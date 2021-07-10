@@ -4,5 +4,16 @@
 
 @layer utilities {
     /*Para agregar clases propias*/
-    
+    .btn {
+        @apply py-2 px-4 rounded
+    }
+    .card-holder{
+        @apply flex flex-col w-56 p-1 border-b-0 bg-white rounded-lg
+    }
+    .buy-btn {
+        @apply text-center text-sm bg-blue-500 rounded py-2 text-white mt-2
+    }
+    .full-screen{
+        @apply h-screen w-full
+    }
 }
