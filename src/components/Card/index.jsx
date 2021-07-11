@@ -1,22 +1,22 @@
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 
-export const Card = () => {
+export const Card = (props) => {
+    const product = props.product
+    console.log(props)
     return (
 
-        <div class="card-holder">
-                <div class="flex rounded flex-col w-ful w-full h-48 bg-gray-200">
-                    <br/>
-                    <div class="bg-red-500 text-white w-1/4 text-center rounded-r-xl">
-                        NEW
-                    </div>
-                </div>
-                <div class="flex border-box p-1 flex-col">
-                    <p class="text-sm text-gray-500">Category</p>
-                    <p>Product Name</p>
-                    <p>$58.<span class="text-sm">00</span></p>
-                    <Link to="/" class="buy-btn">View Item</Link>
-                </div>
+        <div className="card-holder text-left">
+            <div className="flex rounded flex-col w-ful w-full h-48 bg-gray-200">
+                <img className="min-h-full object-cover" src={product.thumbnail} alt="" />
+                <br />
             </div>
+            <div className="flex border-box p-1 flex-col">
+                <p className="text-sm text-gray-500">{ }</p>
+                <p>{product.title}</p>
+                <p className="text-sm">${product.price}</p>
+                <Link to={`/item/${product.id}`} className="buy-btn">View Item</Link>
+            </div>
+        </div>
     )
 }
 

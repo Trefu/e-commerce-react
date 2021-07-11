@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 export const Footer = () => {
     return (
 
-        <section className="bg-white">
+        <footer className="bg-white ">
             <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
                 <nav className="flex flex-wrap justify-center -mx-5 -my-2">
                     <div className="px-5 py-2">
@@ -64,6 +64,6 @@ export const Footer = () => {
                     © 2021 SomeCompany, Inc. All rights reserved.
                 </p>
             </div>
-        </section>
+        </footer>
     )
 }
