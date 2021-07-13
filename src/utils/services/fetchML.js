@@ -11,6 +11,6 @@ const fetchUrl = async (url) => {
     }
 }
 
-export const SEARCH_ITEMS = async (query) => {
+export const searchItems = async (query) => {
     return await fetchUrl(`https://api.mercadolibre.com/sites/MLA/search?q=${query}`);
 }

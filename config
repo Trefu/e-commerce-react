@@ -1,0 +1,10 @@
+  var firebaseConfig = {
+    apiKey: "AIzaSyB12MecZvU6ATjKF_dzOT0lwtOM7wIVngk",
+    authDomain: "react-ecommerce-trefu.firebaseapp.com",
+    projectId: "react-ecommerce-trefu",
+    storageBucket: "react-ecommerce-trefu.appspot.com",
+    messagingSenderId: "314756587257",
+    appId: "1:314756587257:web:e0a58700bbee03ae59cc28"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
