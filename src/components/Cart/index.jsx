@@ -5,9 +5,9 @@ import CartContext from "../../contexts/CartContext/CartContext";
 export const Cart = () => {
     const { cart } = useContext(CartContext)
     return (
-        <li className="pr-6">
+        <li className="pr-6 flex">
 
-            <p >{cart.length}</p>
+            <p  >{cart.length}</p>
             <svg xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
                 fill="none"

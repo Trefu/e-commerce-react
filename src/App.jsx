@@ -12,22 +12,25 @@ export function App() {
 
   return (
     <CartProvider>
-      <BrowserRouter >
-        <div className="flex flex-col justify-between">
-          <Navbar />
+      <ProductsProvider>
+        <BrowserRouter >
+
+          <Navbar className="absolute top-0" />
           <Switch>
-            <ProductsProvider>
-              <Route exact path="/" component={HomeContainer} />
-              <Route exact path="/categories/:id" component={Categories} />
-              <Route exact path="/item/:id" component={ItemDetail} />
-            </ProductsProvider>
+
+            <Route exact path="/" component={HomeContainer} />
+            <Route exact path="/categories/:id" component={Categories} />
+            <Route exact path="/item/:id" component={ItemDetail} />
+
             <Route exact path="/cart" component={CartPage} />
             <Route path="*" component={Error404} />
           </Switch>
-          <Footer />
-        </div>
-      </BrowserRouter>
 
+          <Footer className="absolute bottom-0" />
+
+
+        </BrowserRouter>
+      </ProductsProvider>
     </CartProvider>
   )
 }

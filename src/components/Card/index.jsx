@@ -2,9 +2,7 @@ import { Link } from "react-router-dom"
 
 export const Card = (props) => {
     const product = props.product
-
     return (
-
         <div className="card-holder text-left m-5 flex col">
             <div className="flex rounded flex-col w-full h-48 bg-gray-200">
                 <img className="min-h-full " src={product.pictureUrl} alt="" />

@@ -27,7 +27,7 @@ export const Navbar = () => {
 
 
         <ul className="flex items-center">
-          <Link to="/Cart">
+          <Link to="/cart">
             <Cart />
           </Link>
         </ul>

@@ -1,29 +1,33 @@
 import { useParams } from "react-router-dom"
-
+import ProductsContext from "../../contexts/ProductsContext/ProductsContext";
+import { DisappearedLoading } from "react-loadingg";
+import { useContext } from "react";
+//no funca nada 
 export const ItemDetail = (props) => {
     const { id } = useParams();
-
-    const DEFAULT_ITEM = {
-        category: "deporte",
-        name: "zapatillas",
-        price: "$22,00",
-        id: "1"
-    }
-
-    const FAKE_ARR = [DEFAULT_ITEM, null, null]
-    props = FAKE_ARR.find(i => i.id === id)
-
+    const { products } = useContext(ProductsContext)
+    const product = products.find(p => p.id === id)
+    const isLoading = products.length > 0 ? false : true;
     return (
+        <div className="full-screen flex flex-col justify-center bg-gray-200">
+            {isLoading ?
+                <div>
+                    <DisappearedLoading className="self-center" size="large" />
 
-        <div className="card-holder text-left">
-            <div className="flex rounded flex-col w-ful w-full h-48 bg-gray-200">
-                <br />
-            </div>
-            <div className="flex border-box p-1 flex-col">
-                <p className="text-sm text-gray-500">{props.category}</p>
-                <p>{props.name}</p>
-                <p className="text-sm">{props.price}</p>
-            </div>
+                </div>
+                :
+                <div className="card-holder text-left m-5 flex col self-center">
+                    <div className="flex rounded flex-col w-full h-48 ">
+                        <img className="min-h-full " src={product.pictureUrl} alt="" />
+                        <br />
+                    </div>
+                    <div className="flex border-box p-1 flex-col mt-auto">
+                        <p>{product.title}</p>
+                        <p className="text-sm">{product.fullDescription}</p>
+                        <p className="text-sm">${product.price}</p>
+                        <p className="text-sm">Stock: {product.stock}</p>
+                    </div>
+                </div>}
         </div>
     )
 }
