@@ -1,10 +1,10 @@
-import { Cart } from "../Cart"
+import { Cart } from "./CartIcon"
 import { Link } from "react-router-dom";
 export const Navbar = () => {
 
   return (
 
-    <div className="flex-1 flex flex-col">
+    <div className="flex-1 flex flex-col sticky top-0 w-full">
       <nav className="px-4 flex justify-between bg-white h-16 border-b-2">
         <ul className="flex items-center">
 

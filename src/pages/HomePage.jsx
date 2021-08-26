@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { Card } from "../Card"
+import { Card } from "../components/Card"
 import { DisappearedLoading } from 'react-loadingg';
-import { ProductsContext } from '../../contexts/ProductsContext/ProductsContext'
+import { ProductsContext } from '../contexts/ProductsContext/ProductsContext'
 
 
 

@@ -4,10 +4,13 @@ export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
-    const addItem = (value) => {
+
+    const addItem = (value, quantity = 1) => {
+        console.log(value)
         setCart([...cart, value])
     }
-    const data = { cart, addItem };
+
+    const data = { cart, addItem, setCart };
     return (
         <CartContext.Provider value={data} >
             {children}

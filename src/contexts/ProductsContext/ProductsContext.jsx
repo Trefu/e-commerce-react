@@ -6,8 +6,6 @@ export const ProductsContext = createContext();
 const ProductsProvider = ({ children }) => {
 
     const [products, setProducts] = useState([]);
-
-
     const data = { products };
 
     useEffect(() => {
