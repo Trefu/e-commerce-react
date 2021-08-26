@@ -26,7 +26,7 @@ export const CartPage = () => {
                     </div>
 
                     {cart.map(p => {
-                        return <Product key={p.id} product={p} />
+                        return <Product key={p.id} productInCart={p} />
                     })}
 
 
