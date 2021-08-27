@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { getTotalCost, ola } from "../utils/functions";
+import { getTotalCost } from "../utils/functions";
 import { Link } from "react-router-dom"
 import { ProductCart } from "../components/ProductCart"
 import { FinalPrice } from "../components/FinalPrice";
