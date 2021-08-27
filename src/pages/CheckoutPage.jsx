@@ -1,15 +1,17 @@
 import { useContext } from "react";
+import { getTotalCost, ola } from "../utils/functions";
 import { Link } from "react-router-dom"
 import { ProductCart } from "../components/ProductCart"
+import { FinalPrice } from "../components/FinalPrice";
 import CartContext from "../contexts/CartContext/CartContext";
 
 
-export const CartPage = () => {
+export const CheckoutPage = () => {
     const { cart } = useContext(CartContext);
     return (
 
         <div className="container mx-auto mt-10">
-            <div className="flex shadow-md my-10">
+            <div className="flex flex-col md:flex-row shadow-md my-10">
                 <div className='w-3/4 bg-white px-10 py-10'>
 
                     <div className="flex justify-between border-b pb-8">
@@ -34,18 +36,17 @@ export const CartPage = () => {
                         Continue Shopping
                     </Link>
                 </div>
+
                 <div id="summary" className="w-1/4 px-8 py-10 flex flex-col justify-end">
                     <h1 className="font-semibold text  border-b pb-8 mb-auto mt-2">Order Summary</h1>
-                    <div className="flex justify-between mt-10 mb-5">
-                        <span className="font-semibold text-sm uppercase">Items 3</span>
-                        <span className="font-semibold text-sm">590$</span>
-                    </div>
+
+                    <FinalPrice cart={cart} />
 
 
                     <div className="border-t mt-8">
                         <div className="flex font-semibold justify-between py-6 text-sm uppercase">
                             <span>Total cost</span>
-                            <span>$600</span>
+                            <span>${getTotalCost(cart)}</span>
                         </div>
                         <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
                     </div>
@@ -60,4 +61,3 @@ export const CartPage = () => {
 
 }
 
-export default CartPage

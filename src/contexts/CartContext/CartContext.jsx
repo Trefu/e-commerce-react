@@ -6,7 +6,7 @@ const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
     /**
-     * 
+     * add a new product with the property of quantity(default 1)
      * @param {Object} newProduct 
      * @param {Number} quantity 
      * @returns 
@@ -15,8 +15,7 @@ const CartProvider = ({ children }) => {
         let productInCart = cart.find(p => p.id === newProduct.id);
         if (productInCart) return
         setCart([
-            ...cart,
-            {
+            ...cart, {
                 ...newProduct,
                 quantity
             }
@@ -29,10 +28,11 @@ const CartProvider = ({ children }) => {
      * @param {Number} quantity 
      * @returns 
      */
+
     const actQuantity = (id, quantity) => {
         let productIndex = cart.findIndex(p => p.id === id);
         let auxCart = [...cart];
-        //referencia del producto en el carro auxiliar
+        //refers to product in cart
         let productInCart = auxCart[productIndex];
         productInCart.quantity = quantity;
         if (productInCart.quantity <= 0) productInCart.quantity = 1;

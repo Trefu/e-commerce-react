@@ -1,5 +1,5 @@
 import { Navbar } from "./components/Navbar";
-import { CartPage } from "./pages/CheckoutPage"
+import { CheckoutPage } from "./pages/CheckoutPage"
 import { Categories } from "./pages/CategoriesPage"
 import { Footer } from './components/Footer'
 import { HomeContainer } from "./pages/HomePage";
@@ -14,21 +14,19 @@ export function App() {
     <CartProvider>
       <ProductsProvider>
         <BrowserRouter >
-          <div className='wrapper '>
 
+          <Navbar />
+          <Switch>
 
-            <Navbar />
-            <Switch>
+            <Route exact path="/" component={HomeContainer} />
+            <Route exact path="/categories/:id" component={Categories} />
+            <Route exact path="/item/:id" component={ItemDetail} />
+            <Route exact path="/cart" component={CheckoutPage} />
+            <Route path="*" component={Error404} />
 
-              <Route exact path="/" component={HomeContainer} />
-              <Route exact path="/categories/:id" component={Categories} />
-              <Route exact path="/item/:id" component={ItemDetail} />
-              <Route exact path="/cart" component={CartPage} />
-              <Route path="*" component={Error404} />
+          </Switch>
+          <Footer className="absolute bottom-0" />
 
-            </Switch>
-            <Footer className="absolute bottom-0" />
-          </div>
 
         </BrowserRouter>
       </ProductsProvider>
