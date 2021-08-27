@@ -15,7 +15,6 @@ const ProductsProvider = ({ children }) => {
             const docs = []
             const querySnapshot = await db.collection("items").get()
             querySnapshot.forEach(doc => docs.push({ ...doc.data(), id: doc.id }))
-            console.log(docs)
             setProducts(products => [...products, ...docs])
         }
         getProducts()

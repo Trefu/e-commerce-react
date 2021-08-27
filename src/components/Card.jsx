@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom"
-
-export const Card = (props) => {
-    const product = props.product
+import { useContext } from "react";
+import CartContext from "../contexts/CartContext/CartContext";
+export const Card = ({ product }) => {
+    const { addItem } = useContext(CartContext);
+    const handleClick = (e) => {
+        e.preventDefault();
+        addItem(product)
+    }
     return (
         <div className="card-holder text-left m-5 flex col">
             <div className="flex rounded flex-col w-full h-48 bg-gray-200">
@@ -9,11 +13,10 @@ export const Card = (props) => {
                 <br />
             </div>
             <div className="flex border-box p-1 flex-col mt-auto">
-                <p className="text-sm text-gray-500">{ }</p>
                 <p>{product.title}</p>
                 <p className="text-sm">${product.price}</p>
                 <p className="text-sm">Stock: {product.stock}</p>
-                <Link to={`/item/${product.id}`} className="buy-btn">View Item</Link>
+                <button onClick={handleClick} className="buy-btn">Add to cart</button>
             </div>
         </div>
     )

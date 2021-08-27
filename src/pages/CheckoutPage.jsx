@@ -1,12 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom"
-import { Product } from "../components/ProductCart"
+import { ProductCart } from "../components/ProductCart"
 import CartContext from "../contexts/CartContext/CartContext";
 
 
 export const CartPage = () => {
     const { cart } = useContext(CartContext);
-    console.log(cart)
     return (
 
         <div className="container mx-auto mt-10">
@@ -26,7 +25,7 @@ export const CartPage = () => {
                     </div>
 
                     {cart.map(p => {
-                        return <Product key={p.id} productInCart={p} />
+                        return <ProductCart key={p.id} product={p} />
                     })}
 
 

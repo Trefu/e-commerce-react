@@ -1,12 +1,18 @@
+import { useContext } from "react";
+import CartContext from "../contexts/CartContext/CartContext";
 
-export const Product = ({ productInCart }) => {
-    let product = {
-        ...productInCart,
-        quantity: productInCart.quantity || 1
+export const ProductCart = ({ product }) => {
+    const { actQuantity, deleteItem } = useContext(CartContext);
+
+    const handleDelete = () => {
+        deleteItem(product.id)
     }
-    console.log(product);
-/*     const {  } = useContext(CartContext);
- */    console.log(product)
+
+    const handleAdd = (e) => actQuantity(product.id, product.quantity + 1);
+
+
+    const handleDecrement = e => actQuantity(product.id, product.quantity - 1);
+
     return (
 
         <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
@@ -18,7 +24,7 @@ export const Product = ({ productInCart }) => {
                 <div className="flex flex-col justify-between ml-4 flex-grow">
                     <span className="font-bold text-sm">{product.title}</span>
                     <span className="text-red-500 text-xs">{product.category}</span>
-                    <a href="/" className="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
+                    <button onClick={handleDelete} className="self-start font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</button>
                 </div>
             </div>
 
@@ -26,14 +32,15 @@ export const Product = ({ productInCart }) => {
 
                 {/* Minus quantity */}
 
-                <button>
+                <button onClick={handleDecrement}>
                     <svg className="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
                     </svg>
                 </button>
 
-                <input className="mx-2 border text-center w-8" type="text" value={product.quantity} />
+                <div className="mx-2 border text-center w-8" > {product.quantity} </ div>
                 {/* Add quantity */}
-                <button>
+
+                <button onClick={handleAdd}>
                     <svg className="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
                         <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
                     </svg>
