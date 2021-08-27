@@ -1,10 +1,9 @@
 import { Cart } from "./CartIcon"
 import { Link } from "react-router-dom";
 export const Navbar = () => {
-
   return (
 
-    <div className="flex-1 flex flex-col sticky top-0 w-full">
+    <div className="flex-1 flex flex-col sticky top-0 w-full z-10">
       <nav className="px-4 flex justify-between bg-white h-16 border-b-2">
         <ul className="flex items-center">
 
@@ -21,9 +20,10 @@ export const Navbar = () => {
         <ul className="flex items-center">
 
           <li>
-            <h1 className="pl-8 lg:pl-0 text-gray-700">Toto Store</h1>
+            <h1 className="font-custom animate-pulse pl-8 lg:pl-0 text-transparent bg-gradient-to-t bg-clip-text from-indigo-300 to-gray-800">Let It Rip Store</h1>
           </li>
         </ul>
+
 
 
         <ul className="flex items-center">

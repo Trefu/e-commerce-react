@@ -22,9 +22,9 @@ export const ProductCart = ({ product }) => {
                 </div>
 
                 <div className="flex flex-col justify-between ml-4 flex-grow">
-                    <span className="font-bold text-sm">{product.title}</span>
+                    <span className=" text-sm">{product.title}</span>
                     <span className="text-red-500 text-xs">{product.category}</span>
-                    <button onClick={handleDelete} className="self-start font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</button>
+                    <button onClick={handleDelete} className="self-start  hover:text-red-500 text-gray-500 text-xs">Remove</button>
                 </div>
             </div>
 
@@ -38,6 +38,7 @@ export const ProductCart = ({ product }) => {
                 </button>
 
                 <div className="mx-2 border text-center w-8" > {product.quantity} </ div>
+
                 {/* Add quantity */}
 
                 <button onClick={handleAdd}>
@@ -47,8 +48,8 @@ export const ProductCart = ({ product }) => {
                 </button>
 
             </div>
-            <span className="text-center w-1/5 font-semibold text-sm">${product.price}</span>
-            <span className="text-center w-1/5 font-semibold text-sm">${product.price * product.quantity}</span>
+            <span className="text-center w-1/5  text-sm">${product.price}</span>
+            <span className="text-center w-1/5  text-sm">${product.price * product.quantity}</span>
         </div>
 
     )
