@@ -1,4 +1,4 @@
-import { Cart } from "./CartIcon"
+import { CartIcon } from "./CartIcon"
 import { Link } from "react-router-dom";
 export const Navbar = () => {
   return (
@@ -20,7 +20,10 @@ export const Navbar = () => {
         <ul className="flex items-center">
 
           <li>
-            <h1 className="font-custom animate-pulse pl-8 lg:pl-0 text-transparent bg-gradient-to-t bg-clip-text from-indigo-300 to-gray-800">Let It Rip Store</h1>
+            <Link to='/'
+              className="font-custom animate-pulse pl-8 lg:pl-0 text-transparent bg-gradient-to-t bg-clip-text from-indigo-300 to-gray-800 md:text-4xl">
+              Let It Rip Store
+            </Link >
           </li>
         </ul>
 
@@ -28,7 +31,7 @@ export const Navbar = () => {
 
         <ul className="flex items-center">
           <Link to="/cart">
-            <Cart />
+            <CartIcon />
           </Link>
         </ul>
 

@@ -3,20 +3,26 @@
 @tailwind utilities;
 
 @layer utilities {
+
     /*Para agregar clases propias*/
-    .font-custom{
+    .font-custom {
         font-family: 'Staatliches', cursive;
     }
+
     .btn {
         @apply py-2 px-4 rounded
     }
-    .card-holder{
+
+    .card-holder {
         @apply flex flex-col w-56 p-1 border-b-0 bg-white rounded-lg
     }
+
     .buy-btn {
         @apply text-center text-sm bg-indigo-500 rounded py-2 text-white mt-2
     }
-    .full-screen{
+
+    .full-screen {
         @apply min-h-screen w-full
     }
+
 }

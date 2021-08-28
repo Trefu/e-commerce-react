@@ -14,12 +14,11 @@ const CartProvider = ({ children }) => {
     const addItem = (newProduct, quantity = 1) => {
         let productInCart = cart.find(p => p.id === newProduct.id);
         if (productInCart) return
-        setCart([
-            ...cart, {
-                ...newProduct,
-                quantity
-            }
+        newProduct.quantity = quantity;
+        return setCart([
+            ...cart, newProduct
         ])
+
     }
 
     /**
