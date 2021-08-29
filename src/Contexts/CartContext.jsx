@@ -1,10 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
+import { UiContext } from "./Contexts";
 
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
-
+    const { showToast } = useContext(UiContext);
     /**
      * add a new product with the property of quantity(default 1)
      * @param {Object} newProduct 
@@ -13,13 +14,18 @@ const CartProvider = ({ children }) => {
      */
     const addItem = (newProduct, quantity = 1) => {
         let productInCart = cart.find(p => p.id === newProduct.id);
-        if (productInCart) return
+        if (productInCart || newProduct.stock <= 0) return;
+        showToast({
+            content: `Click on the cart icon to checkout`,
+            title: `${newProduct.title} added to the cart!`,
+            color: 'green'
+        });
         newProduct.quantity = quantity;
         return setCart([
             ...cart, newProduct
-        ])
+        ]);
 
-    }
+    };
 
     /**
      * 
@@ -45,6 +51,11 @@ const CartProvider = ({ children }) => {
     const deleteItem = (id) => {
         let productIndex = cart.findIndex(p => p.id === id);
         let auxCart = [...cart];
+        showToast({
+            content: ``,
+            title: `${auxCart[productIndex].title} removed from cart!`,
+            color: 'red'
+        });
         auxCart.splice(productIndex, 1);
         setCart(auxCart);
     }

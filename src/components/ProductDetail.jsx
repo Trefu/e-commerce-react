@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom"
-import ProductsContext from "../contexts/ProductsContext/ProductsContext";
+import ProductsContext from "../Contexts/ProductsContext";
 import { DisappearedLoading } from "react-loadingg";
 import { useContext } from "react";
-import CartContext from "../contexts/CartContext/CartContext";
+import CartContext from "../Contexts/CartContext";
 //no funca nada 
 export const ItemDetail = () => {
     const { id } = useParams();

@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import { Card } from "../components/Card"
+import { Card } from "../components/ComponentsIndex"
 import { DisappearedLoading } from 'react-loadingg';
-import { ProductsContext } from '../contexts/ProductsContext/ProductsContext'
+import { ProductsContext } from '../Contexts/Contexts'
 
 
-
-export const HomeContainer = () => {
+export const HomePage = () => {
     const { products } = useContext(ProductsContext);
     const isLoading = products.length > 0 ? false : true;
 
@@ -25,3 +24,5 @@ export const HomeContainer = () => {
     )
 }
 
+
+export default HomePage

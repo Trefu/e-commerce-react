@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { Toast } from "./Toast";
-import CartContext from "../contexts/CartContext/CartContext";
+import { Toast } from './ComponentsIndex'
+
+import { CartContext } from "../Contexts/Contexts";
 
 
 export const CartIcon = () => {
@@ -23,3 +24,5 @@ export const CartIcon = () => {
         </li>
     )
 }
+
+export default CartIcon

@@ -1,4 +1,4 @@
-export const FinalPrice = ({ cart }) => {
+export const FinalPriceProduct = ({ cart }) => {
     return (
         <div className="flex justify-between flex-col mt-10 mb-5 tracking-widest">
             {cart.map((product, i) => {
@@ -12,3 +12,5 @@ export const FinalPrice = ({ cart }) => {
 
     )
 }
+
+export default FinalPriceProduct

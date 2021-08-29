@@ -1,8 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import CartContext from "../contexts/CartContext/CartContext";
+import { CartContext } from "../Contexts/Contexts";
 export const Card = ({ product }) => {
     const { addItem } = useContext(CartContext);
+
+    const inStock = product.stock > 0;
+    const stockColor = product.stock > 0 ? 'green' : 'red'
     const handleClick = (e) => {
         e.preventDefault();
         addItem(product)
@@ -13,14 +16,14 @@ export const Card = ({ product }) => {
                 <img className="min-h-full " src={product.pictureUrl} alt="" />
                 <br />
             </div>
-            <div className="flex border-box p-1 flex-col mt-auto">
-                <p className='font-custom'>{product.title}</p>
-                <p className='text-sm text-gray-600 '>{product.description}</p>
-                <Link to='/' className='text-sm color text-indigo-600'>More details</Link >
+            <div className="flex border-box p-1 flex-col h-full ">
+                <p className='font-custom '>{product.title}</p>
+                <p className={`mb-auto text-${stockColor}-500 text-sm`}> {inStock ? 'In stock' : 'Out'} </p>
+                <p className='text-sm text-gray-600 truncate'>{product.description}</p>
+                <Link to={`/item/${product.id}`} className='text-sm color text-indigo-600'>More details</Link >
                 <div className='flex justify-between items-center'>
                     <p className="font-bold text-gray-500">${product.price}</p>
-
-                    <button onClick={handleClick} className="buy-btn px-5 transform duration-200 active:bg-purple-800 active:scale-75">Add to cart</button>
+                    <button onClick={handleClick} className="buy-btn px-5 transform duration-200 hover:bg-purple-600 active:scale-75">Add to cart</button>
                 </div>
             </div>
 
