@@ -17,13 +17,13 @@ export const ProductCart = ({ product }) => {
 
         <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
             <div className="flex w-2/5">
-                <div className="w-20">
-                    <img className='h-24' src={product.pictureUrl} alt="" />
+                <div className="flex flex-col rounded bg-gradient-to-b from-indigo-400 to-gray-200">
+                    <img className='h-20 forced-width object-scale-down' src={product.pictureUrl} alt="" />
                 </div>
 
-                <div className="flex flex-col justify-between ml-4 flex-grow">
+                <div className="flex flex-col justify-between ml-4 ">
                     <span className=" text-sm">{product.title}</span>
-                    <span className="text-red-500 text-xs">{product.category}</span>
+                    <span className="text-blue-600 text-xs">{product.category}</span>
                     <button onClick={handleDelete} className="self-start  hover:text-red-500 text-gray-500 text-xs">Remove</button>
                 </div>
             </div>

@@ -8,6 +8,7 @@ import CartContext from "../Contexts/CartContext";
 
 export const CheckoutPage = () => {
     const { cart } = useContext(CartContext);
+
     const CartEmpty = () =>
         <div className='full-screen flex flex-col justify-center items-center container mx-auto'>
             <div className="p-10 border-b">
@@ -19,11 +20,12 @@ export const CheckoutPage = () => {
                 <span className='text-3xl'>Continue Shopping</span>
             </Link>
         </div>
+
     if (cart.length <= 0) return <CartEmpty />
     return (
-        <div className="container mx-auto mt-10 bg-gray-100">
+        <div className="md:container mx-auto mt-10 bg-gray-100">
             <div className="flex flex-col md:flex-row shadow-md my-10 ">
-                <div className='w-full md:w-3/4 bg-white px-10 py-10'>
+                <div className='w-full md:w-3/4 bg-white px-8 py-10'>
 
                     <div className="flex justify-between border-b pb-8">
                         <h1 className='text-2xl select-none font-custom'>Shopping cart</h1>
@@ -47,7 +49,7 @@ export const CheckoutPage = () => {
                     </Link>
                 </div>
 
-                <div id="summary" className="w-full md:w-1/4 px-8 py-10 flex flex-col justify-end">
+                <div id="summary" className="w-full md:w-1/4 px-2 py-10 flex flex-col justify-end">
                     <h1 className="text  border-b pb-8 mb-auto mt-2">Order Summary</h1>
 
                     <FinalPriceProduct cart={cart} />

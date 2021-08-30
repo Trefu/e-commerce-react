@@ -13,7 +13,7 @@ export const Card = ({ product }) => {
     return (
         <div className="card-holder text-left m-5 flex col transform duration-200 hover:-translate-y-2 hover:shadow-xl ">
             <div className="flex rounded flex-col w-full h-48 bg-gradient-to-b from-indigo-400 to-gray-200">
-                <img className="min-h-full " src={product.pictureUrl} alt="" />
+                <img className="min-h-full object-fill " src={product.pictureUrl} alt={`${product.title}`} />
                 <br />
             </div>
             <div className="flex border-box p-1 flex-col h-full ">
