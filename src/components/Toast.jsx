@@ -1,7 +1,6 @@
+export const Toast = ({ message }) => {
+    if (!message) return null
 
-
-export const Toast = ({ open, message }) => {
-    if (!open) return null
     return (
         <div className={`px-4 py-2 -mx-3 rounded shadow-lg mt-8 fixed top-8 right-5 bg-white z-10`}>
             <div className="mx-3">

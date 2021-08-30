@@ -52,7 +52,7 @@ const CartProvider = ({ children }) => {
         let productIndex = cart.findIndex(p => p.id === id);
         let auxCart = [...cart];
         showToast({
-            content: ``,
+            content: `${cart.length - 1} products left on cart`,
             title: `${auxCart[productIndex].title} removed from cart!`,
             color: 'red'
         });
