@@ -7,4 +7,6 @@ export { default as Navbar } from './Navbar'
 export { default as ProductCart } from './ProductCart'
 export { default as ProductDetail } from './ProductDetail'
 export { default as Toast } from './Toast'
+export { default as Star } from './Star'
+export { default as BuyButton } from './BuyButton'
 

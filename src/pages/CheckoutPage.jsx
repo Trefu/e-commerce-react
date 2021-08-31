@@ -23,11 +23,11 @@ export const CheckoutPage = () => {
 
     if (cart.length <= 0) return <CartEmpty />
     return (
-        <div className="md:container mx-auto mt-10 bg-gray-100">
+        <div className="md:container mx-auto mt-10 ">
             <div className="flex flex-col md:flex-row shadow-md my-10 ">
-                <div className='w-full md:w-3/4 bg-white px-8 py-10'>
+                <div className='w-full md:w-3/4 bg-white px-8 py-10 border-r border-gray-300'>
 
-                    <div className="flex justify-between border-b pb-8">
+                    <div className="flex justify-between border-b pb-8 border-purple-300 border-r-2">
                         <h1 className='text-2xl select-none font-custom'>Shopping cart</h1>
                     </div>
 
@@ -49,13 +49,13 @@ export const CheckoutPage = () => {
                     </Link>
                 </div>
 
-                <div id="summary" className="w-full md:w-1/4 px-2 py-10 flex flex-col justify-end">
-                    <h1 className="text  border-b pb-8 mb-auto mt-2">Order Summary</h1>
+                <div id="summary" className="md:w-1/4 px-2 py-10 flex flex-col justify-between">
+                    <h1 className="border-b pb-8 border-purple-300 mt-2">Order Summary</h1>
 
                     <FinalPriceProduct cart={cart} />
 
 
-                    <div className="border-t mt-8">
+                    <div className="border-t mt-8 border-purple-300">
                         <div className="flex justify-between py-6 text-sm uppercase">
                             <span>Total cost</span>
                             <span>${getTotalCost(cart)}</span>

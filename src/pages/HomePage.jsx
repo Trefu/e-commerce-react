@@ -8,16 +8,15 @@ export const HomePage = () => {
     const { products } = useContext(ProductsContext);
     const isLoading = products.length > 0 ? false : true;
 
+    if (isLoading) return <div className='full-screen flex flex-col justify-center bg-gray-200'>
+        <DisappearedLoading className='self-center' size='large' />
+    </div>
     return (
 
         <div className="full-screen flex flex-col justify-center text-center bg-gray-200">
-
             <div className="flex flex-wrap justify-center">
-                {
-                    isLoading ? <DisappearedLoading /> :
-                        products.map((product, i) =>
-                            <Card key={i} product={product} />)
-                }
+                {products.map((product, i) =>
+                    <Card key={i} product={product} />)}
             </div>
         </div>
 

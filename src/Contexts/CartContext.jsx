@@ -14,7 +14,16 @@ const CartProvider = ({ children }) => {
      */
     const addItem = (newProduct, quantity = 1) => {
         let productInCart = cart.find(p => p.id === newProduct.id);
-        if (productInCart || newProduct.stock <= 0) return;
+        if (productInCart) return showToast({
+            title: `Already on cart!`,
+            content: `${newProduct.title} is already on cart`,
+            color: 'green'
+        });
+        if (newProduct.stock <= 0) return showToast({
+            title: 'No more stock!',
+            content: `${newProduct.title} has no stock!`,
+            color: 'red'
+        })
         showToast({
             content: `Click on the cart icon to checkout`,
             title: `${newProduct.title} added to the cart!`,
