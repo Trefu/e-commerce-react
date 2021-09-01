@@ -25,7 +25,7 @@ export const CheckoutPage = () => {
     return (
         <div className="md:container mx-auto mt-10 ">
             <div className="flex flex-col md:flex-row shadow-md my-10 ">
-                <div className='w-full md:w-3/4 bg-white px-8 py-10 border-r border-gray-300'>
+                <div className='w-full md:w-3/4 bg-white px-2 py-10 border-r border-gray-300'>
 
                     <div className="flex justify-between border-b pb-8 border-purple-300 border-r-2">
                         <h1 className='text-2xl select-none font-custom'>Shopping cart</h1>

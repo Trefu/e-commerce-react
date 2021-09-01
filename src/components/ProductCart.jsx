@@ -1,5 +1,6 @@
-import { useContext } from "react";
+import { useContext, } from "react";
 import CartContext from "../Contexts/CartContext";
+import { Link } from "react-router-dom";
 
 export const ProductCart = ({ product }) => {
     const { actQuantity, deleteItem } = useContext(CartContext);
@@ -15,11 +16,14 @@ export const ProductCart = ({ product }) => {
 
     return (
 
-        <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+        <div className="flex items-center hover:bg-gray-100  py-5">
             <div className="flex w-2/5">
-                <div className="flex flex-col rounded bg-gradient-to-b from-indigo-400 to-gray-200">
-                    <img className='h-20 forced-width object-scale-down' src={product.pictureUrl} alt="" />
-                </div>
+                <Link to={`/item/${product.id}`}>
+                    <div className="flex flex-col rounded bg-gradient-to-b from-gray-400 to-gray-200">
+                        <img className='h-20 forced-width object-scale-down' src={product.pictureUrl} alt="" />
+                    </div>
+                </Link>
+
 
                 <div className="flex flex-col justify-between ml-4 ">
                     <span className=" text-sm">{product.title}</span>

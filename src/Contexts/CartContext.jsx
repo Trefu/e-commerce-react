@@ -14,26 +14,35 @@ const CartProvider = ({ children }) => {
      */
     const addItem = (newProduct, quantity = 1) => {
         let productInCart = cart.find(p => p.id === newProduct.id);
-        if (productInCart) return showToast({
-            title: `Already on cart!`,
-            content: `${newProduct.title} is already on cart`,
-            color: 'green'
-        });
-        if (newProduct.stock <= 0) return showToast({
-            title: 'No more stock!',
-            content: `${newProduct.title} has no stock!`,
-            color: 'red'
-        })
+        const TOAST_RETURNS = {
+            alreadyInCart: {
+                title: `Already on cart!`,
+                content: `${newProduct.title} is already on cart,click on the cart icon to set the quantity`,
+                color: 'green',
+                return: true
+            },
+            outStock: {
+                title: 'Max stock!',
+                content: `${newProduct.title} is on limit stock`,
+                color: 'red',
+                return: true
+            },
+            addedToCart: {
+                title: `${newProduct.title} added to the cart!`,
+                content: `Click on the cart icon to checkout`,
+                color: 'green',
+                return: false
+            }
+        };
+        let keyToastReturns = productInCart ? "alreadyInCart" : newProduct.stock <= 0 ? 'outStock' : 'addedToCart';
         showToast({
-            content: `Click on the cart icon to checkout`,
-            title: `${newProduct.title} added to the cart!`,
-            color: 'green'
+            ...TOAST_RETURNS[keyToastReturns]
         });
+        if (TOAST_RETURNS[keyToastReturns].return) return;
         newProduct.quantity = quantity;
         return setCart([
             ...cart, newProduct
         ]);
-
     };
 
     /**
@@ -48,6 +57,14 @@ const CartProvider = ({ children }) => {
         let auxCart = [...cart];
         //refers to product in cart
         let productInCart = auxCart[productIndex];
+        if (productInCart.stock < quantity) {
+            showToast({
+                content: 'Max stock',
+                title: `${productInCart.title} out of stock!`,
+                color: 'red'
+            });
+            return
+        }
         productInCart.quantity = quantity;
         if (productInCart.quantity <= 0) productInCart.quantity = 1;
         setCart(auxCart);
@@ -61,12 +78,13 @@ const CartProvider = ({ children }) => {
         let productIndex = cart.findIndex(p => p.id === id);
         let auxCart = [...cart];
         showToast({
-            content: `${cart.length - 1} products left on cart`,
+            content: `${cart.length - 1} product left on cart`,
             title: `${auxCart[productIndex].title} removed from cart!`,
             color: 'red'
         });
         auxCart.splice(productIndex, 1);
         setCart(auxCart);
+        return
     }
 
     const data = { cart, addItem, setCart, actQuantity, deleteItem };

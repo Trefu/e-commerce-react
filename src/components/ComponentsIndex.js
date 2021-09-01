@@ -9,4 +9,5 @@ export { default as ProductDetail } from './ProductDetail'
 export { default as Toast } from './Toast'
 export { default as Star } from './Star'
 export { default as BuyButton } from './BuyButton'
+export { default as Modal } from './Modal'
 

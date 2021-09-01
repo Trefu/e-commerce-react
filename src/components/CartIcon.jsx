@@ -6,7 +6,7 @@ import { CartContext } from "../Contexts/Contexts";
 
 export const CartIcon = () => {
     const { cart } = useContext(CartContext);
-    let color = cart.length > 0 ? "purple" : "currentColor";
+    let color = cart.length > 0 ? "indigo" : "currentColor";
 
     return (
         <li className="pr-6 flex relative">

@@ -18,7 +18,7 @@
     }
 
     .buy-btn {
-        @apply text-center text-sm bg-indigo-500 rounded py-2 text-white mt-2
+        @apply text-center text-sm rounded py-2 text-white 
     }
 
     .full-screen {
