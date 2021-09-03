@@ -1,11 +1,8 @@
 import { useContext } from "react";
-import { getTotalCost } from "../utils/functions";
 import { Link } from "react-router-dom"
 import { ProductCart, FinalPriceProduct } from '../components/ComponentsIndex'
-
-import CartContext from "../Contexts/CartContext";
-
-
+import { CartContext } from "../Contexts/Contexts";
+import { getTotalCost } from '../utils/functions';
 export const CheckoutPage = () => {
     const { cart } = useContext(CartContext);
 
@@ -48,7 +45,6 @@ export const CheckoutPage = () => {
                         Continue Shopping
                     </Link>
                 </div>
-
                 <div id="summary" className="md:w-1/4 px-2 py-10 flex flex-col justify-between">
                     <h1 className="border-b pb-8 border-purple-300 mt-2">Order Summary</h1>
 
@@ -62,10 +58,8 @@ export const CheckoutPage = () => {
                         </div>
                         <Link to='/checkout' className="bg-indigo-500 hover:bg-indigo-600 py-3 px-2 text-sm text-white uppercase w-full">Checkout</Link>
                     </div>
-
-
-
                 </div>
+
             </div>
         </div >
 

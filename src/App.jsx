@@ -4,8 +4,10 @@ import { HomePage, CartPage, CheckoutPage } from './pages/PagesIndex'
 import { CartProvider } from "./Contexts/CartContext";
 import { ProductsProvider } from "./Contexts/ProductsContext";
 import { UiProvider } from "./Contexts/UiContext";
+import { CheckoutRoute } from "./routers/CheckoutRoute";
 
 export function App() {
+
   return (
     <UiProvider>
       <CartProvider>
@@ -19,10 +21,9 @@ export function App() {
 
               <Route exact path="/" component={HomePage} />
               <Route exact path="/item/:id" component={ProductDetail} />
-              <Route exact path='/checkout' component={CheckoutPage} />
               <Route exact path="/cart" component={CartPage} />
+              <CheckoutRoute exact path="/checkout" component={CheckoutPage} />
               <Route path="*" component={Error404} />
-
             </Switch>
 
 

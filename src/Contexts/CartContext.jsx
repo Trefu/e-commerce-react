@@ -41,7 +41,7 @@ const CartProvider = ({ children }) => {
             },
             addedToCart: {
                 title: `${newProduct.title} added to the cart!`,
-                content: `Click on the cart icon to checkout`,
+                content: `Click on the cart icon to checkout or select quantity`,
                 color: 'green',
                 return: false
             }
