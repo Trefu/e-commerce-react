@@ -1,11 +1,22 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 import { UiContext } from "./Contexts";
 
 export const CartContext = createContext();
 
+const cartLocalStorage = JSON.parse(localStorage.getItem('cart')) || [];
+
 const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState(cartLocalStorage);
     const { showToast } = useContext(UiContext);
+    const setLocalStorage = value => {
+        try {
+            localStorage.setItem("cart", JSON.stringify(value));
+        }
+        catch (e) {
+            console.log(e)
+        }
+    }
+
     /**
      * add a new product with the property of quantity(default 1)
      * @param {Object} newProduct 
@@ -13,7 +24,8 @@ const CartProvider = ({ children }) => {
      * @returns 
      */
     const addItem = (newProduct, quantity = 1) => {
-        let productInCart = cart.find(p => p.id === newProduct.id);
+        let inCart = cart.find(p => p.id === newProduct.id);
+        let inStock = newProduct.stock <= 0
         const TOAST_RETURNS = {
             alreadyInCart: {
                 title: `Already on cart!`,
@@ -34,15 +46,17 @@ const CartProvider = ({ children }) => {
                 return: false
             }
         };
-        let keyToastReturns = productInCart ? "alreadyInCart" : newProduct.stock <= 0 ? 'outStock' : 'addedToCart';
+        let keyToastReturns = inCart ? "alreadyInCart" : inStock ? 'outStock' : 'addedToCart';
         showToast({
             ...TOAST_RETURNS[keyToastReturns]
         });
         if (TOAST_RETURNS[keyToastReturns].return) return;
         newProduct.quantity = quantity;
-        return setCart([
+        setCart([
             ...cart, newProduct
         ]);
+
+        return
     };
 
     /**
@@ -68,6 +82,8 @@ const CartProvider = ({ children }) => {
         productInCart.quantity = quantity;
         if (productInCart.quantity <= 0) productInCart.quantity = 1;
         setCart(auxCart);
+
+        return
     }
 
     /**
@@ -84,10 +100,17 @@ const CartProvider = ({ children }) => {
         });
         auxCart.splice(productIndex, 1);
         setCart(auxCart);
+
         return
     }
 
+
+    useEffect(() => {
+        setLocalStorage(cart);
+    }, [cart])
+
     const data = { cart, addItem, setCart, actQuantity, deleteItem };
+
     return (
         <CartContext.Provider value={data} >
             {children}

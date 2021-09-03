@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import { Error404, Footer, Navbar, ProductDetail } from './components/ComponentsIndex'
-import { HomePage, CheckoutPage, CategoriesPage } from './pages/PagesIndex'
+import { HomePage, CartPage, CheckoutPage } from './pages/PagesIndex'
 import { CartProvider } from "./Contexts/CartContext";
 import { ProductsProvider } from "./Contexts/ProductsContext";
 import { UiProvider } from "./Contexts/UiContext";
@@ -18,9 +18,9 @@ export function App() {
             <Switch>
 
               <Route exact path="/" component={HomePage} />
-              <Route exact path="/categories/:id" component={CategoriesPage} />
               <Route exact path="/item/:id" component={ProductDetail} />
-              <Route exact path="/cart" component={CheckoutPage} />
+              <Route exact path='/checkout' component={CheckoutPage} />
+              <Route exact path="/cart" component={CartPage} />
               <Route path="*" component={Error404} />
 
             </Switch>
