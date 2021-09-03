@@ -23,12 +23,12 @@ export const ProductDetail = () => {
                 <div className='border-b border-gray-200 p-5'>
                     <p className='text-3xl'>All the payment methods for this product</p>
                 </div>
-                <div className='flex space-x-5 p-5'>
-                    <img className='w-24' src="https://http2.mlstatic.com/storage/logos-api-admin/b4534650-571b-11e8-95d8-631c1a9a92a9-m.svg" alt="" />
-                    <img className='w-24' src="https://i.imgur.com/cMk1MtK.jpg" alt="" />
-                    <img className='w-24' src="https://i.imgur.com/WIAP9Ku.jpg" alt="" />
-                    <img className='w-24' src="https://i.imgur.com/OdxcctP.jpg" alt="" />
-                    <img className='w-24' src="https://i.imgur.com/5TqiRQV.jpg" alt="" />
+                <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 py-5 gap-2 place-items-center'>
+                    <img className='w-20 bg-gray-200 p-2' src="https://http2.mlstatic.com/storage/logos-api-admin/b4534650-571b-11e8-95d8-631c1a9a92a9-m.svg" alt="" />
+                    <img className='w-20 bg-gray-200 p-2' src="https://i.imgur.com/cMk1MtK.jpg" alt="" />
+                    <img className='w-20 bg-gray-200 p-2' src="https://i.imgur.com/WIAP9Ku.jpg" alt="" />
+                    <img className='w-20 bg-gray-200 p-2' src="https://i.imgur.com/OdxcctP.jpg" alt="" />
+                    <img className='w-20 bg-gray-200 p-2' src="https://i.imgur.com/5TqiRQV.jpg" alt="" />
                 </div>
             </Modal >
             <div className="full-screen flex flex-col  bg-gray-300 py-8">
