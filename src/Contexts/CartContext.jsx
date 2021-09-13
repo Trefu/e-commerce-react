@@ -29,19 +29,19 @@ const CartProvider = ({ children }) => {
         const TOAST_RETURNS = {
             alreadyInCart: {
                 title: `Already on cart!`,
-                content: `${newProduct.title} is already on cart,click on the cart icon to set the quantity`,
+                content: `${newProduct.title} is already on cart.`,
                 color: 'green',
                 return: true
             },
             outStock: {
-                title: 'Max stock!',
-                content: `${newProduct.title} is on limit stock`,
+                title: 'Out of stock',
+                content: `${newProduct.title} is out of stock.`,
                 color: 'red',
                 return: true
             },
             addedToCart: {
                 title: `${newProduct.title} added to the cart!`,
-                content: `Click on the cart icon to checkout or select quantity`,
+                content: `Click on the cart icon for checkout or change quantity.`,
                 color: 'green',
                 return: false
             }
