@@ -121,8 +121,8 @@ const orbiters = [
 
       <div class="relative flex items-center justify-center lg:justify-end">
         <HeroBeyblades
-          main='/products/img_2337-2b33a8af5e1d4f947217285994483369.webp.png'
-          main-alt="Lord Spriggan — premium Burst Beyblade"
+          image='/products/img_2337-2b33a8af5e1d4f947217285994483369.webp.png'
+          alt="Lord Spriggan — premium Burst Beyblade"
           :orbiters="orbiters"
           :size="520"
         />
