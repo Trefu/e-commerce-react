@@ -63,20 +63,6 @@ watch(() => products.loaded, (loaded) => {
   if (loaded) randomize()
 }, { immediate: true })
 
-onMounted(() => {
-  window.addEventListener('mousemove', onMouseMove, { passive: true })
-})
-onUnmounted(() => window.removeEventListener('mousemove', onMouseMove))
-
-const mouseX = ref(0)
-const mouseY = ref(0)
-function onMouseMove(e) {
-  const w = window.innerWidth
-  const h = window.innerHeight
-  mouseX.value = (e.clientX - w / 2) / (w / 2)
-  mouseY.value = (e.clientY - h / 2) / (h / 2)
-}
-
 const stats = [
   { label: 'Beys in stock', value: '15K+' },
   { label: 'Stadiums served', value: '94' },
@@ -84,15 +70,13 @@ const stats = [
   { label: 'Tournament wins', value: '1,280' }
 ]
 
-// Hero orbiters
-const orbiters = [
-  { src: '/beyblades/real/tournament-battle.jpg', radius: '40%', size: 110, speed: 8, spin: '3.2s', streak: 'hero-streak-red', alt: 'Tournament battle' },
-  { src: '/beyblades/real/lord-spriggan.jpg',     radius: '33%', size: 78,  speed: 5, spin: '1.4s', streak: 'hero-streak-purple', direction: 'ccw', alt: 'Lord Spriggan' },
-  { src: '/beyblades/burst-valkyrie.svg',         radius: '48%', size: 86,  speed: 10, spin: '1.8s', streak: 'hero-streak-red', direction: 'ccw', alt: 'Valkyrie' },
-  { src: '/beyblades/burst-spriggan.svg',         radius: '44%', size: 72,  speed: 7, spin: '1.6s', streak: 'hero-streak-green', alt: 'Spriggan' },
-  { src: '/beyblades/metal-ldrago.svg',           radius: '37%', size: 70,  speed: 6, spin: '1.5s', streak: 'hero-streak-red', direction: 'ccw', alt: 'L-Drago' },
-  { src: '/beyblades/metal-pegasus.svg',          radius: '51%', size: 78,  speed: 12, spin: '2s', streak: 'hero-streak-blue', alt: 'Pegasus' }
-]
+// Pick the highest-power product with an image for the hero centerpiece
+const heroBeyblade = computed(() => {
+  if (!products.loaded) return null
+  const candidates = products.items.filter(p => p.images?.[0])
+  if (!candidates.length) return null
+  return [...candidates].sort((a, b) => (b.power || 0) - (a.power || 0))[0]
+})
 </script>
 
 <template>
