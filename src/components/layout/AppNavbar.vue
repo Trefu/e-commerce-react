@@ -54,7 +54,7 @@ function logout() {
           <div class="absolute inset-0 rounded-full bg-gradient-to-br from-rip-300 to-rip-700 shadow-glow"></div>
           <div class="streak absolute inset-0 rounded-full"></div>
           <div class="absolute inset-1 rounded-full bg-storm flex items-center justify-center">
-            <img src="/beyblades/real/lord-spriggan.jpg" alt="" class="h-7 w-7 rounded-full object-cover" />
+            <img src='/products/img_0092-df4282351c4db4672817234964170135.webp.png' alt="" class="h-7 w-7 rounded-full object-cover" />
           </div>
           <!-- pulse ring -->
           <span class="absolute -inset-0.5 rounded-full border border-accent-gold/60 animate-pulse-ring pointer-events-none"></span>
