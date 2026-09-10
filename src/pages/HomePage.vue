@@ -86,12 +86,12 @@ const stats = [
 
 // Hero orbiters
 const orbiters = [
-  { src: '/beyblades/real/tournament-battle.jpg', radius: '40%', size: 110, speed: 8, spin: '3.2s', streak: 'hero-streak-red', alt: 'Tournament battle' },
-  { src: '/beyblades/real/lord-spriggan.jpg',     radius: '33%', size: 78,  speed: 5, spin: '1.4s', streak: 'hero-streak-purple', direction: 'ccw', alt: 'Lord Spriggan' },
-  { src: '/beyblades/burst-valkyrie.svg',         radius: '48%', size: 86,  speed: 10, spin: '1.8s', streak: 'hero-streak-red', direction: 'ccw', alt: 'Valkyrie' },
-  { src: '/beyblades/burst-spriggan.svg',         radius: '44%', size: 72,  speed: 7, spin: '1.6s', streak: 'hero-streak-green', alt: 'Spriggan' },
-  { src: '/beyblades/metal-ldrago.svg',           radius: '37%', size: 70,  speed: 6, spin: '1.5s', streak: 'hero-streak-red', direction: 'ccw', alt: 'L-Drago' },
-  { src: '/beyblades/metal-pegasus.svg',          radius: '51%', size: 78,  speed: 12, spin: '2s', streak: 'hero-streak-blue', alt: 'Pegasus' }
+  { src: '/products/img_1486-8eb46d8cc052f1f49f17253870761060.webp.png', radius: '40%', size: 110, speed: 8, spin: '3.2s', streak: 'hero-streak-red', alt: 'Tournament battle' },
+  { src: '/products/img_1622-c00334121d6c48b59f17249617798093.webp.png',     radius: '33%', size: 78,  speed: 5, spin: '1.4s', streak: 'hero-streak-purple', direction: 'ccw', alt: 'Lord Spriggan' },
+  { src: '/products/img_1623-8aef0cbd979a806d0217249616671163.webp.png',         radius: '48%', size: 86,  speed: 10, spin: '1.8s', streak: 'hero-streak-red', direction: 'ccw', alt: 'Valkyrie' },
+  { src: '/products/img_1625-101be200e308044e0417249614445311.webp.png',         radius: '44%', size: 72,  speed: 7, spin: '1.6s', streak: 'hero-streak-green', alt: 'Spriggan' },
+  { src: '/products/img_2333-cfeda5df8e4d7c757717285995410907.webp.png',           radius: '37%', size: 70,  speed: 6, spin: '1.5s', streak: 'hero-streak-red', direction: 'ccw', alt: 'L-Drago' },
+  { src: '/products/img_2335-7eeda68e644e23014817285994954963.webp.png',          radius: '51%', size: 78,  speed: 12, spin: '2s', streak: 'hero-streak-blue', alt: 'Pegasus' }
 ]
 </script>
 
@@ -135,7 +135,7 @@ const orbiters = [
 
       <div class="relative flex items-center justify-center lg:justify-end">
         <HeroBeyblades
-          main="/beyblades/real/lord-spriggan.jpg"
+          main='/products/img_2337-2b33a8af5e1d4f947217285994483369.webp.png'
           main-alt="Lord Spriggan — premium Burst Beyblade"
           :orbiters="orbiters"
           :size="520"

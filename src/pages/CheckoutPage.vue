@@ -236,7 +236,7 @@ function placeOrder() {
             <div class="space-y-3">
               <div v-for="i in detailed" :key="i.id" class="flex items-center gap-3 rounded-2xl border border-white/5 p-3">
                 <div class="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl ring-stadium">
-                  <img :src="i.images?.[0] || '/beyblades/hero.svg'" class="absolute inset-0 m-auto h-12 w-12 object-contain" />
+                  <img :src="i.images?.[0] || '/products/img_0951-f8a1caf9bbffa3a14817231472953152.webp.png'" class="absolute inset-0 m-auto h-12 w-12 object-contain" />
                 </div>
                 <div class="flex-1">
                   <p class="text-sm font-semibold text-white">{{ i.title }}</p>
@@ -264,7 +264,7 @@ function placeOrder() {
         <ul class="mt-4 space-y-3">
           <li v-for="i in detailed" :key="i.id" class="flex items-center gap-3 text-sm">
             <div class="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl ring-stadium">
-              <img :src="i.images?.[0] || '/beyblades/hero.svg'" class="absolute inset-0 m-auto h-10 w-10 object-contain" />
+              <img :src="i.images?.[0] || '/products/img_1151-d209162fea192e8a6b17229854234225.webp.png'" class="absolute inset-0 m-auto h-10 w-10 object-contain" />
             </div>
             <div class="flex-1 min-w-0">
               <p class="truncate font-semibold text-white">{{ i.title }}</p>
