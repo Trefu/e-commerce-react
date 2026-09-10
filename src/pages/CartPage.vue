@@ -25,8 +25,8 @@ const detailed = computed(() => cart.items
     return {
       id: i.id,
       title: i.title || `Item ${String(i.id).slice(-6)}`,
-      images: i.images?.length ? i.images : ['/products/img_0132-c3a1207e03635688e417234948970263.webp.png'],
-      image: i.image || '/products/img_0539-fd604b63bd15263b8917256469689532.webp.png',
+      images: i.images?.length ? i.images : ['/products/img_0539-fd604b63bd15263b8917256469689532.webp.png'],
+      image: i.image || '/products/img_0541-e31daeecfbe7f40ffe17256467416120.webp.png',
       price: Number(i.price) || 0,
       type: i.type || 'Balancer',
       spin: i.spin || 'right',
@@ -126,7 +126,7 @@ function ripCheckout() {
                 :style="{ zIndex: 10 - i }"
               >
                 <div class="streak absolute inset-1 opacity-60 animate-spin-slow"></div>
-                <img :src="item.images?.[0] || '/products/img_0541-e31daeecfbe7f40ffe17256467416120.webp.png'" :alt="item.title" class="absolute inset-0 m-auto h-10 w-10 object-contain" />
+                <img :src="item.images?.[0] || '/products/img_0550-9d8522a05a6b00c33417256463897909.webp.png'" :alt="item.title" class="absolute inset-0 m-auto h-10 w-10 object-contain" />
               </div>
               <div v-if="detailed.length > 5" class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-storm-light bg-storm font-display text-xs text-slate-400">+{{ detailed.length - 5 }}</div>
             </div>
@@ -141,7 +141,7 @@ function ripCheckout() {
           >
             <div class="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl ring-stadium">
               <div class="streak absolute inset-2 opacity-50 animate-spin-slow"></div>
-              <img :src="item.images?.[0] || '/products/img_0550-9d8522a05a6b00c33417256463897909.webp.png'" :alt="item.title" class="absolute inset-0 m-auto h-24 w-24 object-contain" />
+              <img :src="item.images?.[0] || '/products/img_0951-f8a1caf9bbffa3a14817231472953152.webp.png'" :alt="item.title" class="absolute inset-0 m-auto h-24 w-24 object-contain" />
             </div>
             <div class="flex-1 min-w-0">
               <RouterLink :to="`/product/${item.id}`" class="font-display text-xl text-white hover:text-rip-200">{{ item.title }}</RouterLink>

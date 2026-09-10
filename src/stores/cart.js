@@ -65,7 +65,7 @@ export const useCartStore = defineStore('cart', {
             addedAt: i.addedAt || Date.now(),
             price: safePrice,
             title: i.title || product?.title || `Item ${String(i.id).slice(-6)}`,
-            image: i.image || product?.images?.[0] || product?.image || '/products/img_2339-9a5835c5d43751fa4217285993933068.webp.png'
+            image: i.image || product?.images?.[0] || product?.image || '/products/img_2621-7bee4f15e9d0a783f017326606161543.webp.png'
           }
         })
     },
@@ -89,7 +89,7 @@ export const useCartStore = defineStore('cart', {
         addedAt: Date.now(),
         price: Number(fresh.price) || 0,
         title: fresh.title || 'Beyblade',
-        image: fresh.images?.[0] || fresh.image || '/products/img_2621-7bee4f15e9d0a783f017326606161543.webp.png'
+        image: fresh.images?.[0] || fresh.image || '/products/img_2625-94470d86d95ae18d2317326604691843.webp.png'
       }
       const existing = this.items.find(i => i.id === fresh.id)
       if (existing) {

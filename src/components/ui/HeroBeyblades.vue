@@ -2,7 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const props = defineProps({
-  image: { type: String, default: '/beyblades/hero.svg' },
+  image: { type: String, default: '/products/img_0132-c3a1207e03635688e417234948970263.webp.png' },
   alt:   { type: String, default: 'Beyblade' },
   size:  { type: Number, default: 460 }
 })
