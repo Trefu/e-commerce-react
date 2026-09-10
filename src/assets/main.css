@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #app {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at 20% 10%, rgba(99,102,241,0.18), transparent 40%),
+              radial-gradient(circle at 80% 0%, rgba(56,189,248,0.12), transparent 50%),
+              #0b1020;
+}
+
+@layer base {
+  ::selection {
+    background-color: rgba(99, 102, 241, 0.6);
+    color: white;
+  }
+  h1, h2, h3, h4 {
+    font-family: theme('fontFamily.display');
+    letter-spacing: 0.02em;
+  }
+  a {
+    @apply transition-colors;
+  }
+  button {
+    @apply transition-all duration-200;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold tracking-wide uppercase;
+    @apply transition-all duration-200 will-change-transform;
+  }
+  .btn:active { @apply scale-95; }
+  .btn-primary {
+    @apply btn bg-rip-500 text-white shadow-glow hover:bg-rip-400 hover:shadow-[0_0_60px_rgba(99,102,241,0.7)];
+  }
+  .btn-secondary {
+    @apply btn bg-white/5 text-white border border-white/10 backdrop-blur hover:bg-white/10 hover:border-white/20;
+  }
+  .btn-ghost {
+    @apply btn text-rip-200 hover:text-white hover:bg-white/5;
+  }
+  .btn-danger {
+    @apply btn bg-accent-red/90 text-white hover:bg-accent-red;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-wider text-slate-300;
+  }
+  .chip-active {
+    @apply bg-rip-500/20 border-rip-400/40 text-white;
+  }
+  .card-surface {
+    @apply rounded-3xl border border-white/5 bg-white/[0.03] backdrop-blur-md shadow-card;
+  }
+  .input {
+    @apply w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-slate-400 outline-none transition;
+    @apply focus:border-rip-400 focus:ring-2 focus:ring-rip-400/30;
+  }
+  .label {
+    @apply mb-1 block text-xs uppercase tracking-wider text-slate-400;
+  }
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-rip-300 via-white to-rip-300 bg-[length:200%_auto] animate-gradient;
+  }
+  .ring-stadium {
+    background:
+      radial-gradient(circle at center, #1f1d3a 0%, #0b1020 65%);
+    box-shadow:
+      inset 0 0 80px rgba(99,102,241,0.35),
+      inset 0 0 160px rgba(0,0,0,0.8),
+      0 0 80px rgba(99,102,241,0.15);
+  }
+  .rip-divider {
+    background: linear-gradient(90deg, transparent, rgba(99,102,241,0.6), transparent);
+    height: 1px;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0b1020; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4338ca, #6366f1);
+  border-radius: 999px;
+  border: 2px solid #0b1020;
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #6366f1, #818cf8); }
+
+/* Skeleton shimmer */
+.skeleton {
+  background: linear-gradient(110deg, rgba(255,255,255,0.04) 8%, rgba(255,255,255,0.12) 18%, rgba(255,255,255,0.04) 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
+/* 3D tilt utility */
+.tilt-card {
+  perspective: 1000px;
+}
+.tilt-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* Reveal on scroll utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Confetti dot */
+.confetti-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  animation: confetti-fall 1.2s ease-out forwards;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translate3d(0,0,0) rotate(0deg); opacity: 1; }
+  100% { transform: translate3d(var(--tx,0), 220px, 0) rotate(540deg); opacity: 0; }
+}
+
+/* Beyblade streak (radial spin trail) */
+.streak {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(165,180,252,0.5) 30deg, transparent 60deg, transparent 360deg);
+  mask: radial-gradient(circle, transparent 30%, black 31%);
+  -webkit-mask: radial-gradient(circle, transparent 30%, black 31%);
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Hero Beyblade — multi-layer animation helpers */
+.hero-streak {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(251,191,36,0.55) 20deg,
+    rgba(244,114,182,0.45) 50deg,
+    rgba(99,102,241,0.5) 80deg,
+    transparent 110deg,
+    transparent 360deg
+  );
+  mask: radial-gradient(circle, transparent 28%, black 30%, black 70%, transparent 72%);
+  -webkit-mask: radial-gradient(circle, transparent 28%, black 30%, black 70%, transparent 72%);
+}
+
+.hero-streak-red {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(239,68,68,0.7) 25deg,
+    rgba(251,146,60,0.6) 55deg,
+    transparent 90deg,
+    transparent 360deg
+  );
+}
+
+.hero-streak-blue {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(59,130,246,0.7) 25deg,
+    rgba(56,189,248,0.55) 55deg,
+    transparent 90deg,
+    transparent 360deg
+  );
+}
+
+.hero-streak-green {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(34,197,94,0.7) 25deg,
+    rgba(132,204,22,0.55) 55deg,
+    transparent 90deg,
+    transparent 360deg
+  );
+}
+
+.hero-streak-purple {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(168,85,247,0.7) 25deg,
+    rgba(236,72,153,0.55) 55deg,
+    transparent 90deg,
+    transparent 360deg
+  );
+}
+
+.hero-spark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--spark-size, 6px);
+  height: var(--spark-size, 6px);
+  border-radius: 9999px;
+  background: var(--spark-color, #fbbf24);
+  box-shadow: 0 0 12px var(--spark-color, #fbbf24), 0 0 24px var(--spark-color, #fbbf24);
+  transform: translate(-50%, -50%);
+  animation: spark-fly var(--spark-d, 1.6s) ease-out infinite;
+  animation-delay: var(--spark-delay, 0s);
+  pointer-events: none;
+}
+
+.hero-crash-line {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(115deg, transparent 40%, rgba(251,191,36,0.85) 50%, transparent 60%),
+    linear-gradient(70deg, transparent 55%, rgba(244,114,182,0.7) 65%, transparent 75%);
+  mix-blend-mode: screen;
+  border-radius: 9999px;
+  animation: crash-flash 2.6s ease-out infinite;
+  pointer-events: none;
+}
+
+.hero-shockwave {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 2px solid rgba(99,102,241,0.55);
+  animation: shockwave 2.2s ease-out infinite;
+  pointer-events: none;
+}
+
+/* Slow orbit wrapper — translates a child around a circular path.
+   Use --orbit-r for radius and --orbit-d for duration. */
+.hero-orbit {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin-cw var(--orbit-d, 6s) linear infinite;
+  pointer-events: none;
+}
+.hero-orbit.ccw {
+  animation: spin-ccw var(--orbit-d, 6s) linear infinite;
+}
+.hero-orbit-position {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateX(var(--orbit-r, 180px));
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orbit, .hero-spark, .hero-crash-line, .hero-shockwave {
+    animation: none !important;
+  }
+}
+
+/* Marquee */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Reduce motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
