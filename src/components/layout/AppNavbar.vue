@@ -75,8 +75,6 @@ function logout() {
       <nav class="hidden md:flex items-center gap-1 ml-4">
         <RouterLink to="/" class="btn-ghost" exact-active-class="text-white">Home</RouterLink>
         <RouterLink to="/shop" class="btn-ghost" active-class="text-white">Shop</RouterLink>
-        <RouterLink to="/shop/burst" class="btn-ghost" active-class="text-white">Burst</RouterLink>
-        <RouterLink to="/shop/metal" class="btn-ghost" active-class="text-white">Metal</RouterLink>
         <RouterLink to="/shop/starter" class="btn-ghost" active-class="text-white">Starters</RouterLink>
       </nav>
 
@@ -117,12 +115,11 @@ function logout() {
             </div>
           </transition>
         </div>
-        <RouterLink v-else to="/login" class="btn-secondary !py-1.5 !px-4">Sign in</RouterLink>
 
         <RouterLink to="/cart" class="relative btn-ghost !px-3" aria-label="Cart">
           <span class="relative inline-flex">
             <FontAwesomeIcon icon="cart-shopping" class="h-5 w-5" :class="cart.count && 'animate-tilt-shake'" />
-            <span v-if="cart.count" class="absolute -right-2 -top-2 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-gradient-to-br from-accent-red to-rose-400 px-1 text-[11px] font-bold text-white shadow-[0_0_0_3px_rgba(11,16,32,1)] animate-pop-in">
+            <span v-if="cart.count" class="absolute -right-2 -top-2 inline-flex h-4 min-w-[1rem] items-center justify-center rounded-full bg-gradient-to-br from-accent-red to-rose-400 px-1 text-[10px] font-bold text-white shadow-[0_0_0_2px_rgba(11,16,32,1)] animate-pop-in">
               {{ cart.count }}
             </span>
           </span>
@@ -132,6 +129,8 @@ function logout() {
           <FontAwesomeIcon v-if="!menuOpen" icon="bars" class="h-5 w-5" />
           <FontAwesomeIcon v-else icon="xmark" class="h-5 w-5" />
         </button>
+
+        <RouterLink v-if="!auth.user" to="/login" class="btn-secondary !py-1.5 !px-4">Sign in</RouterLink>
       </div>
     </div>
 
@@ -140,8 +139,6 @@ function logout() {
         <div class="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3">
           <RouterLink to="/" class="btn-ghost !justify-start" @click="menuOpen = false">Home</RouterLink>
           <RouterLink to="/shop" class="btn-ghost !justify-start" @click="menuOpen = false">Shop</RouterLink>
-          <RouterLink to="/shop/burst" class="btn-ghost !justify-start" @click="menuOpen = false">Burst</RouterLink>
-          <RouterLink to="/shop/metal" class="btn-ghost !justify-start" @click="menuOpen = false">Metal</RouterLink>
           <RouterLink to="/shop/starter" class="btn-ghost !justify-start" @click="menuOpen = false">Starters</RouterLink>
           <button class="btn-secondary mt-2 !justify-start" @click="ui.openPalette(); menuOpen = false">Search...</button>
         </div>
