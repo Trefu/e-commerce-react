@@ -49,18 +49,13 @@ function logout() {
     :class="scrolled ? 'backdrop-blur-xl bg-storm/70 border-b border-white/10 shadow-card' : 'bg-transparent'"
   >
     <div class="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
-      <RouterLink to="/" class="flex items-center gap-3">
-        <div class="hidden sm:block relative h-12 w-12 shrink-0">
-          <div class="absolute inset-0 rounded-full bg-gradient-to-br from-rip-300 via-rip-500 to-rip-800 shadow-glow"></div>
-          <div class="absolute inset-[6px] rounded-full bg-storm ring-1 ring-white/10 flex items-center justify-center">
-            <span class="font-display text-lg font-bold text-accent-gold">L</span>
-          </div>
-          <span class="absolute -inset-1 rounded-full border border-accent-gold/70 animate-pulse-ring pointer-events-none"></span>
-        </div>
-        <div class="flex flex-col leading-none">
-          <span class="font-display text-2xl tracking-[0.18em] text-white">LET IT RIP</span>
-          <span class="text-[9px] uppercase tracking-[0.45em] text-accent-gold/90 mt-1 font-semibold">Bladers · Since 1999</span>
-        </div>
+      <RouterLink to="/" class="flex items-center">
+        <img
+          src="/logo.png"
+          alt="Let It Rip"
+          class="shrink-0 w-auto transition-all duration-300"
+          :class="scrolled ? 'h-20 sm:h-24' : 'h-14 sm:h-16'"
+        />
       </RouterLink>
 
       <!-- Live battle counter -->
