@@ -215,7 +215,7 @@ const orbiters = [
     </RevealOnScroll>
   </section>
 
-  <SectionDivider variant="glow" height="100px" />
+  <SectionDivider variant="wave" height="160px" from-color="rgba(11,16,32,1)" to-color="rgba(0,0,0,1)" />
 
   <!-- Categories -->
   <section class="relative mx-auto max-w-7xl overflow-hidden px-4 pt-16 pb-24 sm:px-6 lg:px-8">

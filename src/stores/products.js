@@ -11,7 +11,7 @@ export const useProductsStore = defineStore('products', {
     activeCategory: 'all',
     sort: 'featured',
     priceMin: 0,
-    priceMax: 100
+    priceMax: Math.ceil(Math.max(...PRODUCTS.map(p => p.price), 1))
   }),
   getters: {
     maxPrice() {
