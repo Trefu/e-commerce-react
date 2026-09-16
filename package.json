@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check:transitions": "node scripts/check-section-transitions.mjs"
+    "check:transitions": "node scripts/check-section-transitions.mjs",
+    "check:footer-logo": "node scripts/check-footer-logo.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.3.1",

@@ -294,19 +294,16 @@ const activeFilterCount = computed(() =>
           </span>
         </div>
 
-        <transition-group
-          name="grid"
-          tag="div"
+        <div
+          :key="products.activeCategory"
           class="grid gap-6 sm:grid-cols-2 xl:grid-cols-3"
         >
           <ProductCard
-            v-for="(p, idx) in list"
+            v-for="p in list"
             :key="p.id"
             :product="p"
-            class="animate-fade-up"
-            :style="{ animationDelay: (idx * 60) + 'ms' }"
           />
-        </transition-group>
+        </div>
 
         <div v-if="!products.loaded" class="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           <div v-for="n in 6" :key="n" class="h-[440px] rounded-3xl skeleton"></div>
@@ -328,10 +325,4 @@ const activeFilterCount = computed(() =>
 .dropdown-leave-active { transition: opacity 0.2s ease, transform 0.2s ease; }
 .dropdown-enter-from,
 .dropdown-leave-to { opacity: 0; transform: translateY(-6px); }
-
-.grid-enter-active,
-.grid-leave-active { transition: all 0.4s ease; }
-.grid-enter-from,
-.grid-leave-to { opacity: 0; transform: scale(0.95) translateY(10px); }
-.grid-leave-active { position: absolute; }
 </style>

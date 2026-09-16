@@ -30,14 +30,13 @@ onUnmounted(() => clearInterval(timer))
 
     <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
       <div>
-        <div class="flex items-center gap-3">
-          <div class="relative h-10 w-10">
-            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-rip-300 to-rip-700 shadow-glow"></div>
-            <div class="absolute inset-1 rounded-full bg-storm flex items-center justify-center font-display text-rip-200">L</div>
-            
-          </div>
-          <span class="font-display text-2xl tracking-widest text-white">LET&nbsp;IT&nbsp;RIP</span>
-        </div>
+        <RouterLink to="/" class="inline-flex items-center transition-opacity hover:opacity-80" aria-label="Let It Rip — Home">
+          <img
+            src="/logo.png"
+            alt="Let It Rip"
+            class="h-16 w-auto sm:h-20"
+          />
+        </RouterLink>
         <p class="mt-4 text-sm text-slate-400 leading-relaxed">
           Premium Beyblades, metal wheels and starter bundles. Ships worldwide from the storm.
         </p>
