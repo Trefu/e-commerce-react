@@ -1,0 +1,1094 @@
+<!DOCTYPE html><html lang="en" class="dark"><head>
+    <meta charset="UTF-8">
+    <style type="text/css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 'Font Awesome 7 Free';
+  --fa-font-regular: normal 400 1em/1 'Font Awesome 7 Free';
+  --fa-font-light: normal 300 1em/1 'Font Awesome 7 Pro';
+  --fa-font-thin: normal 100 1em/1 'Font Awesome 7 Pro';
+  --fa-font-duotone: normal 900 1em/1 'Font Awesome 7 Duotone';
+  --fa-font-duotone-regular: normal 400 1em/1 'Font Awesome 7 Duotone';
+  --fa-font-duotone-light: normal 300 1em/1 'Font Awesome 7 Duotone';
+  --fa-font-duotone-thin: normal 100 1em/1 'Font Awesome 7 Duotone';
+  --fa-font-brands: normal 400 1em/1 'Font Awesome 7 Brands';
+  --fa-font-sharp-solid: normal 900 1em/1 'Font Awesome 7 Sharp';
+  --fa-font-sharp-regular: normal 400 1em/1 'Font Awesome 7 Sharp';
+  --fa-font-sharp-light: normal 300 1em/1 'Font Awesome 7 Sharp';
+  --fa-font-sharp-thin: normal 100 1em/1 'Font Awesome 7 Sharp';
+  --fa-font-sharp-duotone-solid: normal 900 1em/1 'Font Awesome 7 Sharp Duotone';
+  --fa-font-sharp-duotone-regular: normal 400 1em/1 'Font Awesome 7 Sharp Duotone';
+  --fa-font-sharp-duotone-light: normal 300 1em/1 'Font Awesome 7 Sharp Duotone';
+  --fa-font-sharp-duotone-thin: normal 100 1em/1 'Font Awesome 7 Sharp Duotone';
+  --fa-font-slab-regular: normal 400 1em/1 'Font Awesome 7 Slab';
+  --fa-font-slab-press-regular: normal 400 1em/1 'Font Awesome 7 Slab Press';
+  --fa-font-slab-duo-regular: normal 400 1em/1 'Font Awesome 7 Slab Duo';
+  --fa-font-slab-press-duo-regular: normal 400 1em/1 'Font Awesome 7 Slab Press Duo';
+  --fa-font-pixel-regular: normal 400 1em/1 'Font Awesome 7 Pixel';
+  --fa-font-mosaic-solid: normal 900 1em/1 'Font Awesome 7 Mosaic';
+  --fa-font-vellum-solid: normal 900 1em/1 'Font Awesome 7 Vellum';
+  --fa-font-whiteboard-semibold: normal 600 1em/1 'Font Awesome 7 Whiteboard';
+  --fa-font-thumbprint-light: normal 300 1em/1 'Font Awesome 7 Thumbprint';
+  --fa-font-notdog-solid: normal 900 1em/1 'Font Awesome 7 Notdog';
+  --fa-font-notdog-duo-solid: normal 900 1em/1 'Font Awesome 7 Notdog Duo';
+  --fa-font-etch-solid: normal 900 1em/1 'Font Awesome 7 Etch';
+  --fa-font-graphite-thin: normal 100 1em/1 'Font Awesome 7 Graphite';
+  --fa-font-jelly-regular: normal 400 1em/1 'Font Awesome 7 Jelly';
+  --fa-font-jelly-fill-regular: normal 400 1em/1 'Font Awesome 7 Jelly Fill';
+  --fa-font-jelly-duo-regular: normal 400 1em/1 'Font Awesome 7 Jelly Duo';
+  --fa-font-chisel-regular: normal 400 1em/1 'Font Awesome 7 Chisel';
+  --fa-font-utility-semibold: normal 600 1em/1 'Font Awesome 7 Utility';
+  --fa-font-utility-duo-semibold: normal 600 1em/1 'Font Awesome 7 Utility Duo';
+  --fa-font-utility-fill-semibold: normal 600 1em/1 'Font Awesome 7 Utility Fill';
+}
+
+.svg-inline--fa {
+  box-sizing: content-box;
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+  width: var(--fa-width, 1.25em);
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285714em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left,
+.svg-inline--fa .fa-pull-start {
+  float: inline-start;
+  margin-inline-end: var(--fa-pull-margin, 0.3em);
+}
+.svg-inline--fa.fa-pull-right,
+.svg-inline--fa .fa-pull-end {
+  float: inline-end;
+  margin-inline-start: var(--fa-pull-margin, 0.3em);
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  inset-inline-start: calc(-1 * var(--fa-li-width, 2em));
+  inset-block-start: 0.25em; /* syncing vertical alignment with Web Font rendering */
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: var(--fa-width, 1.25em);
+}
+.fa-layers .svg-inline--fa {
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-counter-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: calc(10 / 16 * 1em); /* converts a 10px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 10 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 10 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-xs {
+  font-size: calc(12 / 16 * 1em); /* converts a 12px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 12 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 12 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-sm {
+  font-size: calc(14 / 16 * 1em); /* converts a 14px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 14 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 14 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-lg {
+  font-size: calc(20 / 16 * 1em); /* converts a 20px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 20 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 20 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-xl {
+  font-size: calc(24 / 16 * 1em); /* converts a 24px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 24 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 24 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-2xl {
+  font-size: calc(32 / 16 * 1em); /* converts a 32px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 32 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 32 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-width-auto {
+  --fa-width: auto;
+}
+
+.fa-fw,
+.fa-width-fixed {
+  --fa-width: 1.25em;
+}
+
+.fa-canvas-square {
+  padding-block: 0.125em;
+  margin-block-end: -0.125em;
+}
+
+.fa-canvas-roomy {
+  padding-block: 0.25em;
+  padding-inline: 0.125em;
+  margin-block-end: -0.25em;
+  box-sizing: content-box;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-inline-start: var(--fa-li-margin, 2.5em);
+  padding-inline-start: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  inset-inline-start: calc(-1 * var(--fa-li-width, 2em));
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+/* Heads Up: Bordered Icons will not be supported in the future!
+  - This feature will be deprecated in the next major release of Font Awesome (v8)!
+  - You may continue to use it in this version *v7), but it will not be supported in Font Awesome v8.
+*/
+/* Notes:
+* --@{v.$css-prefix}-border-width = 1/16 by default (to render as ~1px based on a 16px default font-size)
+* --@{v.$css-prefix}-border-padding =
+  ** 3/16 for vertical padding (to give ~2px of vertical whitespace around an icon considering it's vertical alignment)
+  ** 4/16 for horizontal padding (to give ~4px of horizontal whitespace around an icon)
+*/
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.0625em);
+  box-sizing: var(--fa-border-box-sizing, content-box);
+  padding: var(--fa-border-padding, 0.1875em 0.25em);
+}
+
+.fa-pull-left,
+.fa-pull-start {
+  float: inline-start;
+  margin-inline-end: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right,
+.fa-pull-end {
+  float: inline-end;
+  margin-inline-start: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  animation-name: fa-beat;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  animation-name: fa-bounce;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  animation-name: fa-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-beat-fade {
+  animation-name: fa-beat-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-flip {
+  animation-name: fa-flip;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1.5s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-flip-360 {
+  animation-name: fa-flip-360;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  animation-name: fa-shake;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 0.75s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-spin {
+  animation-name: fa-spin;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 2s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  animation-name: fa-spin;
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+.fa-spin-snap {
+  animation-name: fa-spin-snap;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 3s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-snap-4 {
+  animation-name: fa-spin-snap-4;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 2.4s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-snap-8 {
+  animation-name: fa-spin-snap-8;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 4s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-buzz {
+  animation-name: fa-buzz;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 0.6s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-wag {
+  animation-name: fa-wag;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 0.9s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-out);
+  transform-origin: bottom center;
+}
+
+.fa-float {
+  animation-name: fa-float;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 3s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+  will-change: transform;
+}
+
+.fa-swing {
+  animation-name: fa-swing;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1.2s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-out);
+  transform-origin: top center;
+}
+
+.fa-jello {
+  animation-name: fa-jello;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 0.9s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+  .fa-bounce,
+  .fa-fade,
+  .fa-beat-fade,
+  .fa-flip,
+  .fa-flip-360,
+  .fa-pulse,
+  .fa-shake,
+  .fa-spin,
+  .fa-spin-pulse,
+  .fa-buzz,
+  .fa-float,
+  .fa-jello,
+  .fa-spin-snap,
+  .fa-spin-snap-4,
+  .fa-spin-snap-8,
+  .fa-swing,
+  .fa-wag {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@keyframes fa-beat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(calc(1.25 * var(--fa-beat-scale, 1.25)));
+  }
+  45% {
+    transform: scale(calc(1.22 * var(--fa-beat-scale, 1.22)));
+  }
+  65% {
+    transform: scale(calc(1.25 * var(--fa-beat-scale, 1.25)));
+  }
+  90% {
+    transform: scale(1);
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+    animation-timing-function: var(--fa-animation-timing);
+  }
+  14% {
+    transform: scale(var(--fa-bounce-start-scale-x, 1.06), var(--fa-bounce-start-scale-y, 0.94)) translateY(var(--fa-bounce-anticipation, 3px));
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
+  }
+  32% {
+    transform: scale(var(--fa-bounce-jump-scale-x, 0.94), var(--fa-bounce-jump-scale-y, 1.12)) translateY(calc(-1 * var(--fa-bounce-height, 0.5em)));
+    animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
+  }
+  52% {
+    transform: scale(1, 1) translateY(calc(-1 * var(--fa-bounce-height, 0.5em) * 1.1));
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  70% {
+    transform: scale(var(--fa-bounce-land-scale-x, 1.06), var(--fa-bounce-land-scale-y, 0.92)) translateY(0);
+    animation-timing-function: cubic-bezier(0.33, 0.33, 0.66, 1);
+  }
+  85% {
+    transform: scale(0.98, 1.04) translateY(calc(-2px * var(--fa-bounce-rebound, 1)));
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 1);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-fade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    animation-timing-function: cubic-bezier(0.2, 0, 0.4, 1);
+  }
+  40% {
+    opacity: var(--fa-fade-opacity, 0.4);
+    transform: scale(0.98);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fa-beat-fade {
+  0% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    transform: scale(1);
+    animation-timing-function: cubic-bezier(0.2, 0, 0.4, 1);
+  }
+  25% {
+    opacity: calc(var(--fa-beat-fade-opacity, 0.4) + 0.4);
+    transform: scale(var(--fa-beat-fade-scale, 1.28));
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(var(--fa-beat-fade-scale, 1.25));
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  65% {
+    opacity: calc(var(--fa-beat-fade-opacity, 0.4) + 0.4);
+    transform: scale(var(--fa-beat-fade-scale, 1.28));
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    transform: scale(1);
+  }
+}
+@keyframes fa-flip {
+  0% {
+    transform: perspective(2em) scale(1) rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), 0deg);
+    animation-timing-function: cubic-bezier(0.2, 0, 0.4, 1);
+  }
+  8% {
+    transform: perspective(2em) scale(var(--fa-flip-anticipation-scale, 0.95)) rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), 0deg);
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
+  }
+  35% {
+    transform: perspective(2em) scale(1) rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), calc(var(--fa-flip-angle, -360deg) * 0.6));
+    animation-timing-function: linear;
+  }
+  65% {
+    transform: perspective(2em) scale(1) rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), calc(var(--fa-flip-angle, -360deg) * 0.5));
+    animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
+  }
+  92% {
+    transform: perspective(2em) scale(1) rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), calc(var(--fa-flip-angle, -360deg) * var(--fa-flip-overshoot, 1.04)));
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 1);
+  }
+  100% {
+    transform: perspective(2em) scale(1) rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -360deg));
+  }
+}
+@keyframes fa-flip-360 {
+  0% {
+    transform: perspective(2em) scale(1) rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), 0deg);
+    animation-timing-function: cubic-bezier(0.2, 0, 0.4, 1);
+  }
+  8% {
+    transform: perspective(2em) scale(var(--fa-flip-anticipation-scale, 0.95)) rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), 0deg);
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
+  }
+  50% {
+    transform: perspective(2em) scale(1) rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), calc(var(--fa-flip-angle, -360deg) * 0.6));
+    animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
+  }
+  80% {
+    transform: perspective(2em) scale(1) rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), calc(var(--fa-flip-angle, -360deg) * var(--fa-flip-overshoot, 1.04)));
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 1);
+  }
+  100% {
+    transform: perspective(2em) scale(1) rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -360deg));
+  }
+}
+@keyframes fa-shake {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.2, 0, 0.8, 1);
+  }
+  8% {
+    transform: rotate(35deg) translateX(1px);
+    animation-timing-function: cubic-bezier(0.3, 0, 0.7, 1);
+  }
+  20% {
+    transform: rotate(-22deg) translateX(-1px);
+    animation-timing-function: cubic-bezier(0.3, 0, 0.7, 1);
+  }
+  35% {
+    transform: rotate(15deg) translateX(1px);
+    animation-timing-function: cubic-bezier(0.3, 0, 0.7, 1);
+  }
+  50% {
+    transform: rotate(-9deg);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  65% {
+    transform: rotate(5deg);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  78% {
+    transform: rotate(-3deg);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  90% {
+    transform: rotate(1deg);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fa-spin-snap {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  12% {
+    transform: rotate(60deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  16.67% {
+    transform: rotate(60deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  28.67% {
+    transform: rotate(120deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  33.33% {
+    transform: rotate(120deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  45.33% {
+    transform: rotate(180deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: rotate(180deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  62% {
+    transform: rotate(240deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  66.67% {
+    transform: rotate(240deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  78.67% {
+    transform: rotate(300deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  83.33% {
+    transform: rotate(300deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  95.33% {
+    transform: rotate(360deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fa-spin-snap-4 {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  15% {
+    transform: rotate(90deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  25% {
+    transform: rotate(90deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  40% {
+    transform: rotate(180deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: rotate(180deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  65% {
+    transform: rotate(270deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  75% {
+    transform: rotate(270deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  90% {
+    transform: rotate(360deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fa-spin-snap-8 {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  9% {
+    transform: rotate(45deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  12.5% {
+    transform: rotate(45deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  21.5% {
+    transform: rotate(90deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  25% {
+    transform: rotate(90deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  34% {
+    transform: rotate(135deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  37.5% {
+    transform: rotate(135deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  46.5% {
+    transform: rotate(180deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: rotate(180deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  59% {
+    transform: rotate(225deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  62.5% {
+    transform: rotate(225deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  71.5% {
+    transform: rotate(270deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  75% {
+    transform: rotate(270deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  84% {
+    transform: rotate(315deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  87.5% {
+    transform: rotate(315deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  96.5% {
+    transform: rotate(360deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fa-buzz {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    animation-timing-function: cubic-bezier(0.1, 0, 0.9, 1);
+  }
+  5% {
+    transform: translateX(var(--fa-buzz-distance, 4px)) rotate(0.5deg);
+  }
+  10% {
+    transform: translateX(calc(-1 * var(--fa-buzz-distance, 4px))) rotate(-0.5deg);
+  }
+  15% {
+    transform: translateX(var(--fa-buzz-distance, 4px)) rotate(0.3deg);
+  }
+  20% {
+    transform: translateX(calc(-1 * var(--fa-buzz-distance, 4px))) rotate(-0.3deg);
+  }
+  25% {
+    transform: translateX(calc(var(--fa-buzz-distance, 4px) * 0.7)) rotate(0.2deg);
+  }
+  30% {
+    transform: translateX(calc(-1 * var(--fa-buzz-distance, 4px) * 0.7)) rotate(-0.2deg);
+  }
+  35% {
+    transform: translateX(calc(var(--fa-buzz-distance, 4px) * 0.4)) rotate(0.1deg);
+  }
+  40% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+@keyframes fa-wag {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.2, 0, 0.6, 1);
+  }
+  12% {
+    transform: rotate(var(--fa-wag-angle, 12deg));
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  24% {
+    transform: rotate(2deg);
+    animation-timing-function: cubic-bezier(0.2, 0, 0.6, 1);
+  }
+  36% {
+    transform: rotate(calc(var(--fa-wag-angle, 12deg) * 0.85));
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  48% {
+    transform: rotate(1deg);
+    animation-timing-function: cubic-bezier(0.2, 0, 0.6, 1);
+  }
+  58% {
+    transform: rotate(calc(var(--fa-wag-angle, 12deg) * 0.6));
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  68% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fa-float {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(var(--fa-float-squash-x, 1.02), var(--fa-float-squash-y, 0.98));
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
+  }
+  15% {
+    transform: translateY(calc(-0.4 * var(--fa-float-height, 6px))) translateX(var(--fa-float-drift, 1px)) rotate(var(--fa-float-tilt, 1deg)) scale(1, 1);
+    animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
+  }
+  35% {
+    transform: translateY(calc(-1 * var(--fa-float-height, 6px))) translateX(0) rotate(0deg) scale(var(--fa-float-stretch-x, 0.98), var(--fa-float-stretch-y, 1.03));
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 0);
+  }
+  50% {
+    transform: translateY(calc(-0.92 * var(--fa-float-height, 6px))) translateX(calc(-0.5 * var(--fa-float-drift, 1px))) rotate(calc(-0.5 * var(--fa-float-tilt, 1deg))) scale(0.995, 1.01);
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
+  }
+  70% {
+    transform: translateY(calc(-0.3 * var(--fa-float-height, 6px))) translateX(calc(-1 * var(--fa-float-drift, 1px))) rotate(calc(-1 * var(--fa-float-tilt, 1deg))) scale(1, 1);
+    animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
+  }
+  90% {
+    transform: translateY(calc(0.05 * var(--fa-float-height, 6px))) translateX(0) rotate(0deg) scale(var(--fa-float-squash-x, 1.02), var(--fa-float-squash-y, 0.98));
+    animation-timing-function: cubic-bezier(0.33, 0, 0.66, 1);
+  }
+  100% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(var(--fa-float-squash-x, 1.02), var(--fa-float-squash-y, 0.98));
+  }
+}
+@keyframes fa-swing {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.2, 0, 0.8, 1);
+  }
+  8% {
+    transform: rotate(var(--fa-swing-angle, 22deg));
+    animation-timing-function: cubic-bezier(0.3, 0, 0.7, 1);
+  }
+  18% {
+    transform: rotate(calc(-1 * var(--fa-swing-angle, 22deg) * 0.85));
+    animation-timing-function: cubic-bezier(0.3, 0, 0.7, 1);
+  }
+  28% {
+    transform: rotate(calc(var(--fa-swing-angle, 22deg) * 0.65));
+    animation-timing-function: cubic-bezier(0.35, 0, 0.65, 1);
+  }
+  38% {
+    transform: rotate(calc(-1 * var(--fa-swing-angle, 22deg) * 0.45));
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  48% {
+    transform: rotate(calc(var(--fa-swing-angle, 22deg) * 0.25));
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  56% {
+    transform: rotate(calc(-1 * var(--fa-swing-angle, 22deg) * 0.1));
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  64% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fa-jello {
+  0% {
+    transform: scale(1, 1);
+    animation-timing-function: cubic-bezier(0.2, 0, 0.8, 1);
+  }
+  12% {
+    transform: scale(var(--fa-jello-scale-x, 1.15), calc(2 - var(--fa-jello-scale-x, 1.15)));
+    animation-timing-function: cubic-bezier(0.3, 0, 0.7, 1);
+  }
+  24% {
+    transform: scale(calc(2 - var(--fa-jello-scale-y, 1.12)), var(--fa-jello-scale-y, 1.12));
+    animation-timing-function: cubic-bezier(0.3, 0, 0.7, 1);
+  }
+  36% {
+    transform: scale(calc(1 + (var(--fa-jello-scale-x, 1.15) - 1) * 0.5), calc(2 - (1 + (var(--fa-jello-scale-x, 1.15) - 1) * 0.5)));
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  48% {
+    transform: scale(calc(2 - (1 + (var(--fa-jello-scale-y, 1.12) - 1) * 0.3)), calc(1 + (var(--fa-jello-scale-y, 1.12) - 1) * 0.3));
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  58% {
+    transform: scale(1.02, 0.98);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  68% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+.fa-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  transform: rotate(var(--fa-rotate-angle, 0));
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.svg-inline--fa.fa-inverse {
+  fill: var(--fa-inverse, #fff);
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  line-height: 2em;
+  position: relative;
+  vertical-align: middle;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  --fa-width: 1.25em;
+  height: 1em;
+  width: var(--fa-width);
+}
+.svg-inline--fa.fa-stack-2x {
+  --fa-width: 2.5em;
+  height: 2em;
+  width: var(--fa-width);
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  z-index: var(--fa-stack-z-index, auto);
+}</style><link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Let It Rip — Premium Beyblade store. Shop metal fusion, burst and pro series. Free shipping over $75.">
+    <meta name="theme-color" content="#0b1020">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Oswald:wght@500;700&amp;display=swap" rel="stylesheet">
+    <title>Let It Rip · Premium Beyblade Store</title>
+    <script type="module" crossorigin="" src="/assets/index-tH7JPe0k.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/assets/vue-BPb2vGu8.js">
+    <link rel="modulepreload" crossorigin="" href="/assets/catalog-V2j44S_S.js">
+    <link rel="stylesheet" crossorigin="" href="/assets/index-tav-I14f.css">
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/HomePage-r4iabWHo.js"><link rel="modulepreload" as="script" crossorigin="" href="/assets/arena-C-Je4kF8.js"><link rel="modulepreload" as="script" crossorigin="" href="/assets/ProductCard-kv4lOUux.js"><link rel="modulepreload" as="script" crossorigin="" href="/assets/SpinArrow-DofWeHvM.js"><link rel="modulepreload" as="script" crossorigin="" href="/assets/RevealOnScroll-DeGHfqUv.js"><link rel="modulepreload" as="script" crossorigin="" href="/assets/PowerGauge-DqoWBaIu.js"><link rel="stylesheet" crossorigin="" href="/assets/PowerGauge-BtjtVjQR.css"><link rel="stylesheet" crossorigin="" href="/assets/HomePage-D3sgmMP9.css"></head>
+  <body class="bg-storm text-slate-100 font-body antialiased">
+    <div id="app" data-v-app=""><div class="relative min-h-screen flex flex-col"><div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden"><div class="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-rip-600/30 blur-3xl animate-float"></div><div class="absolute -bottom-40 -right-20 h-[28rem] w-[28rem] rounded-full bg-accent-blue/20 blur-3xl animate-float" style="animation-delay: -2s;"></div><div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(99,102,241,0.08),_transparent_60%)]"></div></div><header data-v-e9d37022="" class="sticky top-0 z-40 transition-all duration-300 bg-transparent border-b border-transparent shadow-none"><div data-v-e9d37022="" class="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 lg:px-8"><a data-v-e9d37022="" href="/" class="router-link-active router-link-exact-active flex items-center gap-3" aria-current="page"><div data-v-e9d37022="" class="hidden sm:block relative h-12 w-12 shrink-0"><div data-v-e9d37022="" class="absolute inset-0 rounded-full bg-gradient-to-br from-rip-300 via-rip-500 to-rip-800 shadow-glow"></div><div data-v-e9d37022="" class="absolute inset-[6px] rounded-full bg-storm ring-1 ring-white/10 flex items-center justify-center"><span data-v-e9d37022="" class="font-display text-lg font-bold text-accent-gold">L</span></div><span data-v-e9d37022="" class="absolute -inset-1 rounded-full border border-accent-gold/70 animate-pulse-ring pointer-events-none"></span></div><div data-v-e9d37022="" class="flex flex-col leading-none"><span data-v-e9d37022="" class="font-display text-2xl tracking-[0.18em] text-white">LET IT RIP</span><span data-v-e9d37022="" class="text-[9px] uppercase tracking-[0.45em] text-accent-gold/90 mt-1 font-semibold">Bladers · Since 1999</span></div></a><div data-v-e9d37022="" class="hidden lg:flex items-center gap-2 ml-2 rounded-full border border-accent-red/30 bg-accent-red/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-accent-red"><span data-v-e9d37022="" class="relative flex h-1.5 w-1.5"><span data-v-e9d37022="" class="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-accent-red"></span><span data-v-e9d37022="" class="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-red"></span></span> Live · 24 battles </div><nav data-v-e9d37022="" class="hidden md:flex items-center gap-1 ml-4"><a data-v-e9d37022="" href="/" class="router-link-active text-white btn-ghost" aria-current="page">Home</a><a data-v-e9d37022="" href="/shop" class="btn-ghost">Shop</a><a data-v-e9d37022="" href="/shop/burst" class="btn-ghost">Burst</a><a data-v-e9d37022="" href="/shop/metal" class="btn-ghost">Metal</a><a data-v-e9d37022="" href="/shop/starter" class="btn-ghost">Starters</a></nav><button data-v-e9d37022="" class="btn-secondary hidden md:inline-flex flex-1 max-w-md !justify-start !py-2 !px-4 text-slate-400"><svg data-v-e9d37022="" class="svg-inline--fa fa-magnifying-glass h-4 w-4 text-slate-400" data-prefix="fas" data-icon="magnifying-glass" role="img" viewBox="0 0 512 512" aria-hidden="true"><path class="" fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376C296.3 401.1 253.9 416 208 416 93.1 416 0 322.9 0 208S93.1 0 208 0 416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg><span data-v-e9d37022="" class="text-sm">Search Beyblades...</span><span data-v-e9d37022="" class="ml-auto flex gap-1"><kbd data-v-e9d37022="" class="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-[10px]">Ctrl</kbd><kbd data-v-e9d37022="" class="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-[10px]">K</kbd></span></button><div data-v-e9d37022="" class="ml-auto flex items-center gap-1"><a data-v-e9d37022="" href="/wishlist" class="relative hidden sm:inline-flex btn-ghost !px-3" aria-label="Wishlist"><svg data-v-e9d37022="" class="svg-inline--fa fa-heart h-5 w-5" data-prefix="far" data-icon="heart" role="img" viewBox="0 0 512 512" aria-hidden="true"><path class="" fill="currentColor" d="M378.9 80c-27.3 0-53 13.1-69 35.2l-34.4 47.6c-4.5 6.2-11.7 9.9-19.4 9.9s-14.9-3.7-19.4-9.9l-34.4-47.6c-16-22.1-41.7-35.2-69-35.2-47 0-85.1 38.1-85.1 85.1 0 49.9 32 98.4 68.1 142.3 41.1 50 91.4 94 125.9 120.3 3.2 2.4 7.9 4.2 14 4.2s10.8-1.8 14-4.2c34.5-26.3 84.8-70.4 125.9-120.3 36.2-43.9 68.1-92.4 68.1-142.3 0-47-38.1-85.1-85.1-85.1zM271 87.1c25-34.6 65.2-55.1 107.9-55.1 73.5 0 133.1 59.6 133.1 133.1 0 68.6-42.9 128.9-79.1 172.8-44.1 53.6-97.3 100.1-133.8 127.9-12.3 9.4-27.5 14.1-43.1 14.1s-30.8-4.7-43.1-14.1C176.4 438 123.2 391.5 79.1 338 42.9 294.1 0 233.7 0 165.1 0 91.6 59.6 32 133.1 32 175.8 32 216 52.5 241 87.1l15 20.7 15-20.7z"></path></svg><!----></a><a data-v-e9d37022="" href="/login" class="btn-secondary !py-1.5 !px-4">Sign in</a><a data-v-e9d37022="" href="/cart" class="relative btn-ghost !px-3" aria-label="Cart"><span data-v-e9d37022="" class="relative inline-flex"><svg data-v-e9d37022="" class="svg-inline--fa fa-cart-shopping h-5 w-5" data-prefix="fas" data-icon="cart-shopping" role="img" viewBox="0 0 640 512" aria-hidden="true"><path class="" fill="currentColor" d="M24-16C10.7-16 0-5.3 0 8S10.7 32 24 32l45.3 0c3.9 0 7.2 2.8 7.9 6.6l52.1 286.3c6.2 34.2 36 59.1 70.8 59.1L456 384c13.3 0 24-10.7 24-24s-10.7-24-24-24l-255.9 0c-11.6 0-21.5-8.3-23.6-19.7l-5.1-28.3 303.6 0c30.8 0 57.2-21.9 62.9-52.2L568.9 69.9C572.6 50.2 557.5 32 537.4 32l-412.7 0-.4-2c-4.8-26.6-28-46-55.1-46L24-16zM208 512a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm224 0a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"></path></svg><!----></span></a><button data-v-e9d37022="" class="btn-ghost md:hidden !px-2" aria-label="Menu"><svg data-v-e9d37022="" class="svg-inline--fa fa-bars h-5 w-5" data-prefix="fas" data-icon="bars" role="img" viewBox="0 0 448 512" aria-hidden="true"><path class="" fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"></path></svg></button></div></div><!----></header><main class="flex-1"><div class=""><section class="relative overflow-hidden pt-12 pb-24"><div class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-40" style="background-image: url(&quot;/bgs/bg-2.jpg&quot;);"></div><div class="absolute inset-0 -z-10"></div><div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8"><div><div class="inline-flex items-center gap-2 chip mb-6"><span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-accent-gold"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-accent-gold"></span></span> New drop · Lord Spriggan in stock </div><h1 class="font-display text-5xl leading-[0.95] sm:text-7xl lg:text-[6rem]"><span class="block gradient-text">LET IT</span><span class="block text-white">RIP.</span></h1><p class="mt-6 max-w-lg text-lg text-slate-300"> The official home for premium Beyblades. Real metal, real bursts, real battles — engineered for stadium domination. </p><div class="mt-8 flex flex-wrap gap-3"><a href="/shop" class="btn-primary !py-3 !px-7 text-base">⚡ Launch the store</a><a href="/shop/burst" class="btn-secondary !py-3 !px-7 text-base">Explore Burst</a></div><dl class="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4"><div><dt class="text-xs uppercase tracking-widest text-slate-400">Beys in stock</dt><dd class="mt-1 font-display text-2xl text-white counter" data-target="15K+">15K+</dd></div><div><dt class="text-xs uppercase tracking-widest text-slate-400">Stadiums served</dt><dd class="mt-1 font-display text-2xl text-white counter" data-target="94">94</dd></div><div><dt class="text-xs uppercase tracking-widest text-slate-400">Avg. shipping</dt><dd class="mt-1 font-display text-2xl text-white counter" data-target="48h">48h</dd></div><div><dt class="text-xs uppercase tracking-widest text-slate-400">Tournament wins</dt><dd class="mt-1 font-display text-2xl text-white counter" data-target="1,280">1,280</dd></div></dl></div><div class="relative flex items-center justify-center lg:justify-end"><div data-v-921611d3="" class="hero-stage relative isolate mx-auto" orbiters="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" style="width: min(520px, 92vw); aspect-ratio: 1 / 1; max-width: 100%;"><img src="/arena.png" alt="" class="pointer-events-none absolute inset-[4%] h-[92%] w-[92%] rounded-full object-cover opacity-90" loading="lazy" decoding="async" data-v-921611d3=""><div class="hero-ring hero-ring--dashed pointer-events-none absolute inset-0" data-v-921611d3=""></div><div class="hero-ring hero-ring--solid pointer-events-none absolute inset-[6%]" data-v-921611d3=""></div><div class="hero-ring hero-ring--dashed hero-ring--fast pointer-events-none absolute inset-[12%]" data-v-921611d3=""></div><div class="pointer-events-none absolute inset-0 rounded-full animate-pulse-glow" style="background:radial-gradient(circle at 50% 50%, rgba(251,191,36,0.22), transparent 55%);" data-v-921611d3=""></div><div data-v-921611d3="" class="hero-spark" style="--tx: 141.8240032493182px; --ty: 0px; --spark-delay: 0.00s; --spark-d: 2.21s; --spark-color: #fbbf24; --spark-size: 4px;"></div><div data-v-921611d3="" class="hero-spark" style="--tx: 144.83713145759555px; --ty: 83.62175683569598px; --spark-delay: 0.13s; --spark-d: 2.21s; --spark-color: #f97316; --spark-size: 6px;"></div><div data-v-921611d3="" class="hero-spark" style="--tx: 74.36478632507179px; --ty: 128.80358820902757px; --spark-delay: 0.26s; --spark-d: 2.04s; --spark-color: #ef4444; --spark-size: 5px;"></div><div data-v-921611d3="" class="hero-spark" style="--tx: 1.0649514502360338e-14px; --ty: 173.91977033337196px; --spark-delay: 0.39s; --spark-d: 2.08s; --spark-color: #a78bfa; --spark-size: 3px;"></div><div data-v-921611d3="" class="hero-spark" style="--tx: -83.0696231661013px; --ty: 143.88080788928815px; --spark-delay: 0.52s; --spark-d: 1.70s; --spark-color: #38bdf8; --spark-size: 7px;"></div><div data-v-921611d3="" class="hero-spark" style="--tx: -150.1188988315852px; --ty: 86.67118665086589px; --spark-delay: 0.65s; --spark-d: 1.63s; --spark-color: #22d3ee; --spark-size: 6px;"></div><div data-v-921611d3="" class="hero-spark" style="--tx: -132.878823455257px; --ty: 1.6272962581894673e-14px; --spark-delay: 0.78s; --spark-d: 2.09s; --spark-color: #f472b6; --spark-size: 3px;"></div><div data-v-921611d3="" class="hero-spark" style="--tx: -140.01554174210733px; --ty: -80.83801071553697px; --spark-delay: 0.91s; --spark-d: 1.49s; --spark-color: #fbbf24; --spark-size: 7px;"></div><div data-v-921611d3="" class="hero-spark" style="--tx: -89.62677501927101px; --ty: -155.23812805192222px; --spark-delay: 1.04s; --spark-d: 2.03s; --spark-color: #f97316; --spark-size: 4px;"></div><div data-v-921611d3="" class="hero-spark" style="--tx: -2.4408792278789184e-14px; --ty: -132.8752763424444px; --spark-delay: 1.17s; --spark-d: 1.53s; --spark-color: #ef4444; --spark-size: 5px;"></div><div data-v-921611d3="" class="hero-spark" style="--tx: 83.04683765049454px; --ty: -143.84134221858048px; --spark-delay: 1.30s; --spark-d: 2.27s; --spark-color: #a78bfa; --spark-size: 3px;"></div><div data-v-921611d3="" class="hero-spark" style="--tx: 114.57578795117986px; --ty: -66.15036201622725px; --spark-delay: 1.43s; --spark-d: 2.26s; --spark-color: #38bdf8; --spark-size: 5px;"></div><div data-v-921611d3="" class="absolute inset-0 flex items-center justify-center" style="transform: translate3d(0px, 0px, 0px);"><div data-v-921611d3="" class="hero-main-wrap"><img data-v-921611d3="" src="/products/img_2337-2b33a8af5e1d4f947217285994483369.webp.png" alt="Lord Spriggan — premium Burst Beyblade" class="hero-main-img" draggable="false"></div></div></div><div class="pointer-events-none absolute -bottom-4 left-1/2 -translate-x-1/2 flex w-full justify-center lg:left-auto lg:right-0 lg:translate-x-0"><span class="rounded-full border border-white/10 bg-storm/60 px-3 py-1 text-[10px] uppercase tracking-[0.4em] text-slate-300 backdrop-blur"> Burst · Real · Spin ↑ </span></div></div></div></section><div data-v-fc42cc8a="" class="section-divider variant-wave" aria-hidden="true" style="--divider-h: 120px; --divider-from: rgba(11,16,32,0); --divider-to: rgba(11,16,32,1);"><svg data-v-fc42cc8a="" class="section-divider__svg" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><defs data-v-fc42cc8a=""><linearGradient data-v-fc42cc8a="" id="dividerStroke" x1="0" y1="0" x2="1" y2="0"><stop data-v-fc42cc8a="" offset="0%" stop-color="rgba(251,191,36,0)"></stop><stop data-v-fc42cc8a="" offset="50%" stop-color="rgba(251,191,36,0.55)"></stop><stop data-v-fc42cc8a="" offset="100%" stop-color="rgba(251,191,36,0)"></stop></linearGradient><linearGradient data-v-fc42cc8a="" id="dividerFill" x1="0" y1="0" x2="0" y2="1"><stop data-v-fc42cc8a="" offset="0%" stop-color="rgba(11,16,32,1)" stop-opacity="0"></stop><stop data-v-fc42cc8a="" offset="100%" stop-color="rgba(11,16,32,1)" stop-opacity="1"></stop></linearGradient></defs><path data-v-fc42cc8a="" d="M0,64 C240,120 480,8 720,40 C960,72 1200,120 1440,56 L1440,120 L0,120 Z" fill="url(#dividerFill)"></path><path data-v-fc42cc8a="" d="M0,64 C240,120 480,8 720,40 C960,72 1200,120 1440,56" fill="none" stroke="url(#dividerStroke)" stroke-width="1.5"></path></svg></div><section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8"><div class="absolute inset-0 -z-10 bg-gradient-to-b from-storm via-black/40 to-storm"></div><div class="reveal"><div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-6"><div><p class="chip">Live battle simulator</p><h2 class="mt-2 font-display text-3xl sm:text-5xl text-white">Pick. Launch. <span class="gradient-text">RIP.</span></h2><p class="mt-2 max-w-2xl text-slate-400">Two beys enter the stadium. Same spin direction = pure stats war. Opposite spins = direction bonus goes to higher RPM. Winner goes straight to your cart.</p></div><button class="btn-secondary !py-2 !px-5 self-start sm:self-auto"><svg class="svg-inline--fa fa-rotate-right h-4 w-4" data-prefix="fas" data-icon="rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true"><path class="" fill="currentColor" d="M488 192l-144 0c-9.7 0-18.5-5.8-22.2-14.8s-1.7-19.3 5.2-26.2l46.7-46.7c-75.3-58.6-184.3-53.3-253.5 15.9-75 75-75 196.5 0 271.5s196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c94.3-94.3 243.7-99.6 344.3-16.2L471 7c6.9-6.9 17.2-8.9 26.2-5.2S512 14.3 512 24l0 144c0 13.3-10.7 24-24 24z"></path></svg> Shuffle matchup </button></div><div class="grid gap-6 lg:grid-cols-[1fr_auto_1fr] items-stretch"><div class="card-surface relative overflow-hidden p-5"><div class="flex items-start gap-3"><div class="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl ring-stadium"><img src="/products/img_3054-0792421b5cf5500d7417813026078275.webp.png" alt="SAMURAI PEGASIS BLUE BRAVE VER. TAKARA" class="absolute inset-0 m-auto h-14 w-14 object-contain"></div><div class="flex-1 min-w-0"><p class="truncate text-sm font-semibold text-white">SAMURAI PEGASIS BLUE BRAVE VER. TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="inline-flex flex-col items-center gap-2"><div class="relative" style="width: 92px; height: 60px;"><svg viewBox="0 0 100 55" class="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMax meet"><defs><linearGradient id="pg-PWR" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#fbbf24" stop-opacity="0.4"></stop><stop offset="100%" stop-color="#fbbf24"></stop></linearGradient></defs><path d="M 5 50 A 45 45 0 0 1 95 50" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="6" stroke-linecap="round"></path><path d="M 5 50 A 45 45 0 0 1 95 50" fill="none" stroke="url(#pg-PWR)" stroke-width="6" stroke-linecap="round" stroke-dasharray="85%" style="filter: drop-shadow(currentcolor 0px 0px 6px);"></path></svg><div class="absolute left-1/2 bottom-0 origin-bottom transition-transform duration-300 ease-out" style="transform: translateX(-50%) rotate(62.73deg);"><div class="h-[42%] w-0.5 rounded-full" style="background: linear-gradient(to top, transparent, rgb(251, 191, 36)); box-shadow: rgb(251, 191, 36) 0px 0px 6px;"></div></div><span class="absolute left-1/2 bottom-0 h-3 w-3 -translate-x-1/2 translate-y-1/2 rounded-full" style="background: rgb(251, 191, 36); box-shadow: rgb(251, 191, 36) 0px 0px 10px;"></span><div class="absolute inset-x-0 bottom-2 text-center"><p class="font-display text-2xl text-white leading-none tabular-nums" style="text-shadow: rgba(251, 191, 36, 0.5) 0px 0px 10px;">8,485</p></div></div><!----></div></div><button data-v-92482426="" type="button" class="mt-4 flex w-full items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-left text-sm text-white outline-none transition hover:border-white/20 focus:border-rip-400 focus:ring-2 focus:ring-rip-400/30"><span data-v-92482426="" class="truncate">SAMURAI PEGASIS BLUE BRAVE VER. TAKARA · <span data-v-92482426="" class="text-accent-gold">8485</span> PWR</span><svg data-v-92482426="" class="svg-inline--fa fa-chevron-down h-3.5 w-3.5 shrink-0 text-slate-400 transition-transform" data-prefix="fas" data-icon="chevron-down" role="img" viewBox="0 0 448 512" aria-hidden="true"><path class="" fill="currentColor" d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg></button></div><div class="flex items-center justify-center lg:flex-col"><div class="font-display text-6xl text-accent-gold/70 tracking-widest">VS</div></div><div class="card-surface relative overflow-hidden p-5"><div class="flex items-start gap-3"><div class="inline-flex flex-col items-center gap-2"><div class="relative" style="width: 92px; height: 60px;"><svg viewBox="0 0 100 55" class="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMax meet"><defs><linearGradient id="pg-PWR" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#fbbf24" stop-opacity="0.4"></stop><stop offset="100%" stop-color="#fbbf24"></stop></linearGradient></defs><path d="M 5 50 A 45 45 0 0 1 95 50" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="6" stroke-linecap="round"></path><path d="M 5 50 A 45 45 0 0 1 95 50" fill="none" stroke="url(#pg-PWR)" stroke-width="6" stroke-linecap="round" stroke-dasharray="84%" style="filter: drop-shadow(currentcolor 0px 0px 6px);"></path></svg><div class="absolute left-1/2 bottom-0 origin-bottom transition-transform duration-300 ease-out" style="transform: translateX(-50%) rotate(61.722deg);"><div class="h-[42%] w-0.5 rounded-full" style="background: linear-gradient(to top, transparent, rgb(251, 191, 36)); box-shadow: rgb(251, 191, 36) 0px 0px 6px;"></div></div><span class="absolute left-1/2 bottom-0 h-3 w-3 -translate-x-1/2 translate-y-1/2 rounded-full" style="background: rgb(251, 191, 36); box-shadow: rgb(251, 191, 36) 0px 0px 10px;"></span><div class="absolute inset-x-0 bottom-2 text-center"><p class="font-display text-2xl text-white leading-none tabular-nums" style="text-shadow: rgba(251, 191, 36, 0.5) 0px 0px 10px;">8,429</p></div></div><!----></div><div class="flex-1 min-w-0"><p class="truncate text-sm font-semibold text-white">A-107 BEYSTADIUM SUPER TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-blue/15 text-accent-blue border-accent-blue/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">🛡</span><span>Defense</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrows-rotate text-rip-300" data-prefix="fas" data-icon="arrows-rotate" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Dual spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M65.9 228.5c13.3-93 93.4-164.5 190.1-164.5 53 0 101 21.5 135.8 56.2 .2 .2 .4 .4 .6 .6l7.6 7.2-47.9 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-128c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 53.4-11.3-10.7C390.5 28.6 326.5 0 256 0 127 0 20.3 95.4 2.6 219.5 .1 237 12.2 253.2 29.7 255.7s33.7-9.7 36.2-27.1zm443.5 64c2.5-17.5-9.7-33.7-27.1-36.2s-33.7 9.7-36.2 27.1c-13.3 93-93.4 164.5-190.1 164.5-53 0-101-21.5-135.8-56.2-.2-.2-.4-.4-.6-.6l-7.6-7.2 47.9 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 320c-8.5 0-16.7 3.4-22.7 9.5S-.1 343.7 0 352.3l1 127c.1 17.7 14.6 31.9 32.3 31.7S65.2 496.4 65 478.7l-.4-51.5 10.7 10.1c46.3 46.1 110.2 74.7 180.7 74.7 129 0 235.7-95.4 253.4-219.5z"></path></svg><!----></span></div></div><div class="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl ring-stadium"><img src="/products/img_1625-101be200e308044e0417249614445311.webp.png" alt="A-107 BEYSTADIUM SUPER TAKARA" class="absolute inset-0 m-auto h-14 w-14 object-contain"></div></div><button data-v-92482426="" type="button" class="mt-4 flex w-full items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-left text-sm text-white outline-none transition hover:border-white/20 focus:border-rip-400 focus:ring-2 focus:ring-rip-400/30"><span data-v-92482426="" class="truncate">A-107 BEYSTADIUM SUPER TAKARA · <span data-v-92482426="" class="text-accent-gold">8429</span> PWR</span><svg data-v-92482426="" class="svg-inline--fa fa-chevron-down h-3.5 w-3.5 shrink-0 text-slate-400 transition-transform" data-prefix="fas" data-icon="chevron-down" role="img" viewBox="0 0 448 512" aria-hidden="true"><path class="" fill="currentColor" d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg></button></div></div><div class="mt-6"><div data-v-1d478d7d="" class="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-storm-light via-storm to-storm-light"><div data-v-1d478d7d="" class="absolute inset-0 pointer-events-none flex items-center justify-center"><div data-v-1d478d7d="" class="relative rounded-full" style="width: 270px; height: 270px; max-width: 90%; max-height: 90%; aspect-ratio: 1 / 1;"><img data-v-1d478d7d="" src="/arena.png" alt="" class="absolute inset-0 h-full w-full rounded-full object-cover select-none pointer-events-none" loading="lazy" decoding="async" style="transform: scale(1.18); transform-origin: center center;"><div data-v-1d478d7d="" class="absolute inset-[18%] rounded-full" style="border: 1px dashed rgba(165, 180, 252, 0.2);"></div></div></div><div data-v-1d478d7d="" class="relative aspect-[16/9] sm:aspect-[21/9]"><div data-v-1d478d7d="" class="absolute left-1/2 top-3 -translate-x-1/2 z-10"><span data-v-1d478d7d="" class="font-display text-2xl tracking-[0.4em] text-accent-gold/60">VS</span></div><!----><div data-v-1d478d7d="" class="absolute left-1/2 top-1/2 z-10" style="transform: translate(calc(-50% + 0px), calc(-50% + 0px)) scale(1); opacity: 1; will-change: transform;"><div data-v-1d478d7d="" class="relative h-20 w-20 sm:h-28 sm:w-28"><img data-v-1d478d7d="" src="/products/img_3054-0792421b5cf5500d7417813026078275.webp.png" alt="SAMURAI PEGASIS BLUE BRAVE VER. TAKARA" class="absolute inset-0 m-auto h-full w-full object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.7)]" style="transform: rotate(0deg);"></div><div data-v-1d478d7d="" class="absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap text-center"><p data-v-1d478d7d="" class="text-[10px] font-bold uppercase tracking-widest text-white">SAMURAI</p></div></div><div data-v-1d478d7d="" class="absolute left-1/2 top-1/2 z-10" style="transform: translate(calc(-50% + 0px), calc(-50% + 0px)) scale(1); opacity: 1; will-change: transform;"><div data-v-1d478d7d="" class="relative h-20 w-20 sm:h-28 sm:w-28"><img data-v-1d478d7d="" src="/products/img_1625-101be200e308044e0417249614445311.webp.png" alt="A-107 BEYSTADIUM SUPER TAKARA" class="absolute inset-0 m-auto h-full w-full object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.7)]" style="transform: rotate(0deg);"></div><div data-v-1d478d7d="" class="absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap text-center"><p data-v-1d478d7d="" class="text-[10px] font-bold uppercase tracking-widest text-white">A-107</p></div></div><!----><div data-v-1d478d7d="" class="absolute inset-0 z-30 flex flex-col items-center justify-center bg-storm/40 backdrop-blur-[2px] gap-3"><p data-v-1d478d7d="" class="text-xs uppercase tracking-[0.4em] text-accent-gold/80">Ready to launch</p><button data-v-1d478d7d="" class="btn-primary !py-3 !px-6 text-base shadow-glow"> ⚡ Launch Battle </button><p data-v-1d478d7d="" class="text-[10px] uppercase tracking-widest text-slate-500">Pick different beys above to change matchup</p></div><!----></div></div></div></div></section><div data-v-fc42cc8a="" class="section-divider variant-glow" aria-hidden="true" style="--divider-h: 100px; --divider-from: rgba(11,16,32,0); --divider-to: rgba(11,16,32,1);"><svg data-v-fc42cc8a="" class="section-divider__svg" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><defs data-v-fc42cc8a=""><radialGradient id="dividerGlow" cx="50%" cy="50%" r="60%" data-v-fc42cc8a=""><stop offset="0%" stop-color="rgba(251,191,36,0.55)" data-v-fc42cc8a=""></stop><stop offset="55%" stop-color="rgba(217,119,6,0.18)" data-v-fc42cc8a=""></stop><stop offset="100%" stop-color="rgba(217,119,6,0)" data-v-fc42cc8a=""></stop></radialGradient></defs><ellipse cx="720" cy="60" rx="640" ry="46" fill="url(#dividerGlow)" data-v-fc42cc8a=""></ellipse></svg></div><section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8"><div class="absolute inset-0 -z-10 bg-gradient-to-br from-black/60 via-storm to-rip-400/5"></div><div class="reveal"><div class="flex items-end justify-between gap-4 mb-8"><div><p class="chip">Categories</p><h2 class="mt-2 font-display text-3xl sm:text-4xl text-white">Find your arena</h2></div><a href="/shop" class="btn-ghost">All collections →</a></div><div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5"><a href="/shop/x" class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:-translate-y-1 hover:border-rip-400/50 hover:shadow-glow"><div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-rip-500/20 blur-2xl transition group-hover:bg-rip-400/40"></div><div class="relative"><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-rip-500 to-rip-700 font-display text-2xl text-white">X</span><h3 class="mt-4 font-display text-2xl text-white">Beyblade X</h3><p class="mt-1 text-xs text-slate-400">La nueva generación. Gear sports.</p></div></a><a href="/shop/burst" class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:-translate-y-1 hover:border-rip-400/50 hover:shadow-glow"><div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-rip-500/20 blur-2xl transition group-hover:bg-rip-400/40"></div><div class="relative"><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-rip-500 to-rip-700 font-display text-2xl text-white">B</span><h3 class="mt-4 font-display text-2xl text-white">Beyblade Burst</h3><p class="mt-1 text-xs text-slate-400">La más competitiva y divertida.</p></div></a><a href="/shop/metal" class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:-translate-y-1 hover:border-rip-400/50 hover:shadow-glow"><div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-rip-500/20 blur-2xl transition group-hover:bg-rip-400/40"></div><div class="relative"><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-rip-500 to-rip-700 font-display text-2xl text-white">M</span><h3 class="mt-4 font-display text-2xl text-white">Metal Fight</h3><p class="mt-1 text-xs text-slate-400">Los beyblades más resistentes.</p></div></a><a href="/shop/pro" class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:-translate-y-1 hover:border-rip-400/50 hover:shadow-glow"><div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-rip-500/20 blur-2xl transition group-hover:bg-rip-400/40"></div><div class="relative"><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-rip-500 to-rip-700 font-display text-2xl text-white">P</span><h3 class="mt-4 font-display text-2xl text-white">Bakuten</h3><p class="mt-1 text-xs text-slate-400">Clásicos de la vieja escuela.</p></div></a><a href="/shop/parts" class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:-translate-y-1 hover:border-rip-400/50 hover:shadow-glow"><div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-rip-500/20 blur-2xl transition group-hover:bg-rip-400/40"></div><div class="relative"><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-rip-500 to-rip-700 font-display text-2xl text-white">T</span><h3 class="mt-4 font-display text-2xl text-white">Accesorios</h3><p class="mt-1 text-xs text-slate-400">Lanzadores, stadiums y más.</p></div></a></div></div></section><div data-v-fc42cc8a="" class="section-divider variant-wave is-flipped" aria-hidden="true" style="--divider-h: 120px; --divider-from: rgba(11,16,32,0); --divider-to: rgba(11,16,32,1);"><svg data-v-fc42cc8a="" class="section-divider__svg" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><defs data-v-fc42cc8a=""><linearGradient data-v-fc42cc8a="" id="dividerStroke" x1="0" y1="0" x2="1" y2="0"><stop data-v-fc42cc8a="" offset="0%" stop-color="rgba(251,191,36,0)"></stop><stop data-v-fc42cc8a="" offset="50%" stop-color="rgba(251,191,36,0.55)"></stop><stop data-v-fc42cc8a="" offset="100%" stop-color="rgba(251,191,36,0)"></stop></linearGradient><linearGradient data-v-fc42cc8a="" id="dividerFill" x1="0" y1="0" x2="0" y2="1"><stop data-v-fc42cc8a="" offset="0%" stop-color="rgba(11,16,32,1)" stop-opacity="0"></stop><stop data-v-fc42cc8a="" offset="100%" stop-color="rgba(11,16,32,1)" stop-opacity="1"></stop></linearGradient></defs><path data-v-fc42cc8a="" d="M0,64 C240,120 480,8 720,40 C960,72 1200,120 1440,56 L1440,120 L0,120 Z" fill="url(#dividerFill)"></path><path data-v-fc42cc8a="" d="M0,64 C240,120 480,8 720,40 C960,72 1200,120 1440,56" fill="none" stroke="url(#dividerStroke)" stroke-width="1.5"></path></svg></div><section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8"><div class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-25" style="background-image: url(&quot;/bgs/bg-3.jpg&quot;);"></div><div class="absolute inset-0 -z-10 bg-gradient-to-r from-black/70 via-storm to-black/70"></div><div class="absolute inset-x-0 top-0 -z-10 h-24 bg-gradient-to-b from-rip-400/10 to-transparent"></div><div class="reveal"><div class="flex items-end justify-between gap-4 mb-8"><div><p class="chip">Featured</p><h2 class="mt-2 font-display text-3xl sm:text-4xl text-white">Top of the meta</h2></div><a href="/shop" class="btn-ghost">Browse all →</a></div><div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div></div></section><div data-v-fc42cc8a="" class="section-divider variant-glow" aria-hidden="true" style="--divider-h: 100px; --divider-from: rgba(11,16,32,0); --divider-to: rgba(11,16,32,1);"><svg data-v-fc42cc8a="" class="section-divider__svg" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><defs data-v-fc42cc8a=""><radialGradient id="dividerGlow" cx="50%" cy="50%" r="60%" data-v-fc42cc8a=""><stop offset="0%" stop-color="rgba(251,191,36,0.55)" data-v-fc42cc8a=""></stop><stop offset="55%" stop-color="rgba(217,119,6,0.18)" data-v-fc42cc8a=""></stop><stop offset="100%" stop-color="rgba(217,119,6,0)" data-v-fc42cc8a=""></stop></radialGradient></defs><ellipse cx="720" cy="60" rx="640" ry="46" fill="url(#dividerGlow)" data-v-fc42cc8a=""></ellipse></svg></div><section class="relative mx-auto mt-24 max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8"><div class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-25" style="background-image: url(&quot;/bgs/bg-1.png&quot;);"></div><div class="absolute inset-x-0 top-0 -z-10 h-32 bg-gradient-to-b from-storm to-transparent"></div><div class="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-storm to-transparent"></div><div class="reveal"><div class="grid gap-6 lg:grid-cols-[1fr_320px]"><div><div class="flex items-end justify-between gap-4 mb-6"><div><p class="chip">Power tier list</p><h2 class="mt-2 font-display text-3xl sm:text-4xl text-white">Ranked by community meta</h2><p class="mt-2 max-w-2xl text-slate-400">Curated by tournament champions. Higher tier = higher win-rate in stadium. Pick a beys to see the breakdown.</p></div></div><div class="space-y-4"><div class="relative"><div class="absolute -left-3 top-0 z-10 flex h-full w-1 rounded-full" style="background: linear-gradient(rgb(251, 191, 36), rgba(251, 191, 36, 0.2));"></div><div class="rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm" style="box-shadow: rgba(251, 191, 36, 0.45) 0px 1px 0px inset;"><header class="flex items-center gap-4 px-4 py-3 sm:px-6"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl font-display text-2xl text-storm" style="background: linear-gradient(135deg, rgb(251, 191, 36), rgba(251, 191, 36, 0.533)); box-shadow: rgba(251, 191, 36, 0.45) 0px 0px 16px;">S</div><div class="flex-1"><p class="font-display text-base tracking-widest text-white">GOD TIER</p><p class="text-xs text-slate-400">8 beys in this tier</p></div><span class="hidden sm:inline-block h-1 flex-1 rounded-full" style="background: linear-gradient(90deg, rgba(251, 191, 36, 0.333), transparent);"></span></header><div class="max-h-[420px] overflow-y-auto px-4 pb-4 sm:px-6"><div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3"><a href="/product/bb-thunder-pegasus-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_3012-04323765f9812ce54f17394925941862.webp.png" alt="THUNDER PEGASUS TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">THUNDER PEGASUS TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-red/15 text-accent-red border-accent-red/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">⚔</span><span>Attack</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(251, 191, 36);">9745</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-salamalyon-gold-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_3056-21c7670c7bbf8b7ceb17813014898782.webp.png" alt="SALAMALYON GOLD TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">SALAMALYON GOLD TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(251, 191, 36);">9469</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-ma10-heavy-metal-system-custom-try-set-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_3464-f1867d8282febe122d17429291798945.webp.png" alt="MA10 HEAVY METAL SYSTEM CUSTOM TRY SET TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">MA10 HEAVY METAL SYSTEM CUSTOM TRY SET TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-rip-500/15 text-rip-300 border-rip-400/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">◆</span><span>Starter Bundle</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrows-rotate text-rip-300" data-prefix="fas" data-icon="arrows-rotate" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Dual spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M65.9 228.5c13.3-93 93.4-164.5 190.1-164.5 53 0 101 21.5 135.8 56.2 .2 .2 .4 .4 .6 .6l7.6 7.2-47.9 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-128c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 53.4-11.3-10.7C390.5 28.6 326.5 0 256 0 127 0 20.3 95.4 2.6 219.5 .1 237 12.2 253.2 29.7 255.7s33.7-9.7 36.2-27.1zm443.5 64c2.5-17.5-9.7-33.7-27.1-36.2s-33.7 9.7-36.2 27.1c-13.3 93-93.4 164.5-190.1 164.5-53 0-101-21.5-135.8-56.2-.2-.2-.4-.4-.6-.6l-7.6-7.2 47.9 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 320c-8.5 0-16.7 3.4-22.7 9.5S-.1 343.7 0 352.3l1 127c.1 17.7 14.6 31.9 32.3 31.7S65.2 496.4 65 478.7l-.4-51.5 10.7 10.1c46.3 46.1 110.2 74.7 180.7 74.7 129 0 235.7-95.4 253.4-219.5z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(251, 191, 36);">9601</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-pre-hybrid-pegasis-prototype-ver" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_3895-f0630dda36461cc6e617453676880756.webp.png" alt="PRE-HYBRID PEGASIS PROTOTYPE VER." class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">PRE-HYBRID PEGASIS PROTOTYPE VER.</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(251, 191, 36);">8891</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-poseidon-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_4525-d21970d0f2afdc3fea17551115272645.webp.png" alt="POSEIDON TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">POSEIDON TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(251, 191, 36);">8951</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-apollon-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_0092-df4282351c4db4672817234964170135.webp.png" alt="APOLLON TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">APOLLON TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(251, 191, 36);">8930</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-gaia-dragoon-v-silver-ver" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_0539-fd604b63bd15263b8917256469689532.webp.png" alt="GAIA DRAGOON V (SILVER VER.)" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">GAIA DRAGOON V (SILVER VER.)</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(251, 191, 36);">8814</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-venus-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_0550-9d8522a05a6b00c33417256463897909.webp.png" alt="VENUS TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">VENUS TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(251, 191, 36);">8882</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a></div><!----></div></div></div><div class="relative"><div class="absolute -left-3 top-0 z-10 flex h-full w-1 rounded-full" style="background: linear-gradient(rgb(167, 139, 250), rgba(167, 139, 250, 0.2));"></div><div class="rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm" style="box-shadow: rgba(167, 139, 250, 0.35) 0px 1px 0px inset;"><header class="flex items-center gap-4 px-4 py-3 sm:px-6"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl font-display text-2xl text-storm" style="background: linear-gradient(135deg, rgb(167, 139, 250), rgba(167, 139, 250, 0.533)); box-shadow: rgba(167, 139, 250, 0.35) 0px 0px 16px;">A</div><div class="flex-1"><p class="font-display text-base tracking-widest text-white">TOP TIER</p><p class="text-xs text-slate-400">8 beys in this tier</p></div><span class="hidden sm:inline-block h-1 flex-1 rounded-full" style="background: linear-gradient(90deg, rgba(167, 139, 250, 0.333), transparent);"></span></header><div class="max-h-[420px] overflow-y-auto px-4 pb-4 sm:px-6"><div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3"><a href="/product/bb-dragoon-msuv-case-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_4576-d7bc23dab57ed4eaa117540829256681.webp.png" alt="DRAGOON MSUV + CASE TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">DRAGOON MSUV + CASE TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-gold/15 text-accent-gold border-accent-gold/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">⚙</span><span>Parts</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrows-rotate text-rip-300" data-prefix="fas" data-icon="arrows-rotate" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Dual spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M65.9 228.5c13.3-93 93.4-164.5 190.1-164.5 53 0 101 21.5 135.8 56.2 .2 .2 .4 .4 .6 .6l7.6 7.2-47.9 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-128c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 53.4-11.3-10.7C390.5 28.6 326.5 0 256 0 127 0 20.3 95.4 2.6 219.5 .1 237 12.2 253.2 29.7 255.7s33.7-9.7 36.2-27.1zm443.5 64c2.5-17.5-9.7-33.7-27.1-36.2s-33.7 9.7-36.2 27.1c-13.3 93-93.4 164.5-190.1 164.5-53 0-101-21.5-135.8-56.2-.2-.2-.4-.4-.6-.6l-7.6-7.2 47.9 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 320c-8.5 0-16.7 3.4-22.7 9.5S-.1 343.7 0 352.3l1 127c.1 17.7 14.6 31.9 32.3 31.7S65.2 496.4 65 478.7l-.4-51.5 10.7 10.1c46.3 46.1 110.2 74.7 180.7 74.7 129 0 235.7-95.4 253.4-219.5z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(167, 139, 250);">8592</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-galeon-2-takara-tomy" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_5171-657107d63b5c3ceaa217636650499021.webp.png" alt="GALEON 2 TAKARA TOMY" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">GALEON 2 TAKARA TOMY</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(167, 139, 250);">8708</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-blitz-unicorno-strongest-blader-set-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_1151-d209162fea192e8a6b17229854234225.webp.png" alt="BLITZ UNICORNO STRONGEST BLADER SET TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">BLITZ UNICORNO STRONGEST BLADER SET TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-rip-500/15 text-rip-300 border-rip-400/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">◆</span><span>Starter Bundle</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrows-rotate text-rip-300" data-prefix="fas" data-icon="arrows-rotate" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Dual spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M65.9 228.5c13.3-93 93.4-164.5 190.1-164.5 53 0 101 21.5 135.8 56.2 .2 .2 .4 .4 .6 .6l7.6 7.2-47.9 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-128c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 53.4-11.3-10.7C390.5 28.6 326.5 0 256 0 127 0 20.3 95.4 2.6 219.5 .1 237 12.2 253.2 29.7 255.7s33.7-9.7 36.2-27.1zm443.5 64c2.5-17.5-9.7-33.7-27.1-36.2s-33.7 9.7-36.2 27.1c-13.3 93-93.4 164.5-190.1 164.5-53 0-101-21.5-135.8-56.2-.2-.2-.4-.4-.6-.6l-7.6-7.2 47.9 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 320c-8.5 0-16.7 3.4-22.7 9.5S-.1 343.7 0 352.3l1 127c.1 17.7 14.6 31.9 32.3 31.7S65.2 496.4 65 478.7l-.4-51.5 10.7 10.1c46.3 46.1 110.2 74.7 180.7 74.7 129 0 235.7-95.4 253.4-219.5z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(167, 139, 250);">8620</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-superking-battle-set-takara-tomy" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_1622-c00334121d6c48b59f17249617798093.webp.png" alt="SUPERKING BATTLE SET TAKARA TOMY" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">SUPERKING BATTLE SET TAKARA TOMY</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-rip-500/15 text-rip-300 border-rip-400/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">◆</span><span>Starter Bundle</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrows-rotate text-rip-300" data-prefix="fas" data-icon="arrows-rotate" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Dual spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M65.9 228.5c13.3-93 93.4-164.5 190.1-164.5 53 0 101 21.5 135.8 56.2 .2 .2 .4 .4 .6 .6l7.6 7.2-47.9 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-128c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 53.4-11.3-10.7C390.5 28.6 326.5 0 256 0 127 0 20.3 95.4 2.6 219.5 .1 237 12.2 253.2 29.7 255.7s33.7-9.7 36.2-27.1zm443.5 64c2.5-17.5-9.7-33.7-27.1-36.2s-33.7 9.7-36.2 27.1c-13.3 93-93.4 164.5-190.1 164.5-53 0-101-21.5-135.8-56.2-.2-.2-.4-.4-.6-.6l-7.6-7.2 47.9 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 320c-8.5 0-16.7 3.4-22.7 9.5S-.1 343.7 0 352.3l1 127c.1 17.7 14.6 31.9 32.3 31.7S65.2 496.4 65 478.7l-.4-51.5 10.7 10.1c46.3 46.1 110.2 74.7 180.7 74.7 129 0 235.7-95.4 253.4-219.5z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(167, 139, 250);">8513</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-dranzer-hms1" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_2339-9a5835c5d43751fa4217285993933068.webp.png" alt="DRANZER MS TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">DRANZER MS TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-red/15 text-accent-red border-accent-red/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">⚔</span><span>Attack</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(167, 139, 250);">8581</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-samurai-pegasis-blue-brave-ver-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_3054-0792421b5cf5500d7417813026078275.webp.png" alt="SAMURAI PEGASIS BLUE BRAVE VER. TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">SAMURAI PEGASIS BLUE BRAVE VER. TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(167, 139, 250);">8485</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-set-25-aniversario-beyblade-x-takara-tomy" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_3258-447825eaf1cb9be16217407692648441.webp.png" alt="SET 25 ANIVERSARIO - BEYBLADE X TAKARA TOMY" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">SET 25 ANIVERSARIO - BEYBLADE X TAKARA TOMY</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-rip-500/15 text-rip-300 border-rip-400/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">◆</span><span>Starter Bundle</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrows-rotate text-rip-300" data-prefix="fas" data-icon="arrows-rotate" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Dual spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M65.9 228.5c13.3-93 93.4-164.5 190.1-164.5 53 0 101 21.5 135.8 56.2 .2 .2 .4 .4 .6 .6l7.6 7.2-47.9 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-128c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 53.4-11.3-10.7C390.5 28.6 326.5 0 256 0 127 0 20.3 95.4 2.6 219.5 .1 237 12.2 253.2 29.7 255.7s33.7-9.7 36.2-27.1zm443.5 64c2.5-17.5-9.7-33.7-27.1-36.2s-33.7 9.7-36.2 27.1c-13.3 93-93.4 164.5-190.1 164.5-53 0-101-21.5-135.8-56.2-.2-.2-.4-.4-.6-.6l-7.6-7.2 47.9 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 320c-8.5 0-16.7 3.4-22.7 9.5S-.1 343.7 0 352.3l1 127c.1 17.7 14.6 31.9 32.3 31.7S65.2 496.4 65 478.7l-.4-51.5 10.7 10.1c46.3 46.1 110.2 74.7 180.7 74.7 129 0 235.7-95.4 253.4-219.5z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(167, 139, 250);">8550</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-dead-phoenix-flame-wing-ver-takara-tomy" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_4526-1707091cbcc186488e17551112854422.webp.png" alt="DEAD PHOENIX (FLAME WING VER.) TAKARA TOMY" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">DEAD PHOENIX (FLAME WING VER.) TAKARA TOMY</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-red/15 text-accent-red border-accent-red/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">⚔</span><span>Attack</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(167, 139, 250);">8469</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a></div><!----></div></div></div><div class="relative"><div class="absolute -left-3 top-0 z-10 flex h-full w-1 rounded-full" style="background: linear-gradient(rgb(96, 165, 250), rgba(96, 165, 250, 0.2));"></div><div class="rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm" style="box-shadow: rgba(96, 165, 250, 0.3) 0px 1px 0px inset;"><header class="flex items-center gap-4 px-4 py-3 sm:px-6"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl font-display text-2xl text-storm" style="background: linear-gradient(135deg, rgb(96, 165, 250), rgba(96, 165, 250, 0.533)); box-shadow: rgba(96, 165, 250, 0.3) 0px 0px 16px;">B</div><div class="flex-1"><p class="font-display text-base tracking-widest text-white">SOLID</p><p class="text-xs text-slate-400">8 beys in this tier</p></div><span class="hidden sm:inline-block h-1 flex-1 rounded-full" style="background: linear-gradient(90deg, rgba(96, 165, 250, 0.333), transparent);"></span></header><div class="max-h-[420px] overflow-y-auto px-4 pb-4 sm:px-6"><div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3"><a href="/product/bb-a-107-beystadium-super-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_1625-101be200e308044e0417249614445311.webp.png" alt="A-107 BEYSTADIUM SUPER TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">A-107 BEYSTADIUM SUPER TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-blue/15 text-accent-blue border-accent-blue/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">🛡</span><span>Defense</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrows-rotate text-rip-300" data-prefix="fas" data-icon="arrows-rotate" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Dual spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M65.9 228.5c13.3-93 93.4-164.5 190.1-164.5 53 0 101 21.5 135.8 56.2 .2 .2 .4 .4 .6 .6l7.6 7.2-47.9 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-128c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 53.4-11.3-10.7C390.5 28.6 326.5 0 256 0 127 0 20.3 95.4 2.6 219.5 .1 237 12.2 253.2 29.7 255.7s33.7-9.7 36.2-27.1zm443.5 64c2.5-17.5-9.7-33.7-27.1-36.2s-33.7 9.7-36.2 27.1c-13.3 93-93.4 164.5-190.1 164.5-53 0-101-21.5-135.8-56.2-.2-.2-.4-.4-.6-.6l-7.6-7.2 47.9 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 320c-8.5 0-16.7 3.4-22.7 9.5S-.1 343.7 0 352.3l1 127c.1 17.7 14.6 31.9 32.3 31.7S65.2 496.4 65 478.7l-.4-51.5 10.7 10.1c46.3 46.1 110.2 74.7 180.7 74.7 129 0 235.7-95.4 253.4-219.5z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(96, 165, 250);">8429</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-zero-g-ultimate-synchrom-dx-set-defense-and-stamina-type-tak" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_2335-7eeda68e644e23014817285994954963.webp.png" alt="ZERO-G ULTIMATE SYNCHROM DX SET DEFENSE AND STAMINA TYPE TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">ZERO-G ULTIMATE SYNCHROM DX SET DEFENSE AND STAMINA TYPE TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-rip-500/15 text-rip-300 border-rip-400/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">◆</span><span>Starter Bundle</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrows-rotate text-rip-300" data-prefix="fas" data-icon="arrows-rotate" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Dual spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M65.9 228.5c13.3-93 93.4-164.5 190.1-164.5 53 0 101 21.5 135.8 56.2 .2 .2 .4 .4 .6 .6l7.6 7.2-47.9 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-128c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 53.4-11.3-10.7C390.5 28.6 326.5 0 256 0 127 0 20.3 95.4 2.6 219.5 .1 237 12.2 253.2 29.7 255.7s33.7-9.7 36.2-27.1zm443.5 64c2.5-17.5-9.7-33.7-27.1-36.2s-33.7 9.7-36.2 27.1c-13.3 93-93.4 164.5-190.1 164.5-53 0-101-21.5-135.8-56.2-.2-.2-.4-.4-.6-.6l-7.6-7.2 47.9 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 320c-8.5 0-16.7 3.4-22.7 9.5S-.1 343.7 0 352.3l1 127c.1 17.7 14.6 31.9 32.3 31.7S65.2 496.4 65 478.7l-.4-51.5 10.7 10.1c46.3 46.1 110.2 74.7 180.7 74.7 129 0 235.7-95.4 253.4-219.5z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(96, 165, 250);">8464</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-a-88-beystadium-super-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_2625-94470d86d95ae18d2317326604691843.webp.png" alt="A-88 BEYSTADIUM SUPER TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">A-88 BEYSTADIUM SUPER TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-blue/15 text-accent-blue border-accent-blue/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">🛡</span><span>Defense</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrows-rotate text-rip-300" data-prefix="fas" data-icon="arrows-rotate" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Dual spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M65.9 228.5c13.3-93 93.4-164.5 190.1-164.5 53 0 101 21.5 135.8 56.2 .2 .2 .4 .4 .6 .6l7.6 7.2-47.9 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-128c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 53.4-11.3-10.7C390.5 28.6 326.5 0 256 0 127 0 20.3 95.4 2.6 219.5 .1 237 12.2 253.2 29.7 255.7s33.7-9.7 36.2-27.1zm443.5 64c2.5-17.5-9.7-33.7-27.1-36.2s-33.7 9.7-36.2 27.1c-13.3 93-93.4 164.5-190.1 164.5-53 0-101-21.5-135.8-56.2-.2-.2-.4-.4-.6-.6l-7.6-7.2 47.9 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 320c-8.5 0-16.7 3.4-22.7 9.5S-.1 343.7 0 352.3l1 127c.1 17.7 14.6 31.9 32.3 31.7S65.2 496.4 65 478.7l-.4-51.5 10.7 10.1c46.3 46.1 110.2 74.7 180.7 74.7 129 0 235.7-95.4 253.4-219.5z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(96, 165, 250);">8460</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-bey-inflatable-stadium-ver-3-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_3869-069b17f610911505d617454265787651.webp.png" alt="BEY INFLATABLE STADIUM VER.3 TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">BEY INFLATABLE STADIUM VER.3 TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-blue/15 text-accent-blue border-accent-blue/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">🛡</span><span>Defense</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrows-rotate text-rip-300" data-prefix="fas" data-icon="arrows-rotate" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Dual spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M65.9 228.5c13.3-93 93.4-164.5 190.1-164.5 53 0 101 21.5 135.8 56.2 .2 .2 .4 .4 .6 .6l7.6 7.2-47.9 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-128c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 53.4-11.3-10.7C390.5 28.6 326.5 0 256 0 127 0 20.3 95.4 2.6 219.5 .1 237 12.2 253.2 29.7 255.7s33.7-9.7 36.2-27.1zm443.5 64c2.5-17.5-9.7-33.7-27.1-36.2s-33.7 9.7-36.2 27.1c-13.3 93-93.4 164.5-190.1 164.5-53 0-101-21.5-135.8-56.2-.2-.2-.4-.4-.6-.6l-7.6-7.2 47.9 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 320c-8.5 0-16.7 3.4-22.7 9.5S-.1 343.7 0 352.3l1 127c.1 17.7 14.6 31.9 32.3 31.7S65.2 496.4 65 478.7l-.4-51.5 10.7 10.1c46.3 46.1 110.2 74.7 180.7 74.7 129 0 235.7-95.4 253.4-219.5z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(96, 165, 250);">8442</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-ultimate-reshuffle-set-l-drago-ver-takara-tomy" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_5173-d0aacfdd979c2e9c5d17636650956956.webp.png" alt="ULTIMATE RESHUFFLE SET L-DRAGO VER. (STRING LAUNCHER NO CLEAR). TAKARA TOMY" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">ULTIMATE RESHUFFLE SET L-DRAGO VER. (STRING LAUNCHER NO CLEAR). TAKARA TOMY</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-white/10 text-slate-200 border-white/20 px-2 py-0.5 text-[10px]"><span aria-hidden="true">➤</span><span>Launcher</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrows-rotate text-rip-300" data-prefix="fas" data-icon="arrows-rotate" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Dual spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M65.9 228.5c13.3-93 93.4-164.5 190.1-164.5 53 0 101 21.5 135.8 56.2 .2 .2 .4 .4 .6 .6l7.6 7.2-47.9 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-128c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 53.4-11.3-10.7C390.5 28.6 326.5 0 256 0 127 0 20.3 95.4 2.6 219.5 .1 237 12.2 253.2 29.7 255.7s33.7-9.7 36.2-27.1zm443.5 64c2.5-17.5-9.7-33.7-27.1-36.2s-33.7 9.7-36.2 27.1c-13.3 93-93.4 164.5-190.1 164.5-53 0-101-21.5-135.8-56.2-.2-.2-.4-.4-.6-.6l-7.6-7.2 47.9 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 320c-8.5 0-16.7 3.4-22.7 9.5S-.1 343.7 0 352.3l1 127c.1 17.7 14.6 31.9 32.3 31.7S65.2 496.4 65 478.7l-.4-51.5 10.7 10.1c46.3 46.1 110.2 74.7 180.7 74.7 129 0 235.7-95.4 253.4-219.5z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(96, 165, 250);">8224</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-slash-riger-ms" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_1486-8eb46d8cc052f1f49f17253870761060.webp.png" alt="SLASH RIGER MS" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">SLASH RIGER MS</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-red/15 text-accent-red border-accent-red/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">⚔</span><span>Attack</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(96, 165, 250);">8190</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-slash-riger-ms-deep-blue-ver-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_1623-8aef0cbd979a806d0217249616671163.webp.png" alt="SLASH RIGER MS DEEP BLUE VER. TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">SLASH RIGER MS DEEP BLUE VER. TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(96, 165, 250);">8084</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-bandit-genbu-custom-combo-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_2337-2b33a8af5e1d4f947217285994483369.webp.png" alt="BANDIT GENBU CUSTOM COMBO TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">BANDIT GENBU CUSTOM COMBO TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-red/15 text-accent-red border-accent-red/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">⚔</span><span>Attack</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(96, 165, 250);">8037</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a></div><!----></div></div></div><div class="relative"><div class="absolute -left-3 top-0 z-10 flex h-full w-1 rounded-full" style="background: linear-gradient(rgb(148, 163, 184), rgba(148, 163, 184, 0.2));"></div><div class="rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm" style="box-shadow: rgba(148, 163, 184, 0.2) 0px 1px 0px inset;"><header class="flex items-center gap-4 px-4 py-3 sm:px-6"><div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl font-display text-2xl text-storm" style="background: linear-gradient(135deg, rgb(148, 163, 184), rgba(148, 163, 184, 0.533)); box-shadow: rgba(148, 163, 184, 0.2) 0px 0px 16px;">C</div><div class="flex-1"><p class="font-display text-base tracking-widest text-white">COLLECTOR</p><p class="text-xs text-slate-400">7 beys in this tier</p></div><span class="hidden sm:inline-block h-1 flex-1 rounded-full" style="background: linear-gradient(90deg, rgba(148, 163, 184, 0.333), transparent);"></span></header><div class="max-h-[420px] overflow-y-auto px-4 pb-4 sm:px-6"><div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3"><a href="/product/bb-random-booster-vol-9-confirmado-trygator" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_4523-36e481c6fe212f31c217551116532054.webp.png" alt="RANDOM BOOSTER VOL.9 CONFIRMADO TRYGATOR" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">RANDOM BOOSTER VOL.9 CONFIRMADO TRYGATOR</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(148, 163, 184);">7930</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-purple-pegasis-wheel-g1-prize-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_5169-0ab90fd1ef6ba9980117636651817385.webp.png" alt="PURPLE PEGASIS WHEEL G1 PRIZE TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">PURPLE PEGASIS WHEEL G1 PRIZE TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(148, 163, 184);">7971</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-orca-diver-hasbro-g-revolution" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_0132-c3a1207e03635688e417234948970263.webp.png" alt="ORCA DIVER HASBRO G-REVOLUTION" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">ORCA DIVER HASBRO G-REVOLUTION</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(148, 163, 184);">7968</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-bakushin-beelzeb-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_0541-e31daeecfbe7f40ffe17256467416120.webp.png" alt="BAKUSHIN BEELZEB TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">BAKUSHIN BEELZEB TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-red/15 text-accent-red border-accent-red/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">⚔</span><span>Attack</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(148, 163, 184);">7956</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-duo-uranus-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_0951-f8a1caf9bbffa3a14817231472953152.webp.png" alt="DUO URANUS TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">DUO URANUS TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-red/15 text-accent-red border-accent-red/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">⚔</span><span>Attack</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(148, 163, 184);">7922</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-beyultimate-shooter-driger-takara" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_2333-cfeda5df8e4d7c757717285995410907.webp.png" alt="BEYULTIMATE SHOOTER DRIGER TAKARA" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">BEYULTIMATE SHOOTER DRIGER TAKARA</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(148, 163, 184);">7780</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a><a href="/product/bb-strike-god-valkyrie-takara-tomy" class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"><div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_2621-7bee4f15e9d0a783f017326606161543.webp.png" alt="STRIKE GOD VALKYRIE TAKARA TOMY" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy"></div><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">STRIKE GOD VALKYRIE TAKARA TOMY</p><div class="mt-1 flex items-center gap-2"><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-red/15 text-accent-red border-accent-red/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">⚔</span><span>Attack</span></span><span class="inline-flex items-center gap-2 align-middle"><svg class="svg-inline--fa fa-arrow-rotate-right text-rip-300" data-prefix="fas" data-icon="arrow-rotate-right" role="img" viewBox="0 0 512 512" aria-hidden="true" aria-label="Right (clockwise) spin" style="width: 20px; height: 20px;"><path class="" fill="currentColor" d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"></path></svg><!----></span></div></div><div class="text-right"><p class="font-display text-sm text-white tabular-nums" style="color: rgb(148, 163, 184);">7611</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></a></div><!----></div></div></div></div></div><aside class="space-y-4"><div class="card-surface p-5"><p class="chip">Leaderboard</p><h3 class="mt-2 font-display text-2xl text-white">Top by power</h3><ul class="mt-4 space-y-3"><li class="flex items-center gap-3"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg font-display text-sm" style="background: linear-gradient(135deg, rgb(251, 191, 36), rgb(245, 158, 11)); color: rgb(11, 16, 32); box-shadow: rgba(251, 191, 36, 0.6) 0px 0px 12px;">#1</span><div class="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_3012-04323765f9812ce54f17394925941862.webp.png" alt="THUNDER PEGASUS TAKARA" class="absolute inset-0 m-auto h-9 w-9 object-contain"></div><div class="flex-1 min-w-0"><p class="truncate text-sm font-semibold text-white">THUNDER PEGASUS TAKARA</p><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-red/15 text-accent-red border-accent-red/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">⚔</span><span>Attack</span></span></div><div class="text-right"><p class="font-display text-sm text-accent-gold tabular-nums">9745</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></li><li class="flex items-center gap-3"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg font-display text-sm" style="background: linear-gradient(135deg, rgb(203, 213, 225), rgb(148, 163, 184)); color: rgb(11, 16, 32); box-shadow: none;">#2</span><div class="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_3464-f1867d8282febe122d17429291798945.webp.png" alt="MA10 HEAVY METAL SYSTEM CUSTOM TRY SET TAKARA" class="absolute inset-0 m-auto h-9 w-9 object-contain"></div><div class="flex-1 min-w-0"><p class="truncate text-sm font-semibold text-white">MA10 HEAVY METAL SYSTEM CUSTOM TRY SET TAKARA</p><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-rip-500/15 text-rip-300 border-rip-400/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">◆</span><span>Starter Bundle</span></span></div><div class="text-right"><p class="font-display text-sm text-accent-gold tabular-nums">9601</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></li><li class="flex items-center gap-3"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg font-display text-sm" style="background: linear-gradient(135deg, rgb(253, 186, 116), rgb(194, 65, 12)); color: rgb(11, 16, 32); box-shadow: none;">#3</span><div class="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg ring-stadium"><img src="/products/img_3056-21c7670c7bbf8b7ceb17813014898782.webp.png" alt="SALAMALYON GOLD TAKARA" class="absolute inset-0 m-auto h-9 w-9 object-contain"></div><div class="flex-1 min-w-0"><p class="truncate text-sm font-semibold text-white">SALAMALYON GOLD TAKARA</p><span class="inline-flex items-center gap-1 rounded-full border font-bold uppercase tracking-widest bg-accent-green/15 text-accent-green border-accent-green/40 px-2 py-0.5 text-[10px]"><span aria-hidden="true">∞</span><span>Stamina</span></span></div><div class="text-right"><p class="font-display text-sm text-accent-gold tabular-nums">9469</p><p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p></div></li></ul><a href="/shop" class="btn-secondary mt-5 w-full !justify-center">Open catalog</a></div><div data-v-88da04ef="" class="relative overflow-hidden rounded-2xl border border-white/10 bg-storm/40 backdrop-blur"><header data-v-88da04ef="" class="flex items-center justify-between border-b border-white/5 px-4 py-2.5"><div data-v-88da04ef="" class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-accent-red"><span data-v-88da04ef="" class="relative flex h-1.5 w-1.5"><span data-v-88da04ef="" class="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-accent-red"></span><span data-v-88da04ef="" class="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-red"></span></span> Live arena ticker </div><span data-v-88da04ef="" class="text-[10px] uppercase tracking-widest text-slate-500">6 recent</span></header><ul data-v-88da04ef="" class="max-h-72 divide-y divide-white/5 overflow-y-auto"><li data-v-88da04ef="" class="flex items-center gap-3 px-4 py-2.5 hover:bg-white/[0.02]"><span data-v-88da04ef="" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[10px] font-bold" style="background: linear-gradient(135deg, rgb(251, 191, 36), rgb(245, 158, 11)); color: rgb(11, 16, 32);">W</span><div data-v-88da04ef="" class="flex-1 min-w-0 text-xs"><p data-v-88da04ef="" class="truncate"><span data-v-88da04ef="" class="text-white font-semibold">Dragoon MSUV</span><span data-v-88da04ef="" class="text-slate-500">bursts</span><span data-v-88da04ef="" class="text-slate-300">Cosmic Pegasus</span></p><p data-v-88da04ef="" class="text-[10px] text-slate-500">Seba vs Sora · Storm Stadium · BURST FINISH</p></div><div data-v-88da04ef="" class="text-right"><p data-v-88da04ef="" class="font-display text-xs text-accent-gold tabular-nums">7623</p><p data-v-88da04ef="" class="text-[9px] uppercase tracking-widest text-slate-600">PWR</p></div></li><li data-v-88da04ef="" class="flex items-center gap-3 px-4 py-2.5 hover:bg-white/[0.02]"><span data-v-88da04ef="" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[10px] font-bold" style="background: linear-gradient(135deg, rgb(251, 191, 36), rgb(245, 158, 11)); color: rgb(11, 16, 32);">W</span><div data-v-88da04ef="" class="flex-1 min-w-0 text-xs"><p data-v-88da04ef="" class="truncate"><span data-v-88da04ef="" class="text-white font-semibold">Dynamite Belial</span><span data-v-88da04ef="" class="text-slate-500">bursts</span><span data-v-88da04ef="" class="text-slate-300">Ultimate Valkyrie</span></p><p data-v-88da04ef="" class="text-[10px] text-slate-500">Mauro vs Aiko · Tokyo Dome · BURST FINISH</p></div><div data-v-88da04ef="" class="text-right"><p data-v-88da04ef="" class="font-display text-xs text-accent-gold tabular-nums">8831</p><p data-v-88da04ef="" class="text-[9px] uppercase tracking-widest text-slate-600">PWR</p></div></li><li data-v-88da04ef="" class="flex items-center gap-3 px-4 py-2.5 hover:bg-white/[0.02]"><span data-v-88da04ef="" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[10px] font-bold" style="background: linear-gradient(135deg, rgb(251, 191, 36), rgb(245, 158, 11)); color: rgb(11, 16, 32);">W</span><div data-v-88da04ef="" class="flex-1 min-w-0 text-xs"><p data-v-88da04ef="" class="truncate"><span data-v-88da04ef="" class="text-white font-semibold">Cosmic Pegasus</span><span data-v-88da04ef="" class="text-slate-500">bursts</span><span data-v-88da04ef="" class="text-slate-300">Cho-Z Spriggan</span></p><p data-v-88da04ef="" class="text-[10px] text-slate-500">Sora vs Aiko · Tokyo Dome · STAMINA WIN</p></div><div data-v-88da04ef="" class="text-right"><p data-v-88da04ef="" class="font-display text-xs text-accent-gold tabular-nums">7914</p><p data-v-88da04ef="" class="text-[9px] uppercase tracking-widest text-slate-600">PWR</p></div></li><li data-v-88da04ef="" class="flex items-center gap-3 px-4 py-2.5 hover:bg-white/[0.02]"><span data-v-88da04ef="" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[10px] font-bold" style="background: linear-gradient(135deg, rgb(251, 191, 36), rgb(245, 158, 11)); color: rgb(11, 16, 32);">W</span><div data-v-88da04ef="" class="flex-1 min-w-0 text-xs"><p data-v-88da04ef="" class="truncate"><span data-v-88da04ef="" class="text-white font-semibold">L Drago Destroy</span><span data-v-88da04ef="" class="text-slate-500">bursts</span><span data-v-88da04ef="" class="text-slate-300">Dynamite Belial</span></p><p data-v-88da04ef="" class="text-[10px] text-slate-500">Toby vs Sora · BA Arena · BURST FINISH</p></div><div data-v-88da04ef="" class="text-right"><p data-v-88da04ef="" class="font-display text-xs text-accent-gold tabular-nums">7497</p><p data-v-88da04ef="" class="text-[9px] uppercase tracking-widest text-slate-600">PWR</p></div></li><li data-v-88da04ef="" class="flex items-center gap-3 px-4 py-2.5 hover:bg-white/[0.02]"><span data-v-88da04ef="" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[10px] font-bold" style="background: linear-gradient(135deg, rgb(251, 191, 36), rgb(245, 158, 11)); color: rgb(11, 16, 32);">W</span><div data-v-88da04ef="" class="flex-1 min-w-0 text-xs"><p data-v-88da04ef="" class="truncate"><span data-v-88da04ef="" class="text-white font-semibold">Dynamite Belial</span><span data-v-88da04ef="" class="text-slate-500">bursts</span><span data-v-88da04ef="" class="text-slate-300">Guilty Longinus</span></p><p data-v-88da04ef="" class="text-[10px] text-slate-500">Kira vs Ren · Madrid Open · EXTREME FINISH</p></div><div data-v-88da04ef="" class="text-right"><p data-v-88da04ef="" class="font-display text-xs text-accent-gold tabular-nums">9936</p><p data-v-88da04ef="" class="text-[9px] uppercase tracking-widest text-slate-600">PWR</p></div></li><li data-v-88da04ef="" class="flex items-center gap-3 px-4 py-2.5 hover:bg-white/[0.02]"><span data-v-88da04ef="" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[10px] font-bold" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04)); color: rgb(148, 163, 184);">L</span><div data-v-88da04ef="" class="flex-1 min-w-0 text-xs"><p data-v-88da04ef="" class="truncate"><span data-v-88da04ef="" class="text-white font-semibold">Dragoon MSUV</span><span data-v-88da04ef="" class="text-slate-500">bursts</span><span data-v-88da04ef="" class="text-slate-300">L Drago Destroy</span></p><p data-v-88da04ef="" class="text-[10px] text-slate-500">Tomás vs Niko · Tokyo Dome · OVER-FINISH</p></div><div data-v-88da04ef="" class="text-right"><p data-v-88da04ef="" class="font-display text-xs text-accent-gold tabular-nums">8652</p><p data-v-88da04ef="" class="text-[9px] uppercase tracking-widest text-slate-600">PWR</p></div></li></ul></div></aside></div></div></section><div data-v-fc42cc8a="" class="section-divider variant-wave" aria-hidden="true" style="--divider-h: 140px; --divider-from: rgba(11,16,32,0); --divider-to: rgba(11,16,32,1);"><svg data-v-fc42cc8a="" class="section-divider__svg" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><defs data-v-fc42cc8a=""><linearGradient data-v-fc42cc8a="" id="dividerStroke" x1="0" y1="0" x2="1" y2="0"><stop data-v-fc42cc8a="" offset="0%" stop-color="rgba(251,191,36,0)"></stop><stop data-v-fc42cc8a="" offset="50%" stop-color="rgba(251,191,36,0.55)"></stop><stop data-v-fc42cc8a="" offset="100%" stop-color="rgba(251,191,36,0)"></stop></linearGradient><linearGradient data-v-fc42cc8a="" id="dividerFill" x1="0" y1="0" x2="0" y2="1"><stop data-v-fc42cc8a="" offset="0%" stop-color="rgba(11,16,32,1)" stop-opacity="0"></stop><stop data-v-fc42cc8a="" offset="100%" stop-color="rgba(11,16,32,1)" stop-opacity="1"></stop></linearGradient></defs><path data-v-fc42cc8a="" d="M0,64 C240,120 480,8 720,40 C960,72 1200,120 1440,56 L1440,120 L0,120 Z" fill="url(#dividerFill)"></path><path data-v-fc42cc8a="" d="M0,64 C240,120 480,8 720,40 C960,72 1200,120 1440,56" fill="none" stroke="url(#dividerStroke)" stroke-width="1.5"></path></svg></div><section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-20 sm:px-6 lg:px-8"><div class="absolute inset-0 -z-10 bg-gradient-to-br from-rip-500/15 via-storm to-black/60"></div><div class="absolute -right-20 -top-20 -z-10 h-72 w-72 rounded-full bg-rip-400/20 blur-3xl"></div><div class="absolute -left-20 bottom-0 -z-10 h-72 w-72 rounded-full bg-rip-500/15 blur-3xl"></div><div class="reveal"><div class="relative overflow-hidden rounded-3xl border border-rip-500/30 bg-gradient-to-br from-rip-700 via-storm to-storm-light p-8 sm:p-12"><div class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-accent-gold/20 blur-3xl"></div><div class="absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-rip-400/30 blur-3xl"></div><div class="relative grid gap-8 lg:grid-cols-2 lg:items-center"><div><p class="chip chip-active">Storm Sale · 20% off</p><h2 class="mt-3 font-display text-4xl sm:text-6xl text-white">GEAR UP. <br><span class="gradient-text">SPIN OUT.</span></h2><p class="mt-4 max-w-md text-slate-300">Use code <kbd class="rounded bg-white/10 px-2 py-1 font-mono text-sm text-white">STORM20</kbd> at checkout. Free shipping over $75.</p><a href="/shop" class="btn-primary mt-6 inline-flex">⚡ Rip the sale</a></div><div class="grid grid-cols-3 gap-4"><a href="/product/bb-ma10-heavy-metal-system-custom-try-set-takara" class="group relative h-44 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2"><img src="/arena.png" alt="" class="pointer-events-none absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-[60%] rounded-full object-cover" loading="lazy" decoding="async"><img src="/products/img_3464-f1867d8282febe122d17429291798945.webp.png" alt="MA10 HEAVY METAL SYSTEM CUSTOM TRY SET TAKARA" class="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-[60%] object-contain drop-shadow-[0_8px_15px_rgba(0,0,0,0.6)] transition group-hover:scale-110" loading="lazy"><div class="relative mt-auto flex h-full flex-col justify-end"><p class="truncate text-xs font-semibold text-white">MA10 HEAVY METAL SYSTEM CUSTOM TRY SET TAKARA</p><p class="text-xs text-accent-gold">$25900.00</p></div></a><a href="/product/bb-blitz-unicorno-strongest-blader-set-takara" class="group relative h-44 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2"><img src="/arena.png" alt="" class="pointer-events-none absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-[60%] rounded-full object-cover" loading="lazy" decoding="async"><img src="/products/img_1151-d209162fea192e8a6b17229854234225.webp.png" alt="BLITZ UNICORNO STRONGEST BLADER SET TAKARA" class="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-[60%] object-contain drop-shadow-[0_8px_15px_rgba(0,0,0,0.6)] transition group-hover:scale-110" loading="lazy"><div class="relative mt-auto flex h-full flex-col justify-end"><p class="truncate text-xs font-semibold text-white">BLITZ UNICORNO STRONGEST BLADER SET TAKARA</p><p class="text-xs text-accent-gold">$8400.00</p></div></a><a href="/product/bb-superking-battle-set-takara-tomy" class="group relative h-44 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2"><img src="/arena.png" alt="" class="pointer-events-none absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-[60%] rounded-full object-cover" loading="lazy" decoding="async"><img src="/products/img_1622-c00334121d6c48b59f17249617798093.webp.png" alt="SUPERKING BATTLE SET TAKARA TOMY" class="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-[60%] object-contain drop-shadow-[0_8px_15px_rgba(0,0,0,0.6)] transition group-hover:scale-110" loading="lazy"><div class="relative mt-auto flex h-full flex-col justify-end"><p class="truncate text-xs font-semibold text-white">SUPERKING BATTLE SET TAKARA TOMY</p><p class="text-xs text-accent-gold">$7300.00</p></div></a></div></div></div></div></section><div data-v-fc42cc8a="" class="section-divider variant-fade" aria-hidden="true" style="--divider-h: 80px; --divider-from: rgba(11,16,32,0); --divider-to: rgba(11,16,32,1);"><span data-v-fc42cc8a="" class="section-divider__bar"></span></div><section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8"><div class="absolute inset-0 -z-10 bg-gradient-to-b from-storm via-black/30 to-storm"></div><div class="reveal"><div class="text-center mb-12"><p class="chip mx-auto">How it works</p><h2 class="mt-2 font-display text-3xl sm:text-4xl text-white">From box to battle in 48 hours</h2></div><div class="grid gap-6 md:grid-cols-3"><div class="card-surface relative p-6"><span class="absolute right-4 top-4 font-display text-4xl text-rip-500/40">①</span><h3 class="font-display text-2xl text-white">Pick your combo</h3><p class="mt-2 text-sm text-slate-400">Browse the catalog. Filter by spin, weight and type.</p></div><div class="card-surface relative p-6"><span class="absolute right-4 top-4 font-display text-4xl text-rip-500/40">②</span><h3 class="font-display text-2xl text-white">Launch with code</h3><p class="mt-2 text-sm text-slate-400">Apply LETITRIP10 at checkout. Free shipping over $75.</p></div><div class="card-surface relative p-6"><span class="absolute right-4 top-4 font-display text-4xl text-rip-500/40">③</span><h3 class="font-display text-2xl text-white">Battle &amp; win</h3><p class="mt-2 text-sm text-slate-400">Rate your pulls, build a wishlist, climb the leaderboard.</p></div></div></div></section></div></main><footer class="mt-24 border-t border-white/10 bg-storm-light/40"><div class="overflow-hidden border-b border-white/5 py-2 text-xs uppercase tracking-[0.3em] text-rip-300"><div class="marquee gap-12 whitespace-nowrap"><span class="flex gap-12"><span>· Beyblade was invented in 1999 by Takara — the spinning top game that started a global craze.</span><span>· The L Drago special-move requires an activation slot, the only spin gear with that feature.</span><span>· A Beyblade stadium is a perfectly circular bowl — the bevel is what keeps bladers in play.</span><span>· Stamina types win by outlasting opponents; Defense types absorb hits and counter-attack.</span><span>· The 4D system (Metal Fight) lets bladers swap bottom tips mid-battle for the first time.</span><span>· World championships have been held since 2003 across multiple generations of Beyblade.</span></span><span class="flex gap-12"><span>· Beyblade was invented in 1999 by Takara — the spinning top game that started a global craze.</span><span>· The L Drago special-move requires an activation slot, the only spin gear with that feature.</span><span>· A Beyblade stadium is a perfectly circular bowl — the bevel is what keeps bladers in play.</span><span>· Stamina types win by outlasting opponents; Defense types absorb hits and counter-attack.</span><span>· The 4D system (Metal Fight) lets bladers swap bottom tips mid-battle for the first time.</span><span>· World championships have been held since 2003 across multiple generations of Beyblade.</span></span></div></div><div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8"><div><div class="flex items-center gap-3"><div class="relative h-10 w-10"><div class="absolute inset-0 rounded-full bg-gradient-to-br from-rip-300 to-rip-700 shadow-glow"></div><div class="absolute inset-1 rounded-full bg-storm flex items-center justify-center font-display text-rip-200">L</div></div><span class="font-display text-2xl tracking-widest text-white">LET&nbsp;IT&nbsp;RIP</span></div><p class="mt-4 text-sm text-slate-400 leading-relaxed"> Premium Beyblades, metal wheels and starter bundles. Ships worldwide from the storm. </p></div><div><h4 class="font-display text-lg tracking-widest text-white">Shop</h4><ul class="mt-4 space-y-2 text-sm text-slate-400"><li><a href="/shop/burst" class="hover:text-white">Burst Series</a></li><li><a href="/shop/metal" class="hover:text-white">Metal Fight</a></li><li><a href="/shop/starter" class="hover:text-white">Starter Packs</a></li><li><a href="/shop/parts" class="hover:text-white">Parts &amp; Tools</a></li></ul></div><div><h4 class="font-display text-lg tracking-widest text-white">Account</h4><ul class="mt-4 space-y-2 text-sm text-slate-400"><li><a href="/login" class="hover:text-white">Sign in</a></li><li><a href="/signup" class="hover:text-white">Create account</a></li><li><a href="/orders" class="hover:text-white">My orders</a></li><li><a href="/wishlist" class="hover:text-white">Wishlist</a></li></ul></div><div><h4 class="font-display text-lg tracking-widest text-white">Newsletter</h4><p class="mt-4 text-sm text-slate-400">Get launch alerts, restocks and 10% off your first order.</p><form class="mt-4 flex gap-2"><input class="input" type="email" placeholder="you@stadium.io" required=""><button class="btn-primary" type="submit">Join</button></form></div></div><div class="border-t border-white/5"><div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-slate-500 sm:flex-row sm:px-6 lg:px-8"><p>© 2026 Let It Rip · All Beyblade product imagery © respective owners.</p><p>Built with Vue 3 · Vite · Pinia · ♥ in Buenos Aires</p></div></div></footer><div data-v-4e35eba8="" class="pointer-events-none fixed top-4 right-4 z-50 flex flex-col gap-3 w-80 max-w-[calc(100vw-2rem)]"></div><!----></div></div>
+
+  
+
+<!----><!----></body></html>
