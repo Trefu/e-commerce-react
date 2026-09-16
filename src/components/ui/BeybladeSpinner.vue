@@ -24,7 +24,6 @@ const speedClass = computed(() => ({
     <!-- Outer ring (stadium) -->
     <div class="absolute inset-0 rounded-full ring-2 ring-rip-500/40"></div>
     <!-- Streak layer -->
-    <div class="absolute inset-1 rounded-full streak" :class="speedClass"></div>
     <!-- Core -->
     <div class="absolute inset-[28%] rounded-full bg-gradient-to-br from-rip-300 to-rip-700 shadow-glow"></div>
     <!-- Center bolt -->

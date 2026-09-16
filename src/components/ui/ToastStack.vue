@@ -30,7 +30,7 @@ const toasts = computed(() => ui.toasts)
         <div class="flex gap-3 p-4 pl-5">
           <div :class="['mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/5', colorClasses(t.color).icon]">
             <span v-if="t.icon" class="text-sm font-bold">{{ t.icon }}</span>
-            <svg v-else viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path d="M10 1l2.928 6.36L20 8.165l-5.2 4.7L16.165 20 10 16.36 3.835 20 5.2 12.865 0 8.165l7.072-.805z"/></svg>
+            <FontAwesomeIcon v-else icon="star" class="h-4 w-4" />
           </div>
           <div class="flex-1 min-w-0">
             <p class="text-sm font-semibold text-white">{{ t.title }}</p>
@@ -41,7 +41,7 @@ const toasts = computed(() => ui.toasts)
             @click="ui.dismiss(t.id)"
             aria-label="Dismiss notification"
           >
-            <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path d="M6.225 4.811L4.811 6.225 8.586 10l-3.775 3.775 1.414 1.414L10 11.414l3.775 3.775 1.414-1.414L11.414 10l3.775-3.775-1.414-1.414L10 8.586z"/></svg>
+            <FontAwesomeIcon icon="xmark" class="h-4 w-4" />
           </button>
         </div>
         <div class="absolute bottom-0 left-0 h-0.5 w-full bg-white/5">

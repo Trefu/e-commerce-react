@@ -8,9 +8,48 @@ import { useCartStore } from './stores/cart'
 import { useWishlistStore } from './stores/wishlist'
 import { useOrdersStore } from './stores/orders'
 import { useProductsStore } from './stores/products'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import {
+  faHeart as faHeartSolid,
+  faCartShopping,
+  faMagnifyingGlass,
+  faBars,
+  faXmark,
+  faRotateRight,
+  faShareNodes,
+  faChevronDown,
+  faStar as faStarSolid,
+  faArrowRotateRight,
+  faArrowRotateLeft,
+  faArrowsRotate
+} from '@fortawesome/free-solid-svg-icons'
+import {
+  faHeart as faHeartRegular,
+  faStar as faStarRegular
+} from '@fortawesome/free-regular-svg-icons'
 import './assets/main.css'
 
+library.add(
+  faHeartSolid,
+  faHeartRegular,
+  faCartShopping,
+  faMagnifyingGlass,
+  faBars,
+  faXmark,
+  faRotateRight,
+  faShareNodes,
+  faChevronDown,
+  faStarSolid,
+  faStarRegular,
+  faArrowRotateRight,
+  faArrowRotateLeft,
+  faArrowsRotate
+)
+
 const app = createApp(App)
+app.component('FontAwesomeIcon', FontAwesomeIcon)
 const pinia = createPinia()
 app.use(pinia)
 app.use(router)

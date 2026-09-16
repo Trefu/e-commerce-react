@@ -56,7 +56,7 @@ const tierStyles = {
             class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"
           >
             <div class="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg ring-stadium">
-              <div class="streak absolute inset-1 opacity-60 animate-spin-slow"></div>
+              
               <img :src="p.images[0]" :alt="p.title" class="absolute inset-0 m-auto h-12 w-12 object-contain" loading="lazy" />
             </div>
             <div class="min-w-0 flex-1">

@@ -108,7 +108,7 @@ const activeFilterCount = computed(() =>
         <div class="relative">
           <button class="btn-secondary !py-2 !px-4" @click="sortOpen = !sortOpen">
             Sort: {{ currentSort.label }}
-            <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/></svg>
+            <FontAwesomeIcon icon="chevron-down" class="h-4 w-4" />
           </button>
           <transition name="dropdown">
             <div v-if="sortOpen" class="absolute right-0 z-10 mt-2 w-44 overflow-hidden rounded-xl border border-white/10 bg-storm-light shadow-card">
@@ -133,7 +133,7 @@ const activeFilterCount = computed(() =>
         <div class="card-surface p-5">
           <h3 class="font-display text-lg tracking-wide text-white">Search</h3>
           <div class="relative mt-3">
-            <svg viewBox="0 0 20 20" fill="currentColor" class="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"><path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd"/></svg>
+            <FontAwesomeIcon icon="magnifying-glass" class="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <input
               :value="products.query"
               @input="products.setQuery($event.target.value)"

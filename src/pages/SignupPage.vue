@@ -29,7 +29,7 @@ function signup() {
 <template>
   <div class="mx-auto flex min-h-[70vh] max-w-md flex-col justify-center px-4 py-12">
     <div class="card-surface relative overflow-hidden p-8">
-      <div class="streak absolute -left-12 -bottom-12 h-48 w-48 opacity-30"></div>
+      
       <p class="chip">Account</p>
       <h1 class="mt-2 font-display text-4xl text-white">Create account</h1>
       <p class="mt-2 text-sm text-slate-400">Save your combos, track orders, climb the leaderboard.</p>

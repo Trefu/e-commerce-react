@@ -27,7 +27,7 @@ function login() {
 <template>
   <div class="mx-auto flex min-h-[70vh] max-w-md flex-col justify-center px-4 py-12">
     <div class="card-surface relative overflow-hidden p-8">
-      <div class="streak absolute -right-12 -top-12 h-48 w-48 opacity-30"></div>
+      
       <p class="chip">Account</p>
       <h1 class="mt-2 font-display text-4xl text-white">Sign in</h1>
       <p class="mt-2 text-sm text-slate-400">Pick up your collection where you left it.</p>

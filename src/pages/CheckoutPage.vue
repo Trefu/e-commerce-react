@@ -250,7 +250,7 @@ function placeOrder() {
               <button class="btn-ghost" @click="back">← Back</button>
               <button class="btn-primary !py-3" :disabled="submitting" @click="placeOrder">
                 <span v-if="submitting" class="flex items-center gap-2">
-                  <span class="streak h-4 w-4 rounded-full animate-spin-slow"></span> Processing...
+                   Processing...
                 </span>
                 <span v-else>Place order · ${{ cart.total.toFixed(2) }}</span>
               </button>

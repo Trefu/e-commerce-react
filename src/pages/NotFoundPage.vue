@@ -14,7 +14,7 @@ onMounted(() => {
 <template>
   <div class="mx-auto flex min-h-[70vh] max-w-2xl flex-col items-center justify-center px-4 py-20 text-center">
     <div class="relative h-40 w-40">
-      <div class="streak absolute inset-0 rounded-full animate-spin-fast"></div>
+      
       <div class="absolute inset-2 rounded-full bg-gradient-to-br from-rip-300 to-rip-700"></div>
       <div class="absolute inset-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-gold"></div>
     </div>

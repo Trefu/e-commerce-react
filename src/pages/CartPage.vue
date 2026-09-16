@@ -102,6 +102,13 @@ function ripCheckout() {
       <div class="space-y-4">
         <!-- Arena stats banner -->
         <div class="relative overflow-hidden rounded-2xl border border-rip-500/30 bg-gradient-to-r from-rip-700/30 via-storm-light/40 to-storm p-5">
+          <img
+            src="/arena.png"
+            alt=""
+            class="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full object-cover opacity-40 mix-blend-screen"
+            loading="lazy"
+            decoding="async"
+          />
           <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-rip-500/30 blur-3xl"></div>
           <div class="absolute -left-10 -bottom-10 h-32 w-32 rounded-full bg-accent-gold/20 blur-3xl"></div>
           <div class="relative flex flex-wrap items-center gap-6">
@@ -125,7 +132,7 @@ function ripCheckout() {
                 class="relative h-12 w-12 overflow-hidden rounded-full border-2 border-storm-light ring-stadium"
                 :style="{ zIndex: 10 - i }"
               >
-                <div class="streak absolute inset-1 opacity-60 animate-spin-slow"></div>
+                
                 <img :src="item.images?.[0] || '/products/img_0550-9d8522a05a6b00c33417256463897909.webp.png'" :alt="item.title" class="absolute inset-0 m-auto h-10 w-10 object-contain" />
               </div>
               <div v-if="detailed.length > 5" class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-storm-light bg-storm font-display text-xs text-slate-400">+{{ detailed.length - 5 }}</div>
@@ -140,7 +147,7 @@ function ripCheckout() {
             :style="{ animationDelay: (i * 60) + 'ms' }"
           >
             <div class="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl ring-stadium">
-              <div class="streak absolute inset-2 opacity-50 animate-spin-slow"></div>
+              
               <img :src="item.images?.[0] || '/products/img_0951-f8a1caf9bbffa3a14817231472953152.webp.png'" :alt="item.title" class="absolute inset-0 m-auto h-24 w-24 object-contain" />
             </div>
             <div class="flex-1 min-w-0">
@@ -158,7 +165,7 @@ function ripCheckout() {
                   <button class="px-3 py-1 text-lg" @click="cart.increment(item.id)">+</button>
                 </div>
                 <button class="btn-ghost !text-xs" @click="wishlist.toggle(item.id)" :class="wishlist.has(item.id) && '!text-accent-red'">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                  <FontAwesomeIcon :icon="['far', 'heart']" class="h-4 w-4" />
                   {{ wishlist.has(item.id) ? 'Wishlisted' : 'Wishlist' }}
                 </button>
                 <button class="btn-ghost !text-xs !text-accent-red" @click="cart.remove(item.id)">Remove</button>

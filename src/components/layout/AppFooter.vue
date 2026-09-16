@@ -34,7 +34,7 @@ onUnmounted(() => clearInterval(timer))
           <div class="relative h-10 w-10">
             <div class="absolute inset-0 rounded-full bg-gradient-to-br from-rip-300 to-rip-700 shadow-glow"></div>
             <div class="absolute inset-1 rounded-full bg-storm flex items-center justify-center font-display text-rip-200">L</div>
-            <div class="streak absolute inset-0 rounded-full"></div>
+            
           </div>
           <span class="font-display text-2xl tracking-widest text-white">LET&nbsp;IT&nbsp;RIP</span>
         </div>

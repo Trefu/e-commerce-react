@@ -11,6 +11,7 @@ import BeybladeSpinner from '@/components/ui/BeybladeSpinner.vue'
 import HeroBeyblades from '@/components/ui/HeroBeyblades.vue'
 import BeybladeTierList from '@/components/ui/BeybladeTierList.vue'
 import BattlePreview from '@/components/ui/BattlePreview.vue'
+import BeyPicker from '@/components/ui/BeyPicker.vue'
 import TypeBadge from '@/components/ui/TypeBadge.vue'
 import SpinArrow from '@/components/ui/SpinArrow.vue'
 import PowerGauge from '@/components/ui/PowerGauge.vue'
@@ -72,12 +73,12 @@ const stats = [
 
 // Hero orbiters
 const orbiters = [
-  { src: '/products/img_1622-c00334121d6c48b59f17249617798093.webp.png', radius: '40%', size: 110, speed: 8, spin: '3.2s', streak: 'hero-streak-red', alt: 'Tournament battle' },
-  { src: '/products/img_1623-8aef0cbd979a806d0217249616671163.webp.png',     radius: '33%', size: 78,  speed: 5, spin: '1.4s', streak: 'hero-streak-purple', direction: 'ccw', alt: 'Lord Spriggan' },
-  { src: '/products/img_1625-101be200e308044e0417249614445311.webp.png',         radius: '48%', size: 86,  speed: 10, spin: '1.8s', streak: 'hero-streak-red', direction: 'ccw', alt: 'Valkyrie' },
-  { src: '/products/img_2333-cfeda5df8e4d7c757717285995410907.webp.png',         radius: '44%', size: 72,  speed: 7, spin: '1.6s', streak: 'hero-streak-green', alt: 'Spriggan' },
-  { src: '/products/img_2335-7eeda68e644e23014817285994954963.webp.png',           radius: '37%', size: 70,  speed: 6, spin: '1.5s', streak: 'hero-streak-red', direction: 'ccw', alt: 'L-Drago' },
-  { src: '/products/img_2337-2b33a8af5e1d4f947217285994483369.webp.png',          radius: '51%', size: 78,  speed: 12, spin: '2s', streak: 'hero-streak-blue', alt: 'Pegasus' }
+  { src: '/products/img_1622-c00334121d6c48b59f17249617798093.webp.png', radius: '40%', size: 110, speed: 8, spin: '3.2s', alt: 'Tournament battle' },
+  { src: '/products/img_1623-8aef0cbd979a806d0217249616671163.webp.png',     radius: '33%', size: 78,  speed: 5, spin: '1.4s', direction: 'ccw', alt: 'Lord Spriggan' },
+  { src: '/products/img_1625-101be200e308044e0417249614445311.webp.png',         radius: '48%', size: 86,  speed: 10, spin: '1.8s', direction: 'ccw', alt: 'Valkyrie' },
+  { src: '/products/img_2333-cfeda5df8e4d7c757717285995410907.webp.png',         radius: '44%', size: 72,  speed: 7, spin: '1.6s', alt: 'Spriggan' },
+  { src: '/products/img_2335-7eeda68e644e23014817285994954963.webp.png',           radius: '37%', size: 70,  speed: 6, spin: '1.5s', direction: 'ccw', alt: 'L-Drago' },
+  { src: '/products/img_2337-2b33a8af5e1d4f947217285994483369.webp.png',          radius: '51%', size: 78,  speed: 12, spin: '2s', alt: 'Pegasus' }
 ]
 </script>
 
@@ -145,7 +146,7 @@ const orbiters = [
           <p class="mt-2 max-w-2xl text-slate-400">Two beys enter the stadium. Same spin direction = pure stats war. Opposite spins = direction bonus goes to higher RPM. Winner goes straight to your cart.</p>
         </div>
         <button class="btn-secondary !py-2 !px-5 self-start sm:self-auto" @click="randomize">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4"><path d="M21 12a9 9 0 11-9-9c2.5 0 4.7 1 6.4 2.6L21 8"/><path d="M21 3v5h-5"/></svg>
+          <FontAwesomeIcon icon="rotate-right" class="h-4 w-4" />
           Shuffle matchup
         </button>
       </div>
@@ -155,7 +156,7 @@ const orbiters = [
         <div class="card-surface relative overflow-hidden p-5">
           <div class="flex items-start gap-3">
             <div class="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl ring-stadium">
-              <div class="streak absolute inset-1 opacity-70 animate-spin-slow"></div>
+              
               <img :src="battleA.images[0]" :alt="battleA.title" class="absolute inset-0 m-auto h-14 w-14 object-contain" />
             </div>
             <div class="flex-1 min-w-0">
@@ -167,9 +168,7 @@ const orbiters = [
             </div>
             <PowerGauge :value="battleA.power" :max="10000" label="PWR" :size="92" :show-label="false" />
           </div>
-          <select v-model="battleA" class="mt-4 w-full input !py-2 text-sm">
-            <option v-for="p in battleOptions" :key="p.id" :value="p">{{ p.title }} · {{ p.power }} PWR</option>
-          </select>
+          <BeyPicker v-model="battleA" :options="battleOptions" />
         </div>
 
         <!-- VS -->
@@ -189,13 +188,11 @@ const orbiters = [
               </div>
             </div>
             <div class="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl ring-stadium">
-              <div class="streak absolute inset-1 opacity-70 animate-spin-slow"></div>
+              
               <img :src="battleB.images[0]" :alt="battleB.title" class="absolute inset-0 m-auto h-14 w-14 object-contain" />
             </div>
           </div>
-          <select v-model="battleB" class="mt-4 w-full input !py-2 text-sm">
-            <option v-for="p in battleOptions" :key="p.id" :value="p">{{ p.title }} · {{ p.power }} PWR</option>
-          </select>
+          <BeyPicker v-model="battleB" :options="battleOptions" />
         </div>
       </div>
 
@@ -292,7 +289,7 @@ const orbiters = [
                   }"
                 >#{{ i + 1 }}</span>
                 <div class="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg ring-stadium">
-                  <div class="streak absolute inset-0.5 opacity-50 animate-spin-slow"></div>
+                  
                   <img :src="p.images[0]" :alt="p.title" class="absolute inset-0 m-auto h-9 w-9 object-contain" />
                 </div>
                 <div class="flex-1 min-w-0">
@@ -360,7 +357,7 @@ const orbiters = [
           { t: 'Battle & win', d: 'Rate your pulls, build a wishlist, climb the leaderboard.', i: '③' }
         ]" :key="step.t" class="card-surface relative p-6">
           <span class="absolute right-4 top-4 font-display text-4xl text-rip-500/40">{{ step.i }}</span>
-          <div class="streak absolute inset-2 rounded-2xl opacity-20"></div>
+          
           <h3 class="font-display text-2xl text-white">{{ step.t }}</h3>
           <p class="mt-2 text-sm text-slate-400">{{ step.d }}</p>
         </div>

@@ -69,13 +69,14 @@ const sparks = Array.from({ length: 12 }, (_, i) => {
       maxWidth: '100%'
     }"
   >
-    <!-- Soft outer halo (follows cursor) -->
-    <div
-      class="pointer-events-none absolute inset-0 rounded-full"
-      :style="{
-        background: 'radial-gradient(circle at ' + (50 + parallaxX * 30) + '% ' + (50 + parallaxY * 30) + '%, rgba(99,102,241,0.32), transparent 60%)',
-        transform: 'translate3d(' + (parallaxX * 14) + 'px, ' + (parallaxY * 14) + 'px, 0)'
-      }"
+    <!-- Arena background (transparent PNG) — fits inside container so the
+         whole arena is visible without clipping -->
+    <img
+      src="/arena.png"
+      alt=""
+      class="pointer-events-none absolute inset-[4%] h-[92%] w-[92%] rounded-full object-cover opacity-90"
+      loading="lazy"
+      decoding="async"
     />
 
     <!-- Stadium ring 1 (rotates clockwise) -->
@@ -120,7 +121,6 @@ const sparks = Array.from({ length: 12 }, (_, i) => {
           class="hero-main-img"
           draggable="false"
         />
-        <div class="hero-main-streak"></div>
       </div>
     </div>
   </div>
@@ -177,24 +177,6 @@ const sparks = Array.from({ length: 12 }, (_, i) => {
   -webkit-user-drag: none;
   filter: drop-shadow(0 25px 40px rgba(0,0,0,0.55));
   animation: hero-blade-spin 2.4s linear infinite;
-}
-
-.hero-main-streak {
-  position: absolute;
-  inset: 6%;
-  border-radius: 9999px;
-  pointer-events: none;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    rgba(251,191,36,0.45) 60deg,
-    transparent 120deg,
-    transparent 360deg
-  );
-  -webkit-mask: radial-gradient(circle, transparent 38%, black 39%);
-          mask: radial-gradient(circle, transparent 38%, black 39%);
-  animation: hero-blade-spin 1.6s linear infinite;
-  opacity: 0.7;
 }
 
 @keyframes hero-blade-spin {

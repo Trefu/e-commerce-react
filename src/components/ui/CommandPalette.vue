@@ -58,7 +58,7 @@ watch(open, (val) => {
       <div class="absolute inset-0 bg-storm/80 backdrop-blur-md" @click="ui.closePalette()" />
       <div class="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-storm-light/95 shadow-2xl shadow-rip-700/30">
         <div class="flex items-center gap-3 border-b border-white/10 px-4">
-          <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 text-slate-400"><path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd"/></svg>
+          <FontAwesomeIcon icon="magnifying-glass" class="h-5 w-5 text-slate-400" />
           <input
             ref="input"
             v-model="query"

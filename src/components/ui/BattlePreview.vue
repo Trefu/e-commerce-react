@@ -111,12 +111,13 @@ function startBattle() {
 }
 
 function launch() {
-  phase.value = 'launching'
-  // First shot: head-on collision. Beys start at opposite edges on the same axis
-  aPos.value = { x: -125, y: 0 }
-  bPos.value = { x: 125, y: 0 }
-  phys.ax = 11; phys.ay = 0
-  phys.bx = -11; phys.by = 0
+  // Beys are launched from opposite edges with velocities aimed at each other.
+  // Physics starts immediately — no center-meeting animation.
+  const edgeX = STADIUM_R - BEY_R - 4
+  aPos.value = { x: -edgeX, y: 0 }
+  bPos.value = { x:  edgeX, y: 0 }
+  phys.ax = 9; phys.ay = 0
+  phys.bx = -9; phys.by = 0
   phys.aSpin = 18 + (props.a?.stats?.attack || 50) * 0.06
   phys.bSpin = 18 + (props.b?.stats?.attack || 50) * 0.06
   phys.aFrameStart = phys.aSpin
@@ -131,22 +132,8 @@ function launch() {
   bOpacity.value = 1
   collisionCount.value = 0
   sparks.value = []
-
-  const start = performance.now()
-  const dur = 600
-  function step(now) {
-    const t = Math.min((now - start) / dur, 1)
-    if (t < 1) {
-      const e = 1 - Math.pow(1 - t, 3)
-      aPos.value = { x: -115 + 115 * e, y: 0 }
-      bPos.value = { x: 115 - 115 * e, y: 0 }
-      raf = requestAnimationFrame(step)
-    } else {
-      phase.value = 'clashing'
-      physLoop()
-    }
-  }
-  raf = requestAnimationFrame(step)
+  phase.value = 'clashing'
+  physLoop()
 }
 
 function physLoop() {
@@ -321,10 +308,11 @@ function bounceWall(key) {
 
 function finishBattle() {
   phase.value = 'result'
+  // 2-second finale: let beys settle + show stats before the result overlay
   timers.push(setTimeout(() => {
     showResult.value = true
     emit('finish', winner.value)
-  }, 600))
+  }, 2000))
 }
 
 function rematch() {
@@ -383,6 +371,16 @@ const winnerColorMap = {
           aspectRatio: '1 / 1'
         }"
       >
+        <!-- Stadium arena (transparent PNG) — scaled up so its outer rim
+             sits flush against the container edge -->
+        <img
+          src="/arena.png"
+          alt=""
+          class="absolute inset-0 h-full w-full rounded-full object-cover select-none pointer-events-none"
+          style="transform: scale(1.18); transform-origin: center;"
+          loading="lazy"
+          decoding="async"
+        />
         <!-- Stadium floor (subtle gradient like a real beystadium bowl) -->
         <div
           class="absolute inset-0 rounded-full"
@@ -391,7 +389,7 @@ const winnerColorMap = {
         <!-- Stadium wall (the actual collision boundary) -->
         <div
           class="absolute inset-0 rounded-full"
-          style="border: 3px solid rgba(251,191,36,0.55); box-shadow: inset 0 0 24px rgba(251,191,36,0.18), 0 0 18px rgba(251,191,36,0.15);"
+          style="border: 3px solid rgba(251,191,36,0.55);"
         ></div>
         <!-- Inner concentric guide ring -->
         <div
@@ -418,15 +416,11 @@ const winnerColorMap = {
         :style="{
           transform: `translate(calc(-50% + ${aPos.x}px), calc(-50% + ${aPos.y}px)) scale(${aScale})`,
           opacity: aOpacity,
-          transition: 'transform 0.08s linear'
+          willChange: 'transform'
         }"
       >
         <div class="relative h-20 w-20 sm:h-28 sm:w-28">
-          <div
-            class="streak absolute inset-0"
-            :class="phys.aStopped ? '' : 'animate-spin-fast'"
-            :style="{ animationDuration: `${Math.max(0.1, 0.5 - phys.aSpin * 0.02)}s` }"
-          ></div>
+          
           <img
             v-if="aImgOk && safeImg(a)"
             :src="safeImg(a)"
@@ -452,15 +446,11 @@ const winnerColorMap = {
         :style="{
           transform: `translate(calc(-50% + ${bPos.x}px), calc(-50% + ${bPos.y}px)) scale(${bScale})`,
           opacity: bOpacity,
-          transition: 'transform 0.08s linear'
+          willChange: 'transform'
         }"
       >
         <div class="relative h-20 w-20 sm:h-28 sm:w-28">
-          <div
-            class="streak absolute inset-0"
-            :class="phys.bStopped ? '' : 'animate-spin-fast'"
-            :style="{ animationDuration: `${Math.max(0.1, 0.5 - phys.bSpin * 0.02)}s` }"
-          ></div>
+          
           <img
             v-if="bImgOk && safeImg(b)"
             :src="safeImg(b)"

@@ -9,50 +9,27 @@ const props = defineProps({
 
 <template>
   <span class="inline-flex items-center gap-2 align-middle">
-    <!-- RIGHT (clockwise spin) — proven lucide-style circular arrow -->
-    <svg
+    <FontAwesomeIcon
       v-if="direction === 'right'"
-      :width="size" :height="size" viewBox="0 0 24 24"
-      :class="spinning ? 'animate-spin-slow' : ''"
-      class="text-rip-300"
-      fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
+      icon="arrow-rotate-right"
+      :style="{ width: size + 'px', height: size + 'px' }"
+      :class="['text-rip-300', spinning ? 'animate-spin-slow' : '']"
       aria-label="Right (clockwise) spin"
-    >
-      <!-- 3/4 arc starting at the right side, sweeping clockwise back up -->
-      <path d="M21 12a9 9 0 1 1-6.219-8.56" />
-      <!-- Arrowhead at top-right corner showing clockwise direction -->
-      <path d="M21 3v6h-6" />
-    </svg>
-
-    <!-- LEFT (counter-clockwise spin) — mirror -->
-    <svg
+    />
+    <FontAwesomeIcon
       v-else-if="direction === 'left'"
-      :width="size" :height="size" viewBox="0 0 24 24"
-      :class="spinning ? 'animate-spin-slow' : ''"
-      class="text-rip-300"
-      fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
+      icon="arrow-rotate-left"
+      :style="{ width: size + 'px', height: size + 'px' }"
+      :class="['text-rip-300', spinning ? 'animate-spin-slow' : '']"
       aria-label="Left (counter-clockwise) spin"
-    >
-      <path d="M3 12a9 9 0 1 0 6.219-8.56" />
-      <path d="M3 3v6h6" />
-    </svg>
-
-    <!-- MIXED — two opposing arcs (yin-yang rotation) -->
-    <svg
+    />
+    <FontAwesomeIcon
       v-else
-      :width="size" :height="size" viewBox="0 0 24 24"
-      :class="spinning ? 'animate-spin-slow' : ''"
-      class="text-rip-300"
-      fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
+      icon="arrows-rotate"
+      :style="{ width: size + 'px', height: size + 'px' }"
+      :class="['text-rip-300', spinning ? 'animate-spin-slow' : '']"
       aria-label="Dual spin"
-    >
-      <!-- Top arc, clockwise -->
-      <path d="M3 12a9 9 0 0 1 15.5-6" />
-      <path d="M18.5 2.5 18.5 7.5 13.5 7.5" />
-      <!-- Bottom arc, counter-clockwise -->
-      <path d="M21 12a9 9 0 0 1-15.5 6" />
-      <path d="M5.5 21.5 5.5 16.5 10.5 16.5" />
-    </svg>
+    />
 
     <span v-if="label" class="text-[10px] uppercase tracking-widest text-slate-400">
       {{ direction === 'mixed' ? 'Dual spin' : direction + ' spin' }}

@@ -154,7 +154,7 @@ const tierColor = computed(() => tierColors[product.value?.tier] || '#94a3b8')
           @mousemove="onMove"
           @mouseleave="onLeave"
         >
-          <div class="streak absolute inset-6 opacity-80" :class="tilt.active ? 'animate-spin-fast' : 'animate-spin-slow'"></div>
+          
           <transition name="img" mode="out-in">
             <img
               :key="galleryIndex"
@@ -223,7 +223,7 @@ const tierColor = computed(() => tierColors[product.value?.tier] || '#94a3b8')
             <button class="px-3 py-2 text-lg" :disabled="qty >= product.stock" @click="qty = Math.min(product.stock, qty + 1)">+</button>
           </div>
           <button class="btn-primary flex-1 !py-3" :disabled="product.stock <= 0" @click="add(); burst()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+            <FontAwesomeIcon icon="cart-shopping" class="h-5 w-5" />
             ⚡ Launch to cart
           </button>
           <button class="btn-secondary !py-3" @click="buyNow">RIP now</button>
@@ -235,11 +235,11 @@ const tierColor = computed(() => tierColors[product.value?.tier] || '#94a3b8')
             :class="wishlist.has(product.id) && '!text-accent-red'"
             @click="wishlist.toggle(product.id)"
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            <FontAwesomeIcon :icon="['far', 'heart']" class="h-4 w-4" />
             {{ wishlist.has(product.id) ? 'In wishlist' : 'Wishlist' }}
           </button>
           <button class="btn-ghost !border !border-white/10" aria-label="Share">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4"><path d="M18 8a3 3 0 100-6 3 3 0 000 6zM6 15a3 3 0 100-6 3 3 0 000 6zM18 22a3 3 0 100-6 3 3 0 000 6zM8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+            <FontAwesomeIcon icon="share-nodes" class="h-4 w-4" />
           </button>
         </div>
 

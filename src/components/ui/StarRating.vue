@@ -34,10 +34,10 @@ function pick(n) {
       @mouseenter="hover = interactive ? n : 0"
       @click="pick(n)"
     >
-      <svg viewBox="0 0 20 20" fill="currentColor" class="w-full h-full">
-        <path v-if="(hover || value) >= n" d="M10 1l2.928 6.36L20 8.165l-5.2 4.7L16.165 20 10 16.36 3.835 20 5.2 12.865 0 8.165l7.072-.805z"/>
-        <path v-else d="M10 1l2.928 6.36L20 8.165l-5.2 4.7L16.165 20 10 16.36 3.835 20 5.2 12.865 0 8.165l7.072-.805zM10 3.5l-2.05 4.45-4.95.57 3.7 3.34-.95 4.86L10 14.36l4.25 2.36-.95-4.86 3.7-3.34-4.95-.57z" fill-opacity="0.25"/>
-      </svg>
+      <FontAwesomeIcon
+        :icon="(hover || value) >= n ? ['fas', 'star'] : ['far', 'star']"
+        class="w-full h-full"
+      />
     </button>
   </div>
 </template>

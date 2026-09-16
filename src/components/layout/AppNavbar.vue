@@ -49,19 +49,17 @@ function logout() {
     :class="scrolled ? 'backdrop-blur-xl bg-storm/70 border-b border-white/10 shadow-card' : 'bg-transparent'"
   >
     <div class="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
-      <RouterLink to="/" class="flex items-center gap-2.5">
-        <div class="relative h-10 w-10">
-          <div class="absolute inset-0 rounded-full bg-gradient-to-br from-rip-300 to-rip-700 shadow-glow"></div>
-          <div class="streak absolute inset-0 rounded-full"></div>
-          <div class="absolute inset-1 rounded-full bg-storm flex items-center justify-center">
-            <img src='/products/img_0092-df4282351c4db4672817234964170135.webp.png' alt="" class="h-7 w-7 rounded-full object-cover" />
+      <RouterLink to="/" class="flex items-center gap-3">
+        <div class="hidden sm:block relative h-12 w-12 shrink-0">
+          <div class="absolute inset-0 rounded-full bg-gradient-to-br from-rip-300 via-rip-500 to-rip-800 shadow-glow"></div>
+          <div class="absolute inset-[6px] rounded-full bg-storm ring-1 ring-white/10 flex items-center justify-center">
+            <span class="font-display text-lg font-bold text-accent-gold">L</span>
           </div>
-          <!-- pulse ring -->
-          <span class="absolute -inset-0.5 rounded-full border border-accent-gold/60 animate-pulse-ring pointer-events-none"></span>
+          <span class="absolute -inset-1 rounded-full border border-accent-gold/70 animate-pulse-ring pointer-events-none"></span>
         </div>
-        <div class="hidden sm:flex flex-col leading-none">
-          <span class="font-display text-xl tracking-widest text-white">LET IT RIP</span>
-          <span class="text-[8px] uppercase tracking-[0.4em] text-accent-gold/80 mt-0.5">Bladers · Since 1999</span>
+        <div class="flex flex-col leading-none">
+          <span class="font-display text-2xl tracking-[0.18em] text-white">LET IT RIP</span>
+          <span class="text-[9px] uppercase tracking-[0.45em] text-accent-gold/90 mt-1 font-semibold">Bladers · Since 1999</span>
         </div>
       </RouterLink>
 
@@ -86,7 +84,7 @@ function logout() {
         class="btn-secondary hidden md:inline-flex flex-1 max-w-md !justify-start !py-2 !px-4 text-slate-400"
         @click="ui.openPalette()"
       >
-        <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd"/></svg>
+        <FontAwesomeIcon icon="magnifying-glass" class="h-4 w-4 text-slate-400" />
         <span class="text-sm">Search Beyblades...</span>
         <span class="ml-auto flex gap-1">
           <kbd class="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-[10px]">Ctrl</kbd>
@@ -96,7 +94,7 @@ function logout() {
 
       <div class="ml-auto flex items-center gap-1">
         <RouterLink to="/wishlist" class="relative hidden sm:inline-flex btn-ghost !px-3" aria-label="Wishlist">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <FontAwesomeIcon :icon="['far', 'heart']" class="h-5 w-5" />
           <span v-if="wishlist.count" class="absolute -right-1 -top-1 inline-flex h-4 min-w-[1rem] items-center justify-center rounded-full bg-accent-red px-1 text-[10px] font-bold text-white animate-pop-in">
             {{ wishlist.count }}
           </span>
@@ -123,7 +121,7 @@ function logout() {
 
         <RouterLink to="/cart" class="relative btn-ghost !px-3" aria-label="Cart">
           <span class="relative inline-flex">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5" :class="cart.count && 'animate-tilt-shake'"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+            <FontAwesomeIcon icon="cart-shopping" class="h-5 w-5" :class="cart.count && 'animate-tilt-shake'" />
             <span v-if="cart.count" class="absolute -right-2 -top-2 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-gradient-to-br from-accent-red to-rose-400 px-1 text-[11px] font-bold text-white shadow-[0_0_0_3px_rgba(11,16,32,1)] animate-pop-in">
               {{ cart.count }}
             </span>
@@ -131,8 +129,8 @@ function logout() {
         </RouterLink>
 
         <button class="btn-ghost md:hidden !px-2" @click="menuOpen = !menuOpen" aria-label="Menu">
-          <svg v-if="!menuOpen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-          <svg v-else viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          <FontAwesomeIcon v-if="!menuOpen" icon="bars" class="h-5 w-5" />
+          <FontAwesomeIcon v-else icon="xmark" class="h-5 w-5" />
         </button>
       </div>
     </div>
