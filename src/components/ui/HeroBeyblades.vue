@@ -10,27 +10,58 @@ const props = defineProps({
 const stage = ref(null)
 const parallaxX = ref(0)
 const parallaxY = ref(0)
+const isVisible = ref(true)
 let raf
 let targetX = 0
 let targetY = 0
 let ro
+let io
 
 function onMove(e) {
-  if (!stage.value) return
+  if (!isVisible.value || !stage.value) return
   const rect = stage.value.getBoundingClientRect()
   targetX = (e.clientX - rect.left) / rect.width - 0.5
   targetY = (e.clientY - rect.top)  / rect.height - 0.5
 }
 
 function loop() {
-  parallaxX.value += (targetX - parallaxX.value) * 0.08
-  parallaxY.value += (targetY - parallaxY.value) * 0.08
-  raf = requestAnimationFrame(loop)
+  if (isVisible.value) {
+    parallaxX.value += (targetX - parallaxX.value) * 0.08
+    parallaxY.value += (targetY - parallaxY.value) * 0.08
+    raf = requestAnimationFrame(loop)
+  } else {
+    raf = null
+  }
+}
+
+function startLoop() {
+  if (raf == null) raf = requestAnimationFrame(loop)
 }
 
 onMounted(() => {
   window.addEventListener('mousemove', onMove, { passive: true })
-  raf = requestAnimationFrame(loop)
+  startLoop()
+
+  if (typeof IntersectionObserver !== 'undefined' && stage.value) {
+    io = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0]
+        if (!entry) return
+        isVisible.value = entry.isIntersecting
+        if (isVisible.value) {
+          targetX = 0
+          targetY = 0
+          startLoop()
+        } else {
+          parallaxX.value = 0
+          parallaxY.value = 0
+        }
+      },
+      { threshold: 0 }
+    )
+    io.observe(stage.value)
+  }
+
   if (typeof ResizeObserver !== 'undefined' && stage.value) {
     ro = new ResizeObserver(() => {})
     ro.observe(stage.value)
@@ -41,6 +72,7 @@ onUnmounted(() => {
   window.removeEventListener('mousemove', onMove)
   if (raf) cancelAnimationFrame(raf)
   if (ro) ro.disconnect()
+  if (io) io.disconnect()
 })
 
 // Orbiting sparkle particles around the center
@@ -78,13 +110,6 @@ const sparks = Array.from({ length: 12 }, (_, i) => {
       loading="lazy"
       decoding="async"
     />
-
-    <!-- Stadium ring 1 (rotates clockwise) -->
-    <div class="hero-ring hero-ring--dashed pointer-events-none absolute inset-0"></div>
-    <!-- Stadium ring 2 (rotates counter-clockwise, gold) -->
-    <div class="hero-ring hero-ring--solid pointer-events-none absolute inset-[6%]"></div>
-    <!-- Stadium ring 3 (rotates clockwise, fast) -->
-    <div class="hero-ring hero-ring--dashed hero-ring--fast pointer-events-none absolute inset-[12%]"></div>
 
     <!-- Pulsing glow at center -->
     <div
@@ -131,28 +156,7 @@ const sparks = Array.from({ length: 12 }, (_, i) => {
   overflow: visible;
 }
 
-/* Stadium rings */
-.hero-ring {
-  border-radius: 9999px;
-  animation: hero-spin-cw 24s linear infinite;
-}
-.hero-ring--solid {
-  border: 1px solid rgba(251,191,36,0.55);
-  box-shadow:
-    inset 0 0 36px rgba(251,191,36,0.22),
-    0 0 30px rgba(251,191,36,0.18);
-  animation: hero-spin-ccw 18s linear infinite;
-}
-.hero-ring--dashed {
-  border: 1px dashed rgba(165,180,252,0.5);
-}
-.hero-ring--fast {
-  animation: hero-spin-cw 9s linear infinite;
-  border-color: rgba(56,189,248,0.4);
-}
-
-@keyframes hero-spin-cw  { to { transform: rotate(360deg); } }
-@keyframes hero-spin-ccw { to { transform: rotate(-360deg); } }
+/* Pulsing glow */
 @keyframes hero-pulse-glow {
   0%, 100% { transform: scale(1);   opacity: 0.6; }
   50%      { transform: scale(1.1); opacity: 1;   }

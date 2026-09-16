@@ -383,10 +383,6 @@ const winnerColorMap = {
     </div>
 
     <div class="relative aspect-[16/9] sm:aspect-[21/9]">
-      <!-- VS label -->
-      <div class="absolute left-1/2 top-3 -translate-x-1/2 z-10">
-        <span class="font-display text-2xl tracking-[0.4em] text-accent-gold/60">VS</span>
-      </div>
 
       <!-- Collision counter (top-right) -->
       <div v-if="phase === 'clashing'" class="absolute right-3 top-3 z-10 rounded-full bg-storm/70 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-accent-gold backdrop-blur">
