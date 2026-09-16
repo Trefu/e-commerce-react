@@ -12,6 +12,7 @@ import HeroBeyblades from '@/components/ui/HeroBeyblades.vue'
 import BeybladeTierList from '@/components/ui/BeybladeTierList.vue'
 import BattlePreview from '@/components/ui/BattlePreview.vue'
 import BeyPicker from '@/components/ui/BeyPicker.vue'
+import SectionDivider from '@/components/ui/SectionDivider.vue'
 import TypeBadge from '@/components/ui/TypeBadge.vue'
 import SpinArrow from '@/components/ui/SpinArrow.vue'
 import PowerGauge from '@/components/ui/PowerGauge.vue'
@@ -140,6 +141,8 @@ const orbiters = [
     </div>
   </section>
 
+  <SectionDivider variant="wave" height="120px" />
+
   <!-- Battle arena — pick 2, see them clash -->
   <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-storm via-black/40 to-storm" />
@@ -207,6 +210,8 @@ const orbiters = [
     </RevealOnScroll>
   </section>
 
+  <SectionDivider variant="glow" height="100px" />
+
   <!-- Categories -->
   <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
     <div class="absolute inset-0 -z-10 bg-gradient-to-br from-black/60 via-storm to-rip-400/5" />
@@ -235,6 +240,8 @@ const orbiters = [
       </div>
     </RevealOnScroll>
   </section>
+
+  <SectionDivider variant="wave" height="120px" flip />
 
   <!-- Featured -->
   <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
@@ -267,6 +274,8 @@ const orbiters = [
       </div>
     </RevealOnScroll>
   </section>
+
+  <SectionDivider variant="glow" height="100px" />
 
   <!-- Tier list + leaderboard -->
   <section class="relative mx-auto mt-24 max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
@@ -329,6 +338,8 @@ const orbiters = [
     </RevealOnScroll>
   </section>
 
+  <SectionDivider variant="wave" height="140px" />
+
   <!-- Deals / Big promo -->
   <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-20 sm:px-6 lg:px-8">
     <div class="absolute inset-0 -z-10 bg-gradient-to-br from-rip-500/15 via-storm to-black/60" />
@@ -370,6 +381,8 @@ const orbiters = [
       </div>
     </RevealOnScroll>
   </section>
+
+  <SectionDivider variant="fade" height="80px" />
 
   <!-- How it works -->
   <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8">

@@ -10,6 +10,10 @@ html, body, #app {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #0a0a0a;
   background-image:
@@ -119,12 +123,44 @@ body {
 /* Reveal on scroll utility */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  transform: translateY(32px);
+  filter: blur(6px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.16,1,0.3,1),
+    filter 0.9s ease;
 }
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Section transition helpers — apply between sibling sections for smoother
+   color handoffs without hard edges. */
+.section-soft-top {
+  position: relative;
+}
+.section-soft-top::before {
+  content: "";
+  position: absolute;
+  inset: -1px 0 auto 0;
+  height: 120px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, var(--soft-top, rgba(11,16,32,1)), transparent);
+  z-index: 0;
+}
+.section-soft-bottom {
+  position: relative;
+}
+.section-soft-bottom::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px 0;
+  height: 120px;
+  pointer-events: none;
+  background: linear-gradient(to top, var(--soft-bottom, rgba(11,16,32,1)), transparent);
+  z-index: 0;
 }
 
 /* Confetti dot */

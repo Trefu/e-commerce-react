@@ -30,7 +30,7 @@ onUnmounted(() => clearInterval(liveTimer))
 const avatarInitial = computed(() => auth.user?.name?.[0]?.toUpperCase() || '?')
 
 function onScroll() {
-  scrolled.value = window.scrollY > 8
+  scrolled.value = window.scrollY > 24
 }
 window.addEventListener('scroll', onScroll, { passive: true })
 onScroll()
@@ -45,8 +45,10 @@ function logout() {
 
 <template>
   <header
-    class="sticky top-0 z-40 transition-all duration-300"
-    :class="scrolled ? 'backdrop-blur-xl bg-storm/70 border-b border-white/10 shadow-card' : 'bg-transparent'"
+    class="sticky top-0 z-40 transition-[background-color,border-color,box-shadow,backdrop-filter] duration-500 ease-out"
+    :class="scrolled
+      ? 'bg-black border-b border-rip-400/30 shadow-card backdrop-blur-xl'
+      : 'bg-transparent border-b border-transparent shadow-none backdrop-blur-0'"
   >
     <div class="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
       <RouterLink to="/" class="flex items-center gap-3">
