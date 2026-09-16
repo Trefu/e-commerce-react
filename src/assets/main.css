@@ -260,3 +260,8 @@ body {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Marquee must scroll even when reduce-motion is set */
+.marquee {
+  animation: marquee 60s linear infinite !important;
+}

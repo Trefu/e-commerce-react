@@ -87,16 +87,21 @@ const orbiters = [
   <div>
   <!-- Hero -->
   <section class="relative overflow-hidden pt-12 pb-24">
-    <div
-      class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-40"
-      style="background-image: url('/bgs/bg-2.jpg');"
-    />
-    <div
-      class="absolute inset-0 -z-10"
-      :style="{
-        background: `radial-gradient(circle at ${50 + mouseX * 8}% ${50 + mouseY * 8}%, rgba(251,191,36,0.18), transparent 55%)`
-      }"
-    />
+    <div class="pointer-events-none absolute inset-x-0 top-0 bottom-0 -z-10 bg-storm" />
+    <div class="pointer-events-none absolute left-1/2 top-0 bottom-0 -z-10 w-full max-w-7xl -translate-x-1/2 overflow-hidden">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+        style="background-image: url('/bgs/bg-2.jpg');"
+      />
+      <div
+        class="absolute inset-0"
+        :style="{
+          background: `radial-gradient(circle at ${50 + mouseX * 8}% ${50 + mouseY * 8}%, rgba(251,191,36,0.18), transparent 55%)`
+        }"
+      />
+      <!-- Bottom fade so the bg blends into the next section -->
+      <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent via-storm/60 to-storm" />
+    </div>
     <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
       <div>
         <div class="inline-flex items-center gap-2 chip mb-6">
@@ -213,8 +218,15 @@ const orbiters = [
   <SectionDivider variant="glow" height="100px" />
 
   <!-- Categories -->
-  <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
-    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-black/60 via-storm to-rip-400/5" />
+  <section class="relative mx-auto max-w-7xl overflow-hidden px-4 pt-16 pb-24 sm:px-6 lg:px-8">
+    <div
+      class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-25"
+      style="background-image: url('/bgs/bg-3.jpg');"
+    />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-storm to-black/70" />
+    <div class="absolute inset-x-0 top-0 -z-10 h-24 bg-gradient-to-b from-rip-400/10 to-transparent" />
+    <div class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-black/60 to-transparent" />
+
     <RevealOnScroll>
       <div class="flex items-end justify-between gap-4 mb-8">
         <div>
@@ -237,40 +249,6 @@ const orbiters = [
             <p class="mt-1 text-xs text-slate-400">{{ c.tagline }}</p>
           </div>
         </RouterLink>
-      </div>
-    </RevealOnScroll>
-  </section>
-
-  <SectionDivider variant="wave" height="120px" flip />
-
-  <!-- Featured -->
-  <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
-    <div
-      class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-25"
-      style="background-image: url('/bgs/bg-3.jpg');"
-    />
-    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-black/70 via-storm to-black/70" />
-    <div class="absolute inset-x-0 top-0 -z-10 h-24 bg-gradient-to-b from-rip-400/10 to-transparent" />
-    <RevealOnScroll>
-      <div class="flex items-end justify-between gap-4 mb-8">
-        <div>
-          <p class="chip">Featured</p>
-          <h2 class="mt-2 font-display text-3xl sm:text-4xl text-white">Top of the meta</h2>
-        </div>
-        <RouterLink to="/shop" class="btn-ghost">Browse all →</RouterLink>
-      </div>
-      <div v-if="!products.loaded" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <div v-for="n in 6" :key="n" class="h-[440px] rounded-3xl skeleton"></div>
-      </div>
-      <div v-else class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <div
-          v-for="(p, idx) in featured"
-          :key="p.id"
-          class="animate-fade-up"
-          :style="{ animationDelay: (idx * 80) + 'ms' }"
-        >
-          <ProductCard :product="p" />
-        </div>
       </div>
     </RevealOnScroll>
   </section>
