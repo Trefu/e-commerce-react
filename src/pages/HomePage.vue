@@ -150,7 +150,8 @@ const orbiters = [
 
   <!-- Battle arena — pick 2, see them clash -->
   <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
-    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-storm via-black/40 to-storm" />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-storm via-storm/60 to-storm/30" />
+    <div class="absolute inset-x-0 bottom-0 -z-10 h-20 bg-gradient-to-b from-transparent to-black" />
     <RevealOnScroll>
       <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-6">
         <div>
@@ -215,16 +216,14 @@ const orbiters = [
     </RevealOnScroll>
   </section>
 
-  <SectionDivider variant="wave" height="160px" from-color="rgba(11,16,32,1)" to-color="rgba(0,0,0,1)" />
-
   <!-- Categories -->
   <section class="relative mx-auto max-w-7xl overflow-hidden px-4 pt-16 pb-24 sm:px-6 lg:px-8">
     <div
-      class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-25"
-      style="background-image: url('/bgs/bg-3.jpg');"
+      class="absolute inset-0 -z-10 bg-cover bg-no-repeat opacity-25"
+      style="background-image: url('/bgs/bg-3.jpg'); background-position: top;"
     />
-    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-storm to-black/70" />
-    <div class="absolute inset-x-0 top-0 -z-10 h-24 bg-gradient-to-b from-rip-400/10 to-transparent" />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-storm to-black/70" />
+    <div class="absolute inset-x-0 top-0 -z-10 h-24 bg-gradient-to-b from-black to-transparent" />
     <div class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-black/60 to-transparent" />
 
     <RevealOnScroll>
