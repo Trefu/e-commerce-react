@@ -11,15 +11,18 @@ html, body, #app {
 }
 
 body {
-  background: radial-gradient(circle at 20% 10%, rgba(99,102,241,0.18), transparent 40%),
-              radial-gradient(circle at 80% 0%, rgba(56,189,248,0.12), transparent 50%),
-              #0b1020;
+  background-color: #0a0a0a;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(251,191,36,0.10), transparent 40%),
+    radial-gradient(circle at 80% 0%,  rgba(217,119,6,0.08),  transparent 50%);
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
 }
 
 @layer base {
   ::selection {
-    background-color: rgba(99, 102, 241, 0.6);
-    color: white;
+    background-color: rgba(251, 191, 36, 0.6);
+    color: #0a0a0a;
   }
   h1, h2, h3, h4 {
     font-family: theme('fontFamily.display');
@@ -40,25 +43,25 @@ body {
   }
   .btn:active { @apply scale-95; }
   .btn-primary {
-    @apply btn bg-rip-500 text-white shadow-glow hover:bg-rip-400 hover:shadow-[0_0_60px_rgba(99,102,241,0.7)];
+    @apply btn bg-gradient-to-r from-rip-400 to-rip-500 text-storm shadow-glow hover:from-rip-300 hover:to-rip-400 hover:shadow-[0_0_60px_rgba(251,191,36,0.7)];
   }
   .btn-secondary {
     @apply btn bg-white/5 text-white border border-white/10 backdrop-blur hover:bg-white/10 hover:border-white/20;
   }
   .btn-ghost {
-    @apply btn text-rip-200 hover:text-white hover:bg-white/5;
+    @apply btn text-rip-300 hover:text-white hover:bg-white/5;
   }
   .btn-danger {
     @apply btn bg-accent-red/90 text-white hover:bg-accent-red;
   }
   .chip {
-    @apply inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-wider text-slate-300;
+    @apply inline-flex items-center gap-1 rounded-full border border-rip-400/30 bg-rip-400/10 px-3 py-1 text-xs uppercase tracking-wider text-rip-200;
   }
   .chip-active {
-    @apply bg-rip-500/20 border-rip-400/40 text-white;
+    @apply bg-rip-500/20 border-rip-400/40 text-rip-100;
   }
   .card-surface {
-    @apply rounded-3xl border border-white/5 bg-white/[0.03] backdrop-blur-md shadow-card;
+    @apply rounded-3xl border border-white/10 bg-black/40 backdrop-blur-md shadow-card;
   }
   .input {
     @apply w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-slate-400 outline-none transition;
@@ -68,34 +71,34 @@ body {
     @apply mb-1 block text-xs uppercase tracking-wider text-slate-400;
   }
   .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+    @apply bg-black/30 backdrop-blur-xl border border-white/10;
   }
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-rip-300 via-white to-rip-300 bg-[length:200%_auto] animate-gradient;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-rip-200 via-rip-400 to-rip-200 bg-[length:200%_auto] animate-gradient;
   }
   .ring-stadium {
     background:
-      radial-gradient(circle at center, #1f1d3a 0%, #0b1020 65%);
+      radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 65%);
     box-shadow:
-      inset 0 0 80px rgba(99,102,241,0.35),
-      inset 0 0 160px rgba(0,0,0,0.8),
-      0 0 80px rgba(99,102,241,0.15);
+      inset 0 0 80px rgba(251,191,36,0.20),
+      inset 0 0 160px rgba(0,0,0,0.85),
+      0 0 80px rgba(251,191,36,0.10);
   }
   .rip-divider {
-    background: linear-gradient(90deg, transparent, rgba(99,102,241,0.6), transparent);
+    background: linear-gradient(90deg, transparent, rgba(251,191,36,0.6), transparent);
     height: 1px;
   }
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #0b1020; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #4338ca, #6366f1);
+  background: linear-gradient(180deg, #d97706, #fbbf24);
   border-radius: 999px;
-  border: 2px solid #0b1020;
+  border: 2px solid #0a0a0a;
 }
-::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #6366f1, #818cf8); }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #fbbf24, #fcd34d); }
 
 /* Skeleton shimmer */
 .skeleton {

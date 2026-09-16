@@ -11,22 +11,23 @@ export default {
         body: ['"Inter"', 'system-ui', 'sans-serif']
       },
       colors: {
+        // Gold-on-black palette — primary accent is gold
         rip: {
-          50:  '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
-          950: '#1e1b4b'
+          50:  '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+          950: '#451a03'
         },
         storm: {
-          DEFAULT: '#0b1020',
-          light: '#11183a'
+          DEFAULT: '#0a0a0a',
+          light:   '#171717'
         },
         accent: {
           gold: '#fbbf24',
@@ -36,9 +37,9 @@ export default {
         }
       },
       boxShadow: {
-        glow: '0 0 40px rgba(99,102,241,0.45)',
-        ring: '0 0 0 1px rgba(255,255,255,0.06), 0 30px 60px -20px rgba(0,0,0,0.6)',
-        card: '0 10px 30px -10px rgba(2, 6, 23, 0.4)'
+        glow: '0 0 40px rgba(251,191,36,0.45)',
+        ring: '0 0 0 1px rgba(255,255,255,0.06), 0 30px 60px -20px rgba(0,0,0,0.8)',
+        card: '0 10px 30px -10px rgba(0, 0, 0, 0.7)'
       },
       keyframes: {
         'spin-slow':   { '0%':   { transform: 'rotate(0deg)' },   '100%': { transform: 'rotate(360deg)' } },

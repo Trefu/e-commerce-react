@@ -7,6 +7,7 @@ import SpinArrow from './SpinArrow.vue'
 const props = defineProps({
   tiers: { type: Object, required: true },
   // tiers = { S: [products], A: [...], B: [...], C: [...] }
+  visiblePerTier: { type: Number, default: 10 }
 })
 
 const order = ['S', 'A', 'B', 'C']
@@ -15,6 +16,14 @@ const tierStyles = {
   A: { color: '#a78bfa', label: 'TOP TIER',     glow: 'rgba(167,139,250,0.35)' },
   B: { color: '#60a5fa', label: 'SOLID',        glow: 'rgba(96,165,250,0.30)' },
   C: { color: '#94a3b8', label: 'COLLECTOR',    glow: 'rgba(148,163,184,0.20)' }
+}
+
+function visible(t) {
+  const all = props.tiers[t] || []
+  return all.slice(0, props.visiblePerTier)
+}
+function overflow(t) {
+  return (props.tiers[t] || []).length - props.visiblePerTier
 }
 </script>
 
@@ -40,7 +49,7 @@ const tierStyles = {
           >{{ t }}</div>
           <div class="flex-1">
             <p class="font-display text-base tracking-widest text-white">{{ tierStyles[t].label }}</p>
-            <p class="text-xs text-slate-400">{{ tiers[t]?.length || 0 }} beys in this tier</p>
+            <p class="text-xs text-slate-400">{{ (tiers[t] || []).length }} beys in this tier</p>
           </div>
           <span
             class="hidden sm:inline-block h-1 flex-1 rounded-full"
@@ -48,29 +57,36 @@ const tierStyles = {
           ></span>
         </header>
 
-        <div class="grid gap-3 px-4 pb-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-3 xl:grid-cols-4">
-          <RouterLink
-            v-for="p in (tiers[t] || [])"
-            :key="p.id"
-            :to="`/product/${p.id}`"
-            class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"
-          >
-            <div class="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg ring-stadium">
-              
-              <img :src="p.images[0]" :alt="p.title" class="absolute inset-0 m-auto h-12 w-12 object-contain" loading="lazy" />
-            </div>
-            <div class="min-w-0 flex-1">
-              <p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">{{ p.title }}</p>
-              <div class="mt-1 flex items-center gap-2">
-                <TypeBadge :type="p.type" size="sm" :glow="false" />
-                <SpinArrow :direction="p.spin" :size="20" :spinning="false" />
+        <div class="max-h-[420px] overflow-y-auto px-4 pb-4 sm:px-6">
+          <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <RouterLink
+              v-for="p in visible(t)"
+              :key="p.id"
+              :to="`/product/${p.id}`"
+              class="group relative flex items-center gap-3 rounded-xl border border-white/5 bg-storm/40 p-3 transition hover:-translate-y-0.5 hover:border-white/20"
+            >
+              <div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg ring-stadium">
+                <img :src="p.images[0]" :alt="p.title" class="absolute inset-0 m-auto h-16 w-16 object-contain" loading="lazy" />
               </div>
-            </div>
-            <div class="text-right">
-              <p class="font-display text-sm text-white tabular-nums" :style="{ color: tierStyles[t].color }">{{ p.power }}</p>
-              <p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p>
-            </div>
-          </RouterLink>
+              <div class="min-w-0 flex-1">
+                <p class="truncate text-sm font-semibold text-white group-hover:text-rip-200">{{ p.title }}</p>
+                <div class="mt-1 flex items-center gap-2">
+                  <TypeBadge :type="p.type" size="sm" :glow="false" />
+                  <SpinArrow :direction="p.spin" :size="20" :spinning="false" />
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="font-display text-sm text-white tabular-nums" :style="{ color: tierStyles[t].color }">{{ p.power }}</p>
+                <p class="text-[9px] uppercase tracking-widest text-slate-500">PWR</p>
+              </div>
+            </RouterLink>
+          </div>
+          <p
+            v-if="overflow(t) > 0"
+            class="mt-3 text-center text-[10px] uppercase tracking-widest text-slate-500"
+          >
+            + {{ overflow(t) }} more in this tier
+          </p>
         </div>
       </div>
     </div>

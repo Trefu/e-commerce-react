@@ -34,9 +34,9 @@ const tierGroups = computed(() => {
   return map
 })
 
-// Top power beys for leaderboard
+// Top power beys for leaderboard (limited to 3 so the column stays compact)
 const leaderboard = computed(() =>
-  [...products.items].filter(p => p.power > 1000).sort((a, b) => b.power - a.power).slice(0, 5)
+  [...products.items].filter(p => p.power > 1000).sort((a, b) => b.power - a.power).slice(0, 3)
 )
 
 // Battle arena — pick 2 beys
@@ -87,9 +87,13 @@ const orbiters = [
   <!-- Hero -->
   <section class="relative overflow-hidden pt-12 pb-24">
     <div
+      class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-40"
+      style="background-image: url('/bgs/bg-2.jpg');"
+    />
+    <div
       class="absolute inset-0 -z-10"
       :style="{
-        background: `radial-gradient(circle at ${50 + mouseX * 8}% ${50 + mouseY * 8}%, rgba(99,102,241,0.18), transparent 55%)`
+        background: `radial-gradient(circle at ${50 + mouseX * 8}% ${50 + mouseY * 8}%, rgba(251,191,36,0.18), transparent 55%)`
       }"
     />
     <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
@@ -137,7 +141,8 @@ const orbiters = [
   </section>
 
   <!-- Battle arena — pick 2, see them clash -->
-  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-storm via-black/40 to-storm" />
     <RevealOnScroll>
       <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-6">
         <div>
@@ -203,7 +208,8 @@ const orbiters = [
   </section>
 
   <!-- Categories -->
-  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-24">
+  <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-black/60 via-storm to-rip-400/5" />
     <RevealOnScroll>
       <div class="flex items-end justify-between gap-4 mb-8">
         <div>
@@ -231,7 +237,13 @@ const orbiters = [
   </section>
 
   <!-- Featured -->
-  <section class="mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
+    <div
+      class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-25"
+      style="background-image: url('/bgs/bg-3.jpg');"
+    />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-black/70 via-storm to-black/70" />
+    <div class="absolute inset-x-0 top-0 -z-10 h-24 bg-gradient-to-b from-rip-400/10 to-transparent" />
     <RevealOnScroll>
       <div class="flex items-end justify-between gap-4 mb-8">
         <div>
@@ -257,7 +269,13 @@ const orbiters = [
   </section>
 
   <!-- Tier list + leaderboard -->
-  <section class="mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="relative mx-auto mt-24 max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
+    <div
+      class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-25"
+      style="background-image: url('/bgs/bg-1.png');"
+    />
+    <div class="absolute inset-x-0 top-0 -z-10 h-32 bg-gradient-to-b from-storm to-transparent" />
+    <div class="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-storm to-transparent" />
     <RevealOnScroll>
       <div class="grid gap-6 lg:grid-cols-[1fr_320px]">
         <div>
@@ -270,8 +288,8 @@ const orbiters = [
           </div>
           <BeybladeTierList :tiers="tierGroups" />
         </div>
-        <aside>
-          <div class="card-surface sticky top-24 p-5">
+        <aside class="space-y-4">
+          <div class="card-surface p-5">
             <p class="chip">Leaderboard</p>
             <h3 class="mt-2 font-display text-2xl text-white">Top by power</h3>
             <ul class="mt-4 space-y-3">
@@ -289,7 +307,7 @@ const orbiters = [
                   }"
                 >#{{ i + 1 }}</span>
                 <div class="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg ring-stadium">
-                  
+
                   <img :src="p.images[0]" :alt="p.title" class="absolute inset-0 m-auto h-9 w-9 object-contain" />
                 </div>
                 <div class="flex-1 min-w-0">
@@ -305,14 +323,17 @@ const orbiters = [
             <RouterLink to="/shop" class="btn-secondary mt-5 w-full !justify-center">Open catalog</RouterLink>
           </div>
 
-          <LiveBattleTicker class="mt-4" />
+          <LiveBattleTicker />
         </aside>
       </div>
     </RevealOnScroll>
   </section>
 
   <!-- Deals / Big promo -->
-  <section class="mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-20 sm:px-6 lg:px-8">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-rip-500/15 via-storm to-black/60" />
+    <div class="absolute -right-20 -top-20 -z-10 h-72 w-72 rounded-full bg-rip-400/20 blur-3xl" />
+    <div class="absolute -left-20 bottom-0 -z-10 h-72 w-72 rounded-full bg-rip-500/15 blur-3xl" />
     <RevealOnScroll>
       <div class="relative overflow-hidden rounded-3xl border border-rip-500/30 bg-gradient-to-br from-rip-700 via-storm to-storm-light p-8 sm:p-12">
         <div class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-accent-gold/20 blur-3xl"></div>
@@ -325,18 +346,25 @@ const orbiters = [
             <RouterLink to="/shop" class="btn-primary mt-6 inline-flex">⚡ Rip the sale</RouterLink>
           </div>
           <div class="grid grid-cols-3 gap-4">
-            <div
-              v-for="(d, i) in deals"
+            <RouterLink
+              v-for="d in deals"
               :key="d.id"
+              :to="`/product/${d.id}`"
               class="group relative h-44 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2"
             >
-              <BeybladeSpinner :size="84" class="absolute right-2 top-2 opacity-30" :speed="i === 0 ? 'fast' : 'normal'" />
-              <img :src="d.images[0]" :alt="d.title" class="absolute bottom-1 left-1/2 h-24 w-24 -translate-x-1/2 object-contain drop-shadow-[0_8px_15px_rgba(0,0,0,0.6)] transition group-hover:scale-110" loading="lazy" />
+              <img
+                src="/arena.png"
+                alt=""
+                class="pointer-events-none absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-[60%] rounded-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+              <img :src="d.images[0]" :alt="d.title" class="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-[60%] object-contain drop-shadow-[0_8px_15px_rgba(0,0,0,0.6)] transition group-hover:scale-110" loading="lazy" />
               <div class="relative mt-auto flex h-full flex-col justify-end">
                 <p class="truncate text-xs font-semibold text-white">{{ d.title }}</p>
                 <p class="text-xs text-accent-gold">${{ d.price.toFixed(2) }}</p>
               </div>
-            </div>
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -344,7 +372,8 @@ const orbiters = [
   </section>
 
   <!-- How it works -->
-  <section class="mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-storm via-black/30 to-storm" />
     <RevealOnScroll>
       <div class="text-center mb-12">
         <p class="chip mx-auto">How it works</p>

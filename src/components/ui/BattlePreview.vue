@@ -352,13 +352,6 @@ const winnerColorMap = {
 
 <template>
   <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-storm-light via-storm to-storm-light">
-    <!-- Stadium ring background -->
-    <div class="absolute inset-0 pointer-events-none">
-      <div class="absolute left-1/2 top-1/2 h-[120%] w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full ring-2 ring-rip-500/20"></div>
-      <div class="absolute left-1/2 top-1/2 h-[90%] w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full ring-2 border-dashed border-rip-300/30"></div>
-      <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 50% 50%, rgba(99,102,241,0.3), transparent 60%);"></div>
-    </div>
-
     <!-- Stadium floor + collision wall (visible) — sized to match physics constants -->
     <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
       <div
@@ -381,16 +374,6 @@ const winnerColorMap = {
           loading="lazy"
           decoding="async"
         />
-        <!-- Stadium floor (subtle gradient like a real beystadium bowl) -->
-        <div
-          class="absolute inset-0 rounded-full"
-          style="background: radial-gradient(circle at 50% 50%, rgba(99,102,241,0.18) 0%, rgba(67,56,202,0.10) 55%, rgba(11,16,32,0.4) 100%);"
-        ></div>
-        <!-- Stadium wall (the actual collision boundary) -->
-        <div
-          class="absolute inset-0 rounded-full"
-          style="border: 3px solid rgba(251,191,36,0.55);"
-        ></div>
         <!-- Inner concentric guide ring -->
         <div
           class="absolute inset-[18%] rounded-full"
