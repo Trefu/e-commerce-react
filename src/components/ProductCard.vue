@@ -5,7 +5,6 @@ import { useCartStore } from '@/stores/cart'
 import { useWishlistStore } from '@/stores/wishlist'
 import StarRating from '@/components/ui/StarRating.vue'
 import TypeBadge from '@/components/ui/TypeBadge.vue'
-import SpinArrow from '@/components/ui/SpinArrow.vue'
 
 const props = defineProps({
   product: { type: Object, required: true }
@@ -51,15 +50,7 @@ function open() {
   router.push({ name: 'product', params: { id: props.product.id } })
 }
 
-const colors = {
-  red:    { ring: 'from-accent-red/40 to-rose-500/10',   text: 'text-accent-red' },
-  blue:   { ring: 'from-accent-blue/40 to-sky-500/10',   text: 'text-accent-blue' },
-  green:  { ring: 'from-accent-green/40 to-emerald-500/10', text: 'text-accent-green' },
-  purple: { ring: 'from-rip-500/40 to-fuchsia-500/10',   text: 'text-rip-300' },
-  mixed:  { ring: 'from-rip-500/40 to-accent-gold/20',    text: 'text-accent-gold' },
-  black:  { ring: 'from-white/30 to-white/5',            text: 'text-white' }
-}
-const theme = computed(() => colors[props.product.color] || colors.purple)
+const theme = { ring: 'from-white/15 to-white/5', text: 'text-white' }
 
 const tierColors = {
   S: '#fbbf24',
@@ -105,10 +96,10 @@ const tierColor = computed(() => tierColors[props.product.tier] || '#94a3b8')
         class="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-storm/70 text-slate-200 backdrop-blur transition hover:text-accent-red active:scale-90"
         :class="isWish && 'text-accent-red animate-pop-in'"
         :style="product.tier ? { left: 'auto', right: '0.75rem' } : {}"
-        @click="toggleWish"
+        @click.stop="toggleWish"
         aria-label="Add to wishlist"
       >
-        <FontAwesomeIcon :icon="['far', 'heart']" class="h-4 w-4" />
+        <FontAwesomeIcon :icon="isWish ? ['fas', 'heart'] : ['far', 'heart']" class="h-4 w-4" />
       </button>
 
       <!-- Badge (next to wishlist when tier present) -->
@@ -124,19 +115,16 @@ const tierColor = computed(() => tierColors[props.product.tier] || '#94a3b8')
 
       <!-- Stadium ring -->
       <div class="absolute inset-x-6 top-6 h-56 overflow-hidden rounded-2xl ring-stadium">
-        
+
         <img
           :src="product.images[0]"
           :alt="product.title"
           class="absolute inset-0 m-auto h-44 w-44 object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.5)] transition-transform duration-500 will-change-transform"
-          :style="{ transform: `translate3d(${tilt.tx}px, ${tilt.ty}px, 0) rotate(${-tilt.ry * 2}deg)` }"
+          :style="{ transform: `translate3d(${tilt.tx}px, ${tilt.ty}px, 0)` }"
           loading="lazy"
         />
         <div class="absolute bottom-2 right-3 rounded-full bg-storm/70 px-2 py-0.5 text-[10px] uppercase tracking-widest text-slate-300 backdrop-blur">
           {{ product.series }}
-        </div>
-        <div class="absolute left-2 top-2">
-          <SpinArrow :direction="product.spin" :size="22" />
         </div>
       </div>
 

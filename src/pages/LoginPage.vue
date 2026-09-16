@@ -22,6 +22,14 @@ function login() {
   const next = route.query.redirect || '/'
   router.push(next)
 }
+
+function socialUnavailable(provider) {
+  ui.toast({
+    title: `${provider} sign-in unavailable`,
+    content: 'Use email + password for now — or create a free account.',
+    color: 'gold'
+  })
+}
 </script>
 
 <template>
@@ -52,8 +60,8 @@ function login() {
       </div>
 
       <div class="space-y-2">
-        <button class="btn-secondary w-full !py-3">Continue with Google</button>
-        <button class="btn-secondary w-full !py-3">Continue with Apple</button>
+        <button type="button" class="btn-secondary w-full !py-3" @click="socialUnavailable('Google')">Continue with Google</button>
+        <button type="button" class="btn-secondary w-full !py-3" @click="socialUnavailable('Apple')">Continue with Apple</button>
       </div>
 
       <p class="mt-6 text-center text-sm text-slate-400">
