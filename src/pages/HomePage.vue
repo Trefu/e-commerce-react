@@ -146,8 +146,6 @@ const orbiters = [
     </div>
   </section>
 
-  <SectionDivider variant="wave" height="120px" />
-
   <!-- Battle arena — pick 2, see them clash -->
   <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-storm via-storm/60 to-storm/30" />
@@ -314,8 +312,6 @@ const orbiters = [
       </div>
     </RevealOnScroll>
   </section>
-
-  <SectionDivider variant="wave" height="140px" />
 
   <!-- Deals / Big promo -->
   <section class="relative mx-auto max-w-7xl overflow-hidden px-4 py-20 sm:px-6 lg:px-8">
