@@ -161,7 +161,10 @@ const sparks = Array.from({ length: 12 }, (_, i) => {
   0%, 100% { transform: scale(1);   opacity: 0.6; }
   50%      { transform: scale(1.1); opacity: 1;   }
 }
-.animate-pulse-glow { animation: hero-pulse-glow 3.4s ease-in-out infinite; }
+.animate-pulse-glow {
+  animation: hero-pulse-glow 3.4s ease-in-out infinite !important;
+  animation-iteration-count: infinite !important;
+}
 
 /* Center main blade wrapper */
 .hero-main-wrap {
@@ -180,11 +183,15 @@ const sparks = Array.from({ length: 12 }, (_, i) => {
   user-select: none;
   -webkit-user-drag: none;
   filter: drop-shadow(0 25px 40px rgba(0,0,0,0.55));
-  animation: hero-blade-spin 2.4s linear infinite;
+  animation: hero-blade-spin 2.4s linear infinite !important;
+  animation-iteration-count: infinite !important;
+  transform-origin: 50% 50%;
+  will-change: transform;
 }
 
 @keyframes hero-blade-spin {
-  to { transform: rotate(360deg); }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 /* Spark particles — fly outward from center */
@@ -199,8 +206,10 @@ const sparks = Array.from({ length: 12 }, (_, i) => {
   background: var(--spark-color, #fbbf24);
   border-radius: 9999px;
   box-shadow: 0 0 12px var(--spark-color, #fbbf24);
-  animation: hero-spark-fly var(--spark-d, 1.6s) ease-out var(--spark-delay, 0s) infinite;
+  animation: hero-spark-fly var(--spark-d, 1.6s) ease-out var(--spark-delay, 0s) infinite !important;
+  animation-iteration-count: infinite !important;
   pointer-events: none;
+  will-change: transform, opacity;
 }
 
 @keyframes hero-spark-fly {

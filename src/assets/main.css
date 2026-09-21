@@ -187,7 +187,8 @@ body {
   background: var(--spark-color, #fbbf24);
   box-shadow: 0 0 12px var(--spark-color, #fbbf24), 0 0 24px var(--spark-color, #fbbf24);
   transform: translate(-50%, -50%);
-  animation: spark-fly var(--spark-d, 1.6s) ease-out infinite;
+  animation: spark-fly var(--spark-d, 1.6s) ease-out infinite !important;
+  animation-iteration-count: infinite !important;
   animation-delay: var(--spark-delay, 0s);
   pointer-events: none;
 }
@@ -200,7 +201,8 @@ body {
     linear-gradient(70deg, transparent 55%, rgba(244,114,182,0.7) 65%, transparent 75%);
   mix-blend-mode: screen;
   border-radius: 9999px;
-  animation: crash-flash 2.6s ease-out infinite;
+  animation: crash-flash 2.6s ease-out infinite !important;
+  animation-iteration-count: infinite !important;
   pointer-events: none;
 }
 
@@ -209,7 +211,8 @@ body {
   inset: 0;
   border-radius: 9999px;
   border: 2px solid rgba(99,102,241,0.55);
-  animation: shockwave 2.2s ease-out infinite;
+  animation: shockwave 2.2s ease-out infinite !important;
+  animation-iteration-count: infinite !important;
   pointer-events: none;
 }
 
@@ -221,11 +224,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: spin-cw var(--orbit-d, 6s) linear infinite;
+  animation: spin-cw var(--orbit-d, 6s) linear infinite !important;
+  animation-iteration-count: infinite !important;
   pointer-events: none;
 }
 .hero-orbit.ccw {
-  animation: spin-ccw var(--orbit-d, 6s) linear infinite;
+  animation: spin-ccw var(--orbit-d, 6s) linear infinite !important;
+  animation-iteration-count: infinite !important;
 }
 .hero-orbit-position {
   position: absolute;
@@ -236,32 +241,33 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-orbit, .hero-spark, .hero-crash-line, .hero-shockwave {
-    animation: none !important;
-  }
+  /* keep decorative infinite animations running — see main reduced-motion
+     rule below for the actual policy */
 }
 
 /* Marquee */
 .marquee {
   display: flex;
   width: max-content;
-  animation: marquee 28s linear infinite;
+  animation: marquee 28s linear infinite !important;
+  animation-iteration-count: infinite !important;
 }
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
-/* Reduce motion respect */
+/* Reduce motion respect — only kill interactive transitions and short
+   one-shot animations. Decorative infinite animations (hero spin, sparks,
+   pulse glow, marquee, etc.) are kept because they're not the motion
+   source that triggers vestibular issues; killing them breaks the page. */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .anim-once {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
   }
-}
-
-/* Marquee must scroll even when reduce-motion is set */
-.marquee {
-  animation: marquee 60s linear infinite !important;
 }

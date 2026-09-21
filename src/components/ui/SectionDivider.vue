@@ -1,5 +1,7 @@
 <script setup>
-defineProps({
+import { useId } from 'vue'
+
+const props = defineProps({
   variant: {
     type: String,
     default: 'wave',
@@ -22,6 +24,11 @@ defineProps({
     default: 'rgba(11,16,32,1)'
   }
 })
+
+const uid = useId()
+const strokeId = `dividerStroke-${uid}`
+const fillId = `dividerFill-${uid}`
+const glowId = `dividerGlow-${uid}`
 </script>
 
 <template>
@@ -43,24 +50,24 @@ defineProps({
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <linearGradient id="dividerStroke" x1="0" y1="0" x2="1" y2="0">
+        <linearGradient :id="strokeId" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%"   stop-color="rgba(251,191,36,0)" />
           <stop offset="50%"  stop-color="rgba(251,191,36,0.55)" />
           <stop offset="100%" stop-color="rgba(251,191,36,0)" />
         </linearGradient>
-        <linearGradient id="dividerFill" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient :id="fillId" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%"   :stop-color="toColor" stop-opacity="0" />
           <stop offset="100%" :stop-color="toColor" stop-opacity="1" />
         </linearGradient>
       </defs>
       <path
         d="M0,64 C240,120 480,8 720,40 C960,72 1200,120 1440,56 L1440,120 L0,120 Z"
-        fill="url(#dividerFill)"
+        :fill="`url(#${fillId})`"
       />
       <path
         d="M0,64 C240,120 480,8 720,40 C960,72 1200,120 1440,56"
         fill="none"
-        stroke="url(#dividerStroke)"
+        :stroke="`url(#${strokeId})`"
         stroke-width="1.5"
       />
     </svg>
@@ -73,13 +80,13 @@ defineProps({
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <radialGradient id="dividerGlow" cx="50%" cy="50%" r="60%">
+        <radialGradient :id="glowId" cx="50%" cy="50%" r="60%">
           <stop offset="0%"   stop-color="rgba(251,191,36,0.55)" />
           <stop offset="55%"  stop-color="rgba(217,119,6,0.18)" />
           <stop offset="100%" stop-color="rgba(217,119,6,0)" />
         </radialGradient>
       </defs>
-      <ellipse cx="720" cy="60" rx="640" ry="46" fill="url(#dividerGlow)" />
+      <ellipse cx="720" cy="60" rx="640" ry="46" :fill="`url(#${glowId})`" />
     </svg>
 
     <span v-else class="section-divider__bar" />
