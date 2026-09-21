@@ -28,7 +28,6 @@ const props = defineProps({
 const uid = useId()
 const strokeId = `dividerStroke-${uid}`
 const fillId = `dividerFill-${uid}`
-const glowId = `dividerGlow-${uid}`
 </script>
 
 <template>
@@ -72,22 +71,7 @@ const glowId = `dividerGlow-${uid}`
       />
     </svg>
 
-    <svg
-      v-else-if="variant === 'glow'"
-      class="section-divider__svg"
-      viewBox="0 0 1440 120"
-      preserveAspectRatio="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <defs>
-        <radialGradient :id="glowId" cx="50%" cy="50%" r="60%">
-          <stop offset="0%"   stop-color="rgba(251,191,36,0.55)" />
-          <stop offset="55%"  stop-color="rgba(217,119,6,0.18)" />
-          <stop offset="100%" stop-color="rgba(217,119,6,0)" />
-        </radialGradient>
-      </defs>
-      <ellipse cx="720" cy="60" rx="640" ry="46" :fill="`url(#${glowId})`" />
-    </svg>
+    <div v-else-if="variant === 'glow'" class="section-divider__glow" />
 
     <span v-else class="section-divider__bar" />
   </div>
@@ -110,6 +94,23 @@ const glowId = `dividerGlow-${uid}`
   width: 100%;
   height: 100%;
   display: block;
+}
+
+.section-divider__glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(640px, 80%);
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    ellipse 50% 50% at 50% 50%,
+    rgba(251, 191, 36, 0.55) 0%,
+    rgba(217, 119, 6, 0.18) 55%,
+    rgba(217, 119, 6, 0) 100%
+  );
+  filter: blur(18px);
+  pointer-events: none;
 }
 
 .section-divider__bar {
